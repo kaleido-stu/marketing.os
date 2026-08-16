@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="csrf-token" content="prototype">
+<title>تسجيل الدخول | نظام إدارة شركات الماركتينج والبرودكشن</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+
+<link rel="stylesheet" href="css/core.css">
+</head>
+<body class="auth-body">
+  <div class="auth-wrap">
+  <div class="auth-card">
+    <div class="auth-brand">
+      <div class="brand-row" style="justify-content:center;">
+        <div class="brand-mark">K</div>
+        <div style="text-align:right;">
+          <div class="brand-name" style="color:var(--ink);">Kaleido O.S</div>
+          <div class="brand-sub" style="color:var(--gray-500);">MARKETING &amp; PRODUCTION OS</div>
+        </div>
+      </div>
+      <div class="clapper-stripe" style="margin-top:16px;border-radius:20px;"></div>
+    </div>
+
+    <div class="auth-head">
+      <h1>تسجيل الدخول</h1>
+      <p class="muted">أدخل بياناتك للوصول إلى نظام إدارة التشغيل</p>
+    </div>
+
+    
+    <form method="POST" action="login.html" class="auth-form">
+      <input type="hidden" name="_token" value="prototype" autocomplete="off">
+      <div class="field">
+        <label for="login">اسم المستخدم أو البريد الإلكتروني</label>
+        <input id="login" type="text" name="login" value="" required autofocus autocomplete="username" placeholder="username أو you@example.com">
+      </div>
+
+      <div class="field">
+        <label for="password">كلمة المرور</label>
+        <input id="password" type="password" name="password" required autocomplete="current-password" placeholder="••••••••">
+      </div>
+
+      <label class="remember">
+        <input type="checkbox" name="remember">
+        <span>تذكّرني على هذا الجهاز</span>
+      </label>
+
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:6px;">
+        تسجيل الدخول
+      </button>
+    </form>
+
+    <div class="clapper-stripe" style="margin-top:22px;"></div>
+  </div>
+</div>
+<script src="js/prototype.js"></script>
+</body>
+</html>

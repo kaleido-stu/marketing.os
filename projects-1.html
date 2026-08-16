@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="csrf-token" content="prototype">
+<title>Kaleido O.S | نظام إدارة شركات الماركتينج والبرودكشن</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<script src="js/chart.min.js"></script>
+<link rel="stylesheet" href="css/core.css">
+
+<link rel="stylesheet" href="modules/departments/css/departments.css">
+<link rel="stylesheet" href="modules/crm/css/crm.css">
+<link rel="stylesheet" href="modules/tasks/css/tasks.css">
+<link rel="stylesheet" href="modules/projects/css/projects.css">
+<link rel="stylesheet" href="modules/scheduling/css/scheduling.css">
+<link rel="stylesheet" href="modules/freelancers/css/freelancers.css">
+<link rel="stylesheet" href="modules/invoices/css/finance.css">
+</head>
+<body>
+
+<div class="app">
+  <div class="sidebar-backdrop" id="backdrop" onclick="toggleSidebar(false)"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+        <div class="brand-row">
+        <div class="brand-mark">K</div>
+        <div>
+            <div class="brand-name">Kaleido O.S</div>
+            <div class="brand-sub">MARKETING &amp; PRODUCTION OS</div>
+        </div>
+        </div>
+        <div class="clapper-stripe"></div>
+    </div>
+
+    <nav class="nav">
+                <div class="nav-group-label">الرئيسية</div>
+                        <a href="index.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h8V3H3v10zM13 21h8V11h-8v10zM13 3v6h8V3h-8zM3 21h8v-6H3v6z"/></svg>
+                <span>لوحة التحكم</span>
+                            </a>
+                            <div class="nav-group-label">المبيعات والعملاء</div>
+                        <a href="crm-pipeline.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M2 21v-2a5 5 0 015-5h4a5 5 0 015 5v2"/><circle cx="18" cy="8" r="2.3"/><path d="M16 21v-1.6a4 4 0 00-1.2-2.9"/></svg>
+                <span>العملاء المحتملون (CRM)</span>
+                                <span class="badge">7</span>
+                            </a>
+                        <a href="projects.html" class="nav-item active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
+                <span>المشاريع والحملات</span>
+                                <span class="badge">4</span>
+                            </a>
+                            <div class="nav-group-label">العمليات</div>
+                        <a href="scheduling.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>جدولة التصوير والمعدات</span>
+                            </a>
+                        <a href="freelancers.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+                <span>الفريلانسرز والموردين</span>
+                            </a>
+                        <a href="departments.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-5h6v5"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01"/></svg>
+                <span>الأقسام</span>
+                            </a>
+                            <div class="nav-group-label">العميل والمال</div>
+                        <a href="reports.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9M12 21V3M20 21v-7"/></svg>
+                <span>تقارير الربحية</span>
+                            </a>
+                        <a href="invoices.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l3 3v17H6z"/><line x1="9" y1="8" x2="14" y2="8"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="12" y2="16"/></svg>
+                <span>الفواتير</span>
+                            </a>
+                            <div class="nav-group-label">النظام</div>
+                        <a href="settings-users.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                <span>الإعدادات</span>
+                            </a>
+                        </nav>
+</aside>
+
+  <div class="main">
+    <div class="topbar">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <button class="hamburger" onclick="toggleSidebar(true)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        </button>
+        <div>
+          <div class="topbar-title">حملة رمضان 2026</div>
+          <div class="topbar-sub">كافيه لومير · حملة موسمية</div>
+        </div>
+              </div>
+      <div class="topbar-right">
+        
+                <div class="rec-pill">
+          <span class="rec-dot"></span>
+          <span class="txt">2 تصوير جاري دلوقتي</span>
+        </div>
+        
+                
+        <div class="notif-wrap">
+          <button class="notif-bell" id="notif-bell" onclick="toggleNotifications(event)" title="الإشعارات">
+            
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2a1.2 1.2 0 011.2 1.2v.9a6.3 6.3 0 014.9 6.14v3.06l1.44 2.4A1.2 1.2 0 0118.5 19.5h-13a1.2 1.2 0 01-1.04-1.8l1.44-2.4V10.24A6.3 6.3 0 0110.8 4.1v-.9A1.2 1.2 0 0112 2z"/>
+              <path d="M9.6 20.7h4.8a2.4 2.4 0 01-4.8 0z"/>
+            </svg>
+            <span class="notif-badge" id="notif-badge" style="display:none;">0</span>
+          </button>
+          <div class="notif-panel" id="notif-panel">
+            <div class="notif-head">
+              <h4>الإشعارات</h4>
+              <button class="notif-readall" onclick="markAllRead()">تعليم الكل كمقروء</button>
+            </div>
+            <div class="notif-list" id="notif-list">
+              <div class="muted notif-empty">جاري التحميل...</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topbar-user">
+          <div class="user-avatar">أو</div>
+          <div class="tu-meta">
+            <div class="tu-name">أونر النظام</div>
+            <div class="tu-role">الأونر</div>
+          </div>
+          <form method="POST" action="#" data-proto-dead="/logout" style="display:flex;">
+            <input type="hidden" name="_token" value="prototype" autocomplete="off">            <button type="submit" class="tu-logout" title="تسجيل خروج">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            </button>
+          </form>
+        </div>
+              </div>
+    </div>
+
+    <div class="content">
+      <div class="section-head">
+  <h2>حملة رمضان 2026</h2>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+    
+          <a href="invoices-create.html" class="btn btn-primary btn-sm">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l3 3v17H6z"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="12" y2="16"/></svg>
+        تحويل المشروع لفاتورة
+      </a>
+              <a href="projects-1-edit.html" class="btn btn-outline btn-sm">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+        تعديل المشروع
+      </a>
+              <button class="btn btn-sm btn-danger" onclick="deleteProject()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg>
+        حذف
+      </button>
+        <a href="projects.html" class="btn btn-ghost btn-sm">← رجوع للمشاريع</a>
+  </div>
+</div>
+
+
+  <div class="dept-tag-row">
+    <span class="muted" style="font-size:12px;">الأقسام الشغالة:</span>
+          <span class="dept-tag" style="--dept:#E8590C;">البرودكشن</span>
+          <span class="dept-tag" style="--dept:#0EA5A5;">برمجة</span>
+          <span class="dept-tag" style="--dept:#1B4DFF;">ديجيتال ماركتينج</span>
+      </div>
+
+
+
+<div class="pipeline">
+          <div class="pipe-col pipe-new">
+      <div class="pipe-head">
+        <h4>جديد</h4>
+        <span class="pipe-count">0</span>
+      </div>
+      <div class="pipe-body">
+                  <div class="pipe-empty">—</div>
+              </div>
+    </div>
+          <div class="pipe-col pipe-in_progress">
+      <div class="pipe-head">
+        <h4>جاري التنفيذ</h4>
+        <span class="pipe-count">2</span>
+      </div>
+      <div class="pipe-body">
+                  <button type="button" class="pipe-card" onclick="jumpToTask(3)">
+            <span class="pipe-card-title">اعتماد العميل على السكريبت</span>
+                          <span class="dept-tag" style="--dept:#0EA5A5;">برمجة</span>
+                        <span class="pipe-card-meta">
+                                                      </span>
+          </button>
+                  <button type="button" class="pipe-card" onclick="jumpToTask(4)">
+            <span class="pipe-card-title">جدولة النشر</span>
+                          <span class="dept-tag" style="--dept:#1B4DFF;">ديجيتال ماركتينج</span>
+                        <span class="pipe-card-meta">
+                                                      </span>
+          </button>
+              </div>
+    </div>
+          <div class="pipe-col pipe-review">
+      <div class="pipe-head">
+        <h4>مراجعة</h4>
+        <span class="pipe-count">0</span>
+      </div>
+      <div class="pipe-body">
+                  <div class="pipe-empty">—</div>
+              </div>
+    </div>
+          <div class="pipe-col pipe-completed">
+      <div class="pipe-head">
+        <h4>اكتمل</h4>
+        <span class="pipe-count">2</span>
+      </div>
+      <div class="pipe-body">
+                  <button type="button" class="pipe-card" onclick="jumpToTask(1)">
+            <span class="pipe-card-title">تصوير محتوى الفيديو</span>
+                          <span class="dept-tag" style="--dept:#1B4DFF;">ديجيتال ماركتينج</span>
+                        <span class="pipe-card-meta">
+                                                      </span>
+          </button>
+                  <button type="button" class="pipe-card" onclick="jumpToTask(2)">
+            <span class="pipe-card-title">تصميم البانرات</span>
+                          <span class="dept-tag" style="--dept:#E8590C;">البرودكشن</span>
+                        <span class="pipe-card-meta">
+                                                      </span>
+          </button>
+              </div>
+    </div>
+  </div>
+
+
+<h3 style="margin:26px 0 14px;font-size:17px;color:var(--primary-dark);">تفاصيل المهام</h3>
+
+  <div class="card task-card" id="task-1">
+  <div class="task-head" onclick="toggleTask(1)">
+    <button type="button" class="task-caret" id="caret-1" aria-label="توسيع">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <div class="task-head-main">
+      <h3>تصوير محتوى الفيديو</h3>
+      <div class="task-head-meta">
+                  <span class="dept-tag" style="--dept:#1B4DFF;">ديجيتال ماركتينج</span>
+                                      </div>
+    </div>
+
+    <div class="task-head-side" onclick="event.stopPropagation();">
+      <div class="task-owner">
+                  <span class="muted" style="font-size:12px;">— بدون مسؤول —</span>
+                      </div>
+            <select class="form-select status-select st-completed" onchange="updateStatus(1, this)" title="حالة المهمة">
+                  <option value="new" >جديد</option>
+                  <option value="in_progress" >جاري التنفيذ</option>
+                  <option value="review" >مراجعة</option>
+                  <option value="completed" selected>اكتمل</option>
+              </select>
+
+          </div>
+  </div>
+
+  <div class="task-body" id="body-1" style="display:none;">
+    
+          <div class="task-section deadline-row">
+        <label for="dl-1">الديدلاين</label>
+        <input id="dl-1" type="date" value="" onchange="saveDeadline(1, this)">
+      </div>
+    
+    
+    
+    <div class="task-section">
+      <div class="task-section-head">
+        <h4 class="task-section-title">الموظفون على التاسك</h4>
+        <span class="muted" style="font-size:11.5px;">المسؤول واحد، والمنفّذون أي عدد — كلهم بيشوفوا التاسك</span>
+      </div>
+
+      <div class="crew-list" id="crew-1">
+        
+                  <div class="muted crew-empty" id="crew-empty-1" style="font-size:12.5px;">مفيش منفّذين مضافين — المسؤول بس.</div>
+              </div>
+
+              <div class="crew-add">
+          <select class="form-select" id="crew-sel-1">
+            <option value="">— اختر موظف تضيفه —</option>
+                          <option value="1" data-initials="أو" data-role="الأونر">أونر النظام (الأونر)</option>
+                      </select>
+          <button class="btn btn-outline btn-sm" onclick="addCrew(1)">إضافة للتاسك</button>
+        </div>
+          </div>
+
+    
+    <div class="task-section">
+      <div class="task-section-head">
+        <h4 class="task-section-title">الخطوات الفرعية</h4>
+        <span class="steps-progress" id="prog-1">0 من 0 خطوات</span>
+      </div>
+      <p class="muted steps-note">
+        إنهاء كل الخطوات <b>ما بيقفلش المهمة تلقائيًا</b> — حالة المهمة بتتغيّر بإيدك من فوق.
+      </p>
+
+      <div class="step-list" id="steps-1">
+                  <div class="muted step-empty" id="steps-empty-1" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
+              </div>
+
+      <div class="step-add">
+        <input type="text" id="st-title-1" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(1)">
+        <input type="text" id="st-details-1" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(1)">
+        <button class="btn btn-outline btn-sm" onclick="addStep(1)">أضف خطوة</button>
+      </div>
+    </div>
+
+    
+    <div class="task-section">
+      <div class="task-section-head">
+        <h4 class="task-section-title">ملفات الشغل</h4>
+        <span class="muted" style="font-size:11.5px;">ملفات داخلية بين الفريق — مش تسليمات العميل</span>
+      </div>
+
+      <div class="attach-list" id="attachments-1">
+                  <div class="muted attach-empty" id="attach-empty-1" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
+              </div>
+
+      <div class="attach-add">
+        <input type="file" id="file-1" class="attach-input" onchange="uploadFile(1)">
+        <label for="file-1" class="btn btn-outline btn-sm">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          رفع ملف جديد
+        </label>
+        <span class="muted attach-hint">أقصى حجم 20 م.ب — صور، فيديو، مستندات، ملفات مضغوطة.</span>
+      </div>
+    </div>
+
+    
+    <div class="comments">
+      <h4 class="comments-title">التعليقات</h4>
+      <div class="comment-list" id="comments-1">
+                  <div class="muted comment-empty" id="empty-1" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
+              </div>
+      <div class="comment-form">
+        <input type="text" id="ci-1" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(1)">
+        <button class="btn btn-primary btn-sm" onclick="addComment(1)">إرسال</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="card task-card" id="task-2">
+  <div class="task-head" onclick="toggleTask(2)">
+    <button type="button" class="task-caret" id="caret-2" aria-label="توسيع">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <div class="task-head-main">
+      <h3>تصميم البانرات</h3>
+      <div class="task-head-meta">
+                  <span class="dept-tag" style="--dept:#E8590C;">البرودكشن</span>
+                                      </div>
+    </div>
+
+    <div class="task-head-side" onclick="event.stopPropagation();">
+      <div class="task-owner">
+                  <span class="muted" style="font-size:12px;">— بدون مسؤول —</span>
+                      </div>
+            <select class="form-select status-select st-completed" onchange="updateStatus(2, this)" title="حالة المهمة">
+                  <option value="new" >جديد</option>
+                  <option value="in_progress" >جاري التنفيذ</option>
+                  <option value="review" >مراجعة</option>
+                  <option value="completed" selected>اكتمل</option>
+              </select>
+
+          </div>
+  </div>
+
+  <div class="task-body" id="body-2" style="display:none;">
+    
+          <div class="task-section deadline-row">
+        <label for="dl-2">الديدلاين</label>
+        <input id="dl-2" type="date" value="" onchange="saveDeadline(2, this)">
+      </div>
+    
+    
+    
+    <div class="task-section">
+      <div class="task-section-head">
+        <h4 class="task-section-title">الموظفون على التاسك</h4>
+        <span class="muted" style="font-size:11.5px;">المسؤول واحد، والمنفّذون أي عدد — كلهم بيشوفوا التاسك</span>
+      </div>
+
+      <div class="crew-list" id="crew-2">
+        
+                  <div class="muted crew-empty" id="crew-empty-2" style="font-size:12.5px;">مفيش منفّذين مضافين — المسؤول بس.</div>
+              </div>
+
+              <div class="crew-add">
+          <select class="form-select" id="crew-sel-2">
+            <option value="">— اختر موظف تضيفه —</option>
+                          <option value="1" data-initials="أو" data-role="الأونر">أونر النظام (الأونر)</option>
+                      </select>
+          <button class="btn btn-outline btn-sm" onclick="addCrew(2)">إضافة للتاسك</button>
+        </div>
+          </div>
+
+    
+    <div class="task-section">
+      <div class="task-section-head">
+        <h4 class="task-section-title">الخطوات الفرعية</h4>
+        <span class="steps-progress" id="prog-2">0 من 0 خطوات</span>
+      </div>
+      <p class="muted steps-note">
+        إنهاء كل الخطوات <b>ما بيقفلش المهمة تلقائيًا</b> — حالة المهمة بتتغيّر بإيدك من فوق.
+      </p>
+
+      <div class="step-list" id="steps-2">
+                  <div class="muted step-empty" id="steps-empty-2" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
+              </div>
+
+      <div class="step-add">
+        <input type="text" id="st-title-2" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(2)">
+        <input type="text" id="st-details-2" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(2)">
+        <button class="btn btn-outline btn-sm" onclick="addStep(2)">أضف خطوة</button>
+      </div>
+    </div>
+
+    
+    <div class="task-section">
+      <div class="task-section-head">
+        <h4 class="task-section-title">ملفات الشغل</h4>
+        <span class="muted" style="font-size:11.5px;">ملفات داخلية بين الفريق — مش تسليمات العميل</span>
+      </div>
+
+      <div class="attach-list" id="attachments-2">
+                  <div class="muted attach-empty" id="attach-empty-2" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
+              </div>
+
+      <div class="attach-add">
+        <input type="file" id="file-2" class="attach-input" onchange="uploadFile(2)">
+        <label for="file-2" class="btn btn-outline btn-sm">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          رفع ملف جديد
+        </label>
+        <span class="muted attach-hint">أقصى حجم 20 م.ب — صور، فيديو، مستندات، ملفات مضغوطة.</span>
+      </div>
+    </div>
+
+    
+    <div class="comments">
+      <h4 class="comments-title">التعليقات</h4>
+      <div class="comment-list" id="comments-2">
+                  <div class="muted comment-empty" id="empty-2" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
+              </div>
+      <div class="comment-form">
+        <input type="text" id="ci-2" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(2)">
+        <button class="btn btn-primary btn-sm" onclick="addComment(2)">إرسال</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="card task-card" id="task-3">
+  <div class="task-head" onclick="toggleTask(3)">
+    <button type="button" class="task-caret" id="caret-3" aria-label="توسيع">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <div class="task-head-main">
+      <h3>اعتماد العميل على السكريبت</h3>
+      <div class="task-head-meta">
+                  <span class="dept-tag" style="--dept:#0EA5A5;">برمجة</span>
+                                      </div>
+    </div>
+
+    <div class="task-head-side" onclick="event.stopPropagation();">
+      <div class="task-owner">
+                  <span class="muted" style="font-size:12px;">— بدون مسؤول —</span>
+                      </div>
+            <select class="form-select status-select st-in_progress" onchange="updateStatus(3, this)" title="حالة المهمة">
+                  <option value="new" >جديد</option>
+                  <option value="in_progress" selected>جاري التنفيذ</option>
+                  <option value="review" >مراجعة</option>
+                  <option value="completed" >اكتمل</option>
+              </select>
+
+          </div>
+  </div>
+
+  <div class="task-body" id="body-3" style="display:none;">
+    
+          <div class="task-section deadline-row">
+        <label for="dl-3">الديدلاين</label>
+        <input id="dl-3" type="date" value="" onchange="saveDeadline(3, this)">
+      </div>
+    
+    
+    
+    <div class="task-section">
+      <div class="task-section-head">
+        <h4 class="task-section-title">الموظفون على التاسك</h4>
+        <span class="muted" style="font-size:11.5px;">المسؤول واحد، والمنفّذون أي عدد — كلهم بيشوفوا التاسك</span>
+      </div>
+
+      <div class="crew-list" id="crew-3">
+        
+                  <div class="muted crew-empty" id="crew-empty-3" style="font-size:12.5px;">مفيش منفّذين مضافين — المسؤول بس.</div>
+              </div>
+
+              <div class="crew-add">
+          <select class="form-select" id="crew-sel-3">
+            <option value="">— اختر موظف تضيفه —</option>
+                          <option value="1" data-initials="أو" data-role="الأونر">أونر النظام (الأونر)</option>
+                      </select>
+          <button class="btn btn-outline btn-sm" onclick="addCrew(3)">إضافة للتاسك</button>
+        </div>
+          </div>
+
+    
+    <div class="task-section">
+      <div class="task-section-head">
+        <h4 class="task-section-title">الخطوات الفرعية</h4>
+        <span class="steps-progress" id="prog-3">0 من 0 خطوات</span>
+      </div>
+      <p class="muted steps-note">
+        إنهاء كل الخطوات <b>ما بيقفلش المهمة تلقائيًا</b> — حالة المهمة بتتغيّر بإيدك من فوق.
+      </p>
+
+      <div class="step-list" id="steps-3">
+                  <div class="muted step-empty" id="steps-empty-3" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
+              </div>
+
+      <div class="step-add">
+        <input type="text" id="st-title-3" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(3)">
+        <input type="text" id="st-details-3" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(3)">
+        <button class="btn btn-outline btn-sm" onclick="addStep(3)">أضف خطوة</button>
+      </div>
+    </div>
+
+    
+    <div class="task-section">
+      <div class="task-section-head">
+        <h4 class="task-section-title">ملفات الشغل</h4>
+        <span class="muted" style="font-size:11.5px;">ملفات داخلية بين الفريق — مش تسليمات العميل</span>
+      </div>
+
+      <div class="attach-list" id="attachments-3">
+                  <div class="muted attach-empty" id="attach-empty-3" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
+              </div>
+
+      <div class="attach-add">
+        <input type="file" id="file-3" class="attach-input" onchange="uploadFile(3)">
+        <label for="file-3" class="btn btn-outline btn-sm">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          رفع ملف جديد
+        </label>
+        <span class="muted attach-hint">أقصى حجم 20 م.ب — صور، فيديو، مستندات، ملفات مضغوطة.</span>
+      </div>
+    </div>
+
+    
+    <div class="comments">
+      <h4 class="comments-title">التعليقات</h4>
+      <div class="comment-list" id="comments-3">
+                  <div class="muted comment-empty" id="empty-3" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
+              </div>
+      <div class="comment-form">
+        <input type="text" id="ci-3" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(3)">
+        <button class="btn btn-primary btn-sm" onclick="addComment(3)">إرسال</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="card task-card" id="task-4">
+  <div class="task-head" onclick="toggleTask(4)">
+    <button type="button" class="task-caret" id="caret-4" aria-label="توسيع">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <div class="task-head-main">
+      <h3>جدولة النشر</h3>
+      <div class="task-head-meta">
+                  <span class="dept-tag" style="--dept:#1B4DFF;">ديجيتال ماركتينج</span>
+                                      </div>
+    </div>
+
+    <div class="task-head-side" onclick="event.stopPropagation();">
+      <div class="task-owner">
+                  <span class="muted" style="font-size:12px;">— بدون مسؤول —</span>
+                      </div>
+            <select class="form-select status-select st-in_progress" onchange="updateStatus(4, this)" title="حالة المهمة">
+                  <option value="new" >جديد</option>
+                  <option value="in_progress" selected>جاري التنفيذ</option>
+                  <option value="review" >مراجعة</option>
+                  <option value="completed" >اكتمل</option>
+              </select>
+
+          </div>
+  </div>
+
+  <div class="task-body" id="body-4" style="display:none;">
+    
+          <div class="task-section deadline-row">
+        <label for="dl-4">الديدلاين</label>
+        <input id="dl-4" type="date" value="" onchange="saveDeadline(4, this)">
+      </div>
+    
+    
+    
+    <div class="task-section">
+      <div class="task-section-head">
+        <h4 class="task-section-title">الموظفون على التاسك</h4>
+        <span class="muted" style="font-size:11.5px;">المسؤول واحد، والمنفّذون أي عدد — كلهم بيشوفوا التاسك</span>
+      </div>
+
+      <div class="crew-list" id="crew-4">
+        
+                  <div class="muted crew-empty" id="crew-empty-4" style="font-size:12.5px;">مفيش منفّذين مضافين — المسؤول بس.</div>
+              </div>
+
+              <div class="crew-add">
+          <select class="form-select" id="crew-sel-4">
+            <option value="">— اختر موظف تضيفه —</option>
+                          <option value="1" data-initials="أو" data-role="الأونر">أونر النظام (الأونر)</option>
+                      </select>
+          <button class="btn btn-outline btn-sm" onclick="addCrew(4)">إضافة للتاسك</button>
+        </div>
+          </div>
+
+    
+    <div class="task-section">
+      <div class="task-section-head">
+        <h4 class="task-section-title">الخطوات الفرعية</h4>
+        <span class="steps-progress" id="prog-4">0 من 0 خطوات</span>
+      </div>
+      <p class="muted steps-note">
+        إنهاء كل الخطوات <b>ما بيقفلش المهمة تلقائيًا</b> — حالة المهمة بتتغيّر بإيدك من فوق.
+      </p>
+
+      <div class="step-list" id="steps-4">
+                  <div class="muted step-empty" id="steps-empty-4" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
+              </div>
+
+      <div class="step-add">
+        <input type="text" id="st-title-4" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(4)">
+        <input type="text" id="st-details-4" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(4)">
+        <button class="btn btn-outline btn-sm" onclick="addStep(4)">أضف خطوة</button>
+      </div>
+    </div>
+
+    
+    <div class="task-section">
+      <div class="task-section-head">
+        <h4 class="task-section-title">ملفات الشغل</h4>
+        <span class="muted" style="font-size:11.5px;">ملفات داخلية بين الفريق — مش تسليمات العميل</span>
+      </div>
+
+      <div class="attach-list" id="attachments-4">
+                  <div class="muted attach-empty" id="attach-empty-4" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
+              </div>
+
+      <div class="attach-add">
+        <input type="file" id="file-4" class="attach-input" onchange="uploadFile(4)">
+        <label for="file-4" class="btn btn-outline btn-sm">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          رفع ملف جديد
+        </label>
+        <span class="muted attach-hint">أقصى حجم 20 م.ب — صور، فيديو، مستندات، ملفات مضغوطة.</span>
+      </div>
+    </div>
+
+    
+    <div class="comments">
+      <h4 class="comments-title">التعليقات</h4>
+      <div class="comment-list" id="comments-4">
+                  <div class="muted comment-empty" id="empty-4" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
+              </div>
+      <div class="comment-form">
+        <input type="text" id="ci-4" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(4)">
+        <button class="btn btn-primary btn-sm" onclick="addComment(4)">إرسال</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+
+
+<button class="mobile-fab" onclick="location.href='./scheduling'" title="تحديث سريع من الموقع">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="13" r="4"/><path d="M5 7h2l1-2h8l1 2h2a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9a2 2 0 012-2z"/></svg>
+</button>
+
+<div class="overlay" id="overlay" onclick="if(event.target===this) closeModal()">
+  <div class="modal" id="modalBox"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/app.js"></script>
+<script>
+/* ---------- جرس الإشعارات (مشترك لكل الصفحات) ---------- */
+const NOTIF_URL = ".\/notifications";
+const NOTIF_READ_URL = ".\/notifications\/read-all";
+const NOTIF_OPEN = ".\/notifications";
+const NOTIF_CSRF = document.querySelector('meta[name=csrf-token]').content;
+const NOTIF_ICONS = {
+  task: '<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>',
+  returned: '<polyline points="9 14 4 9 9 4"/><path d="M20 20v-7a4 4 0 00-4-4H4"/>',
+  completed: '<path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>',
+  deadline: '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+};
+
+function loadNotifications() {
+  fetch(NOTIF_URL, { headers: { 'Accept': 'application/json' } })
+    .then(r => r.json())
+    .then(d => {
+      if (!d.ok) return;
+
+      // شارة العدّاد + اهتزاز الجرس لما يوصل جديد
+      const badge = document.getElementById('notif-badge');
+      const bell = document.getElementById('notif-bell');
+      const prev = parseInt(badge.dataset.count || '0');
+      badge.textContent = d.unread > 99 ? '99+' : d.unread;
+      badge.style.display = d.unread > 0 ? 'flex' : 'none';
+      badge.dataset.count = d.unread;
+      if (d.unread > prev) {
+        bell.classList.add('is-ringing');
+        setTimeout(() => bell.classList.remove('is-ringing'), 900);
+      }
+
+      const list = document.getElementById('notif-list');
+      if (!d.items.length) {
+        list.innerHTML = '<div class="muted notif-empty">مفيش إشعارات جديدة</div>';
+        return;
+      }
+      list.innerHTML = d.items.map(n => `
+        <a href="${NOTIF_OPEN}/${n.id}" class="notif-item ${n.unread ? 'is-unread' : ''}">
+          <span class="notif-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${NOTIF_ICONS[n.icon] || NOTIF_ICONS.task}</svg></span>
+          <span class="notif-body">
+            <span class="notif-title"></span>
+            <span class="notif-text"></span>
+            <span class="muted notif-time">${n.time}</span>
+          </span>
+        </a>`).join('');
+      // النصوص بتتحط كـtextContent عشان أي محتوى من الداتابيز يفضل آمن
+      list.querySelectorAll('.notif-item').forEach((el, i) => {
+        el.querySelector('.notif-title').textContent = d.items[i].title;
+        el.querySelector('.notif-text').textContent = d.items[i].body || '';
+      });
+    }).catch(() => {});
+}
+
+function toggleNotifications(e) {
+  e.stopPropagation();
+  const panel = document.getElementById('notif-panel');
+  panel.classList.toggle('open');
+  if (panel.classList.contains('open')) loadNotifications();
+}
+
+function markAllRead() {
+  fetch(NOTIF_READ_URL, { method: 'POST', headers: { 'Accept': 'application/json', 'X-CSRF-TOKEN': NOTIF_CSRF } })
+    .then(r => r.json()).then(d => { showToast(d.message); loadNotifications(); })
+    .catch(() => showToast('تعذّر الاتصال بالخادم.'));
+}
+
+document.addEventListener('click', e => {
+  const panel = document.getElementById('notif-panel');
+  if (panel && !panel.contains(e.target)) panel.classList.remove('open');
+});
+
+document.addEventListener('DOMContentLoaded', loadNotifications);
+setInterval(loadNotifications, 60000); // تحديث كل دقيقة
+</script>
+<script>
+const CSRF = document.querySelector('meta[name=csrf-token]').content;
+
+/* ---------- توسيع/طي التاسك ---------- */
+function toggleTask(id) {
+  const body = document.getElementById('body-' + id);
+  const caret = document.getElementById('caret-' + id);
+  const open = body.style.display === 'none';
+  body.style.display = open ? 'block' : 'none';
+  caret.classList.toggle('open', open);
+}
+
+/* ---------- حالة التاسك (يدوية دايمًا) ---------- */
+function updateStatus(taskId, sel) {
+  const prev = sel.dataset.prev || sel.value;
+  fetch(`./tasks/${taskId}/status`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
+    body: JSON.stringify({ status: sel.value }),
+  }).then(async r => {
+    const d = await r.json();
+    if (r.ok && d.ok) {
+      sel.className = 'form-select status-select st-' + d.status;
+      sel.dataset.prev = d.status;
+      showToast(d.message);
+    } else { sel.value = prev; showToast(d.message || 'تعذّر تحديث الحالة.'); }
+  }).catch(() => { sel.value = prev; showToast('تعذّر الاتصال بالخادم.'); });
+}
+
+/* ---------- الديدلاين ---------- */
+function saveDeadline(taskId, input) {
+  fetch(`./tasks/${taskId}/deadline`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
+    body: JSON.stringify({ deadline: input.value || null }),
+  }).then(async r => {
+    const d = await r.json();
+    showToast(d.message || 'تم الحفظ');
+    if (r.ok && d.ok) setTimeout(() => location.reload(), 700);
+  }).catch(() => showToast('تعذّر الاتصال بالخادم.'));
+}
+
+/* ---------- إرجاع التاسك من المراجعة (المسئول يختار الموظف) ---------- */
+function openReturnTask(taskId) {
+  const crew = Array.from(document.querySelectorAll(`#crew-${taskId} .crew-row`))
+    .map(r => ({ id: r.id.split('-')[2], name: r.querySelector('.member-name')?.textContent || '' }))
+    .filter(x => x.id);
+
+  const opts = crew.length
+    ? crew.map(c => `<option value="${c.id}">${c.name}</option>`).join('')
+    : '';
+
+  document.getElementById('modalBox').innerHTML = `
+    <div class="modal-head"><h3>إرجاع التاسك للتعديل</h3><button class="close-x" onclick="closeModal()">✕</button></div>
+    <div class="modal-body">
+      <div id="rt-error" class="auth-error" style="display:none;"></div>
+      <p class="muted" style="font-size:12.5px;line-height:1.9;margin-bottom:14px;">
+        التاسك هيرجع لـ<b>"جاري التنفيذ"</b> ويظهر تاني للموظف اللي هتختاره، وهيوصله إشعار بملاحظتك.
+      </p>
+      <div class="field">
+        <label for="rt-user">الموظف اللي هيكمّل</label>
+        <select id="rt-user" class="form-select">
+          ${opts || '<option value="">— مفيش منفّذين على التاسك —</option>'}
+        </select>
+      </div>
+      <div class="field" style="margin-top:12px;">
+        <label for="rt-note">ملاحظة الإرجاع (اختياري)</label>
+        <textarea id="rt-note" rows="3" placeholder="محتاج تظبط..."></textarea>
+      </div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:14px;" onclick="submitReturn(this, ${taskId})">تأكيد الإرجاع</button>
+    </div>`;
+  document.getElementById('overlay').classList.add('active');
+}
+
+function submitReturn(btn, taskId) {
+  const userId = document.getElementById('rt-user').value;
+  const err = document.getElementById('rt-error');
+  if (!userId) { err.textContent = 'ضيف منفّذ للتاسك الأول عشان ترجّعهوله.'; err.style.display = 'flex'; return; }
+
+  btn.disabled = true;
+  fetch(`./tasks/${taskId}/return`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
+    body: JSON.stringify({ user_id: parseInt(userId), review_note: document.getElementById('rt-note').value.trim() || null }),
+  }).then(async r => {
+    const d = await r.json();
+    if (r.ok && d.ok) { closeModal(); showToast(d.message); setTimeout(() => location.reload(), 600); }
+    else { btn.disabled = false; err.textContent = d.message || 'حدث خطأ.'; err.style.display = 'flex'; }
+  }).catch(() => { btn.disabled = false; err.textContent = 'تعذّر الاتصال بالخادم.'; err.style.display = 'flex'; });
+}
+
+/* ---------- الموظفون المنفّذون ---------- */
+function addCrew(taskId) {
+  const sel = document.getElementById('crew-sel-' + taskId);
+  const userId = sel.value;
+  if (!userId) return;
+  const opt = sel.selectedOptions[0];
+
+  fetch(`./tasks/${taskId}/members`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
+    body: JSON.stringify({ user_id: parseInt(userId) }),
+  }).then(async r => {
+    const d = await r.json();
+    if (!r.ok || !d.ok) { showToast(d.message || 'تعذّرت الإضافة.'); return; }
+
+    document.getElementById('crew-empty-' + taskId)?.remove();
+
+    const row = document.createElement('div');
+    row.className = 'crew-row';
+    row.id = `crew-${taskId}-${d.member.id}`;
+    row.innerHTML = `
+      <span class="avatar-sm"></span>
+      <span class="member-name"></span>
+      <span class="badge badge-gray">منفّذ</span>
+      <span class="muted crew-role"></span>
+      <button class="ra-btn ra-danger" title="إزالة من التاسك" onclick="removeCrew(${taskId}, ${d.member.id})">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>`;
+    row.querySelector('.avatar-sm').textContent = d.member.initials;
+    row.querySelector('.member-name').textContent = d.member.name;
+    row.querySelector('.crew-role').textContent = d.member.role;
+    document.getElementById('crew-' + taskId).appendChild(row);
+
+    sel.value = '';
+    showToast(d.message);
+  }).catch(() => showToast('تعذّر الاتصال بالخادم.'));
+}
+
+function removeCrew(taskId, userId) {
+  if (!confirm('إزالة الموظف ده من التاسك؟')) return;
+  fetch(`./tasks/${taskId}/members/${userId}`, {
+    method: 'DELETE',
+    headers: { 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
+  }).then(async r => {
+    const d = await r.json();
+    if (!r.ok || !d.ok) { showToast(d.message || 'تعذّرت الإزالة.'); return; }
+    document.getElementById(`crew-${taskId}-${userId}`)?.remove();
+    showToast(d.message);
+  }).catch(() => showToast('تعذّر الاتصال بالخادم.'));
+}
+
+/* ---------- الخطوات الفرعية ---------- */
+function renderProgress(taskId, progress) {
+  const text = `${progress.done} من ${progress.total} خطوات`;
+  const prog = document.getElementById('prog-' + taskId);
+  if (prog) prog.textContent = text;
+  const pill = document.getElementById('pill-' + taskId);
+  if (pill) { pill.textContent = text; pill.style.display = progress.total ? '' : 'none'; }
+}
+
+function addStep(taskId) {
+  const titleEl = document.getElementById('st-title-' + taskId);
+  const detailsEl = document.getElementById('st-details-' + taskId);
+  const title = titleEl.value.trim();
+  if (!title) { showToast('اكتب عنوان الخطوة.'); return; }
+
+  fetch(`./tasks/${taskId}/steps`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
+    body: JSON.stringify({ title, details: detailsEl.value.trim() || null }),
+  }).then(async r => {
+    const d = await r.json();
+    if (!r.ok || !d.ok) { showToast(d.message || 'تعذّرت إضافة الخطوة.'); return; }
+
+    document.getElementById('steps-empty-' + taskId)?.remove();
+
+    const row = document.createElement('div');
+    row.className = 'step-row';
+    row.id = 'step-' + d.step.id;
+    row.innerHTML = `
+      <input type="checkbox" onchange="toggleStep(${d.step.id}, ${taskId}, this)">
+      <div class="step-main"><span class="step-title"></span>${d.step.details ? '<span class="step-details"></span>' : ''}</div>
+      <button class="ra-btn ra-danger" title="حذف الخطوة" onclick="deleteStep(${d.step.id}, ${taskId})">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg>
+      </button>`;
+    row.querySelector('.step-title').textContent = d.step.title;
+    if (d.step.details) row.querySelector('.step-details').textContent = d.step.details;
+    document.getElementById('steps-' + taskId).appendChild(row);
+
+    titleEl.value = ''; detailsEl.value = '';
+    renderProgress(taskId, d.progress);
+    showToast(d.message);
+  }).catch(() => showToast('تعذّر الاتصال بالخادم.'));
+}
+
+// ملاحظة: ده بيحدّث عدّاد التقدّم بس — حالة التاسك ما بتتغيّرش تلقائيًا مهما خلصت الخطوات
+function toggleStep(stepId, taskId, box) {
+  fetch(`./tasks/steps/${stepId}/toggle`, {
+    method: 'POST',
+    headers: { 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
+  }).then(async r => {
+    const d = await r.json();
+    if (!r.ok || !d.ok) { box.checked = !box.checked; showToast(d.message || 'تعذّر التحديث.'); return; }
+    document.getElementById('step-' + stepId)?.classList.toggle('is-done', d.done);
+    renderProgress(taskId, d.progress);
+  }).catch(() => { box.checked = !box.checked; showToast('تعذّر الاتصال بالخادم.'); });
+}
+
+function deleteStep(stepId, taskId) {
+  if (!confirm('حذف الخطوة دي؟')) return;
+  fetch(`./tasks/steps/${stepId}`, {
+    method: 'DELETE',
+    headers: { 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
+  }).then(async r => {
+    const d = await r.json();
+    if (!r.ok || !d.ok) { showToast(d.message || 'تعذّر الحذف.'); return; }
+    document.getElementById('step-' + stepId)?.remove();
+    renderProgress(taskId, d.progress);
+    showToast(d.message);
+  }).catch(() => showToast('تعذّر الاتصال بالخادم.'));
+}
+
+/* ---------- المرفقات ---------- */
+function uploadFile(taskId) {
+  const input = document.getElementById('file-' + taskId);
+  if (!input.files.length) return;
+
+  const form = new FormData();
+  form.append('file', input.files[0]);
+
+  showToast('جاري رفع الملف...');
+  fetch(`./tasks/${taskId}/attachments`, {
+    method: 'POST',
+    headers: { 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
+    body: form,
+  }).then(async r => {
+    const d = await r.json();
+    input.value = '';
+    if (!r.ok || !d.ok) {
+      showToast(d.errors ? Object.values(d.errors)[0][0] : (d.message || 'تعذّر رفع الملف.'));
+      return;
+    }
+
+    document.getElementById('attach-empty-' + taskId)?.remove();
+
+    const row = document.createElement('div');
+    row.className = 'attach-row';
+    row.id = 'attach-' + d.attachment.id;
+    row.innerHTML = `
+      <span class="attach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/></svg></span>
+      <a href="#" data-proto-dead="/tasks/attachments/${d.attachment.id}/download" class="attach-name"></a>
+      <span class="attach-meta muted"></span>
+      <button class="ra-btn ra-danger" title="حذف الملف" onclick="deleteAttachment(${d.attachment.id})">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg>
+      </button>`;
+    row.querySelector('.attach-name').textContent = d.attachment.name;
+    row.querySelector('.attach-meta').textContent = `${d.attachment.size} · ${d.attachment.uploader} · ${d.attachment.time}`;
+    document.getElementById('attachments-' + taskId).prepend(row);
+    showToast(d.message);
+  }).catch(() => { input.value = ''; showToast('تعذّر الاتصال بالخادم.'); });
+}
+
+function deleteAttachment(id) {
+  if (!confirm('حذف الملف ده نهائيًا؟')) return;
+  fetch(`./tasks/attachments/${id}`, {
+    method: 'DELETE',
+    headers: { 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
+  }).then(async r => {
+    const d = await r.json();
+    if (!r.ok || !d.ok) { showToast(d.message || 'تعذّر الحذف.'); return; }
+    document.getElementById('attach-' + id)?.remove();
+    showToast(d.message);
+  }).catch(() => showToast('تعذّر الاتصال بالخادم.'));
+}
+
+/* ---------- التعليقات ---------- */
+function addComment(taskId) {
+  const input = document.getElementById('ci-' + taskId);
+  const body = input.value.trim();
+  if (!body) return;
+  input.disabled = true;
+  fetch(`./tasks/${taskId}/comments`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
+    body: JSON.stringify({ body }),
+  }).then(async r => {
+    const d = await r.json();
+    input.disabled = false;
+    if (r.ok && d.ok) {
+      document.getElementById('empty-' + taskId)?.remove();
+      const div = document.createElement('div');
+      div.className = 'comment';
+      div.innerHTML = `<span class="avatar-sm">${d.comment.initials}</span>
+        <div><div class="comment-name">${d.comment.name} <span class="muted comment-time">· ${d.comment.time}</span></div>
+        <div class="comment-body"></div></div>`;
+      div.querySelector('.comment-body').textContent = d.comment.body;
+      document.getElementById('comments-' + taskId).appendChild(div);
+      input.value = '';
+    } else { showToast(d.message || 'تعذّر إضافة التعليق.'); }
+  }).catch(() => { input.disabled = false; showToast('تعذّر الاتصال بالخادم.'); });
+}
+</script>
+<script>
+function jumpToTask(id) {
+  const card = document.getElementById('task-' + id);
+  if (!card) return;
+  const body = document.getElementById('body-' + id);
+  if (body && body.style.display === 'none') toggleTask(id);
+  card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  card.classList.add('is-highlight');
+  setTimeout(() => card.classList.remove('is-highlight'), 1600);
+}
+
+function deleteProject() {
+  if (!confirm('متأكد من حذف هذا المشروع وكل مهامه وخطواته ومرفقاته وتعليقاته؟ لا يمكن التراجع.')) return;
+  fetch('./projects/1', {
+    method: 'DELETE',
+    headers: { 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
+  }).then(async r => {
+    const d = await r.json();
+    showToast(d.message);
+    if (r.ok && d.ok) setTimeout(() => window.location = './projects', 600);
+  }).catch(() => showToast('تعذّر الاتصال بالخادم.'));
+}
+</script>
+<script src="js/prototype.js"></script>
+</body>
+</html>

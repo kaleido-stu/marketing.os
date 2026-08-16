@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="csrf-token" content="prototype">
+<title>Kaleido O.S | نظام إدارة شركات الماركتينج والبرودكشن</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<script src="js/chart.min.js"></script>
+<link rel="stylesheet" href="css/core.css">
+
+<link rel="stylesheet" href="modules/departments/css/departments.css">
+<link rel="stylesheet" href="modules/crm/css/crm.css">
+<link rel="stylesheet" href="modules/tasks/css/tasks.css">
+<link rel="stylesheet" href="modules/projects/css/projects.css">
+<link rel="stylesheet" href="modules/scheduling/css/scheduling.css">
+<link rel="stylesheet" href="modules/freelancers/css/freelancers.css">
+<link rel="stylesheet" href="modules/invoices/css/finance.css">
+</head>
+<body>
+
+<div class="app">
+  <div class="sidebar-backdrop" id="backdrop" onclick="toggleSidebar(false)"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+        <div class="brand-row">
+        <div class="brand-mark">K</div>
+        <div>
+            <div class="brand-name">Kaleido O.S</div>
+            <div class="brand-sub">MARKETING &amp; PRODUCTION OS</div>
+        </div>
+        </div>
+        <div class="clapper-stripe"></div>
+    </div>
+
+    <nav class="nav">
+                <div class="nav-group-label">الرئيسية</div>
+                        <a href="index.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h8V3H3v10zM13 21h8V11h-8v10zM13 3v6h8V3h-8zM3 21h8v-6H3v6z"/></svg>
+                <span>لوحة التحكم</span>
+                            </a>
+                            <div class="nav-group-label">المبيعات والعملاء</div>
+                        <a href="crm-pipeline.html" class="nav-item active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M2 21v-2a5 5 0 015-5h4a5 5 0 015 5v2"/><circle cx="18" cy="8" r="2.3"/><path d="M16 21v-1.6a4 4 0 00-1.2-2.9"/></svg>
+                <span>العملاء المحتملون (CRM)</span>
+                                <span class="badge">7</span>
+                            </a>
+                        <a href="projects.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
+                <span>المشاريع والحملات</span>
+                                <span class="badge">4</span>
+                            </a>
+                            <div class="nav-group-label">العمليات</div>
+                        <a href="scheduling.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>جدولة التصوير والمعدات</span>
+                            </a>
+                        <a href="freelancers.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+                <span>الفريلانسرز والموردين</span>
+                            </a>
+                        <a href="departments.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-5h6v5"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01"/></svg>
+                <span>الأقسام</span>
+                            </a>
+                            <div class="nav-group-label">العميل والمال</div>
+                        <a href="reports.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9M12 21V3M20 21v-7"/></svg>
+                <span>تقارير الربحية</span>
+                            </a>
+                        <a href="invoices.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l3 3v17H6z"/><line x1="9" y1="8" x2="14" y2="8"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="12" y2="16"/></svg>
+                <span>الفواتير</span>
+                            </a>
+                            <div class="nav-group-label">النظام</div>
+                        <a href="settings-users.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                <span>الإعدادات</span>
+                            </a>
+                        </nav>
+</aside>
+
+  <div class="main">
+    <div class="topbar">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <button class="hamburger" onclick="toggleSidebar(true)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        </button>
+        <div>
+          <div class="topbar-title">العملاء المحتملون</div>
+          <div class="topbar-sub">تابع كل عميل من أول تواصل لحد التعاقد</div>
+        </div>
+              </div>
+      <div class="topbar-right">
+        
+                <div class="rec-pill">
+          <span class="rec-dot"></span>
+          <span class="txt">2 تصوير جاري دلوقتي</span>
+        </div>
+        
+                
+        <div class="notif-wrap">
+          <button class="notif-bell" id="notif-bell" onclick="toggleNotifications(event)" title="الإشعارات">
+            
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2a1.2 1.2 0 011.2 1.2v.9a6.3 6.3 0 014.9 6.14v3.06l1.44 2.4A1.2 1.2 0 0118.5 19.5h-13a1.2 1.2 0 01-1.04-1.8l1.44-2.4V10.24A6.3 6.3 0 0110.8 4.1v-.9A1.2 1.2 0 0112 2z"/>
+              <path d="M9.6 20.7h4.8a2.4 2.4 0 01-4.8 0z"/>
+            </svg>
+            <span class="notif-badge" id="notif-badge" style="display:none;">0</span>
+          </button>
+          <div class="notif-panel" id="notif-panel">
+            <div class="notif-head">
+              <h4>الإشعارات</h4>
+              <button class="notif-readall" onclick="markAllRead()">تعليم الكل كمقروء</button>
+            </div>
+            <div class="notif-list" id="notif-list">
+              <div class="muted notif-empty">جاري التحميل...</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topbar-user">
+          <div class="user-avatar">أو</div>
+          <div class="tu-meta">
+            <div class="tu-name">أونر النظام</div>
+            <div class="tu-role">الأونر</div>
+          </div>
+          <form method="POST" action="#" data-proto-dead="/logout" style="display:flex;">
+            <input type="hidden" name="_token" value="prototype" autocomplete="off">            <button type="submit" class="tu-logout" title="تسجيل خروج">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            </button>
+          </form>
+        </div>
+              </div>
+    </div>
+
+    <div class="content">
+      <div class="section-head">
+  <div class="pill-tabs">
+            <button class="pill-tab active">مسار البيع</button>
+                <a href="crm-clients.html" class="pill-tab" style="display:inline-block;">العملاء الحاليين</a>
+                <a href="crm-clients-archived.html" class="pill-tab" style="display:inline-block;">الأرشيف</a>
+      </div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+    <button class="btn btn-outline btn-sm" onclick="showToast('اسحب أي كارت بين الأعمدة لتحديث حالته')">💡 اسحب الكروت لتغيير الحالة</button>
+    <button class="btn btn-primary btn-sm" onclick="openLeadForm()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      إضافة عميل محتمل
+    </button>
+  </div>
+</div>
+
+<div class="kanban">
+      <div class="kanban-col" data-stage="new" ondragover="event.preventDefault(); this.classList.add('over')" ondragleave="this.classList.remove('over')" ondrop="dropLead(event,'new')">
+      <h4>جديد <span class="kanban-count">2</span></h4>
+
+              <div class="kanban-card" draggable="true" data-lead-id="1" ondragstart="dragLead(event,'1')">
+          <div class="lead-card-top">
+            <a href="crm-leads-1.html" class="name lead-link">شركة دلتا فارما</a>
+            <div class="lead-actions">
+              <button class="proj-del proj-editbtn" title="تعديل" onclick="event.stopPropagation();openLeadForm(1)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+              </button>
+                              <button class="proj-del" title="حذف" onclick="event.stopPropagation();deleteLead(1, '\u0634\u0631\u0643\u0629 \u062f\u0644\u062a\u0627 \u0641\u0627\u0631\u0645\u0627')">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg>
+                </button>
+                          </div>
+          </div>
+
+          <div class="company">قطاع دوائي · إحالة</div>
+
+          
+          <div class="lead-badges">
+                                      <span class="badge badge-red">متابعة مستحقة</span>
+                      </div>
+
+          
+                  </div>
+              <div class="kanban-card" draggable="true" data-lead-id="2" ondragstart="dragLead(event,'2')">
+          <div class="lead-card-top">
+            <a href="crm-leads-2.html" class="name lead-link">مجموعة سيلفر مول</a>
+            <div class="lead-actions">
+              <button class="proj-del proj-editbtn" title="تعديل" onclick="event.stopPropagation();openLeadForm(2)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+              </button>
+                              <button class="proj-del" title="حذف" onclick="event.stopPropagation();deleteLead(2, '\u0645\u062c\u0645\u0648\u0639\u0629 \u0633\u064a\u0644\u0641\u0631 \u0645\u0648\u0644')">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg>
+                </button>
+                          </div>
+          </div>
+
+          <div class="company">تجزئة · موقع الشركة</div>
+
+          
+          <div class="lead-badges">
+                                  </div>
+
+          
+                  </div>
+          </div>
+      <div class="kanban-col" data-stage="contacted" ondragover="event.preventDefault(); this.classList.add('over')" ondragleave="this.classList.remove('over')" ondrop="dropLead(event,'contacted')">
+      <h4>تم التواصل <span class="kanban-count">2</span></h4>
+
+              <div class="kanban-card" draggable="true" data-lead-id="3" ondragstart="dragLead(event,'3')">
+          <div class="lead-card-top">
+            <a href="crm-leads-3.html" class="name lead-link">مطاعم تيستي</a>
+            <div class="lead-actions">
+              <button class="proj-del proj-editbtn" title="تعديل" onclick="event.stopPropagation();openLeadForm(3)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+              </button>
+                              <button class="proj-del" title="حذف" onclick="event.stopPropagation();deleteLead(3, '\u0645\u0637\u0627\u0639\u0645 \u062a\u064a\u0633\u062a\u064a')">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg>
+                </button>
+                          </div>
+          </div>
+
+          <div class="company">مطاعم · لينكدإن</div>
+
+          
+          <div class="lead-badges">
+                                  </div>
+
+          
+                  </div>
+              <div class="kanban-card" draggable="true" data-lead-id="4" ondragstart="dragLead(event,'4')">
+          <div class="lead-card-top">
+            <a href="crm-leads-4.html" class="name lead-link">أكاديمية نور التعليمية</a>
+            <div class="lead-actions">
+              <button class="proj-del proj-editbtn" title="تعديل" onclick="event.stopPropagation();openLeadForm(4)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+              </button>
+                              <button class="proj-del" title="حذف" onclick="event.stopPropagation();deleteLead(4, '\u0623\u0643\u0627\u062f\u064a\u0645\u064a\u0629 \u0646\u0648\u0631 \u0627\u0644\u062a\u0639\u0644\u064a\u0645\u064a\u0629')">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg>
+                </button>
+                          </div>
+          </div>
+
+          <div class="company">تعليم · إحالة</div>
+
+          
+          <div class="lead-badges">
+                                      <span class="badge badge-red">متابعة مستحقة</span>
+                      </div>
+
+          
+                  </div>
+          </div>
+      <div class="kanban-col" data-stage="proposal" ondragover="event.preventDefault(); this.classList.add('over')" ondragleave="this.classList.remove('over')" ondrop="dropLead(event,'proposal')">
+      <h4>عرض سعر <span class="kanban-count">2</span></h4>
+
+              <div class="kanban-card" draggable="true" data-lead-id="6" ondragstart="dragLead(event,'6')">
+          <div class="lead-card-top">
+            <a href="crm-leads-6.html" class="name lead-link">كارز هب</a>
+            <div class="lead-actions">
+              <button class="proj-del proj-editbtn" title="تعديل" onclick="event.stopPropagation();openLeadForm(6)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+              </button>
+                              <button class="proj-del" title="حذف" onclick="event.stopPropagation();deleteLead(6, '\u0643\u0627\u0631\u0632 \u0647\u0628')">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg>
+                </button>
+                          </div>
+          </div>
+
+          <div class="company">سيارات · موقع الشركة</div>
+
+          
+          <div class="lead-badges">
+                                  </div>
+
+          
+                  </div>
+              <div class="kanban-card" draggable="true" data-lead-id="5" ondragstart="dragLead(event,'5')">
+          <div class="lead-card-top">
+            <a href="crm-leads-5.html" class="name lead-link">بيوتي لاب</a>
+            <div class="lead-actions">
+              <button class="proj-del proj-editbtn" title="تعديل" onclick="event.stopPropagation();openLeadForm(5)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+              </button>
+                              <button class="proj-del" title="حذف" onclick="event.stopPropagation();deleteLead(5, '\u0628\u064a\u0648\u062a\u064a \u0644\u0627\u0628')">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg>
+                </button>
+                          </div>
+          </div>
+
+          <div class="company">تجميل · إنستجرام</div>
+
+          
+          <div class="lead-badges">
+                                  </div>
+
+          
+                  </div>
+          </div>
+      <div class="kanban-col" data-stage="negotiation" ondragover="event.preventDefault(); this.classList.add('over')" ondragleave="this.classList.remove('over')" ondrop="dropLead(event,'negotiation')">
+      <h4>تفاوض <span class="kanban-count">1</span></h4>
+
+              <div class="kanban-card" draggable="true" data-lead-id="7" ondragstart="dragLead(event,'7')">
+          <div class="lead-card-top">
+            <a href="crm-leads-7.html" class="name lead-link">جرين فارم</a>
+            <div class="lead-actions">
+              <button class="proj-del proj-editbtn" title="تعديل" onclick="event.stopPropagation();openLeadForm(7)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+              </button>
+                              <button class="proj-del" title="حذف" onclick="event.stopPropagation();deleteLead(7, '\u062c\u0631\u064a\u0646 \u0641\u0627\u0631\u0645')">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg>
+                </button>
+                          </div>
+          </div>
+
+          <div class="company">زراعة · مؤتمر</div>
+
+          
+          <div class="lead-badges">
+                                  </div>
+
+          
+                  </div>
+          </div>
+      <div class="kanban-col" data-stage="won" ondragover="event.preventDefault(); this.classList.add('over')" ondragleave="this.classList.remove('over')" ondrop="dropLead(event,'won')">
+      <h4>تم الفوز <span class="kanban-count">1</span></h4>
+
+              <div class="kanban-card" draggable="true" data-lead-id="8" ondragstart="dragLead(event,'8')">
+          <div class="lead-card-top">
+            <a href="crm-leads-8.html" class="name lead-link">وايت ستون العقارية</a>
+            <div class="lead-actions">
+              <button class="proj-del proj-editbtn" title="تعديل" onclick="event.stopPropagation();openLeadForm(8)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+              </button>
+                              <button class="proj-del" title="حذف" onclick="event.stopPropagation();deleteLead(8, '\u0648\u0627\u064a\u062a \u0633\u062a\u0648\u0646 \u0627\u0644\u0639\u0642\u0627\u0631\u064a\u0629')">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg>
+                </button>
+                          </div>
+          </div>
+
+          <div class="company">عقارات · إحالة</div>
+
+          
+          <div class="lead-badges">
+                                  </div>
+
+          
+                      <button class="btn btn-primary btn-sm" style="width:100%;margin-top:8px;justify-content:center;" onclick="event.stopPropagation();convertLead(8)">تحويل لمشروع</button>
+                  </div>
+          </div>
+      <div class="kanban-col" data-stage="lost" ondragover="event.preventDefault(); this.classList.add('over')" ondragleave="this.classList.remove('over')" ondrop="dropLead(event,'lost')">
+      <h4>فقدنا العميل <span class="kanban-count">1</span></h4>
+
+              <div class="kanban-card" draggable="true" data-lead-id="9" ondragstart="dragLead(event,'9')">
+          <div class="lead-card-top">
+            <a href="crm-leads-9.html" class="name lead-link">سبيس جيم</a>
+            <div class="lead-actions">
+              <button class="proj-del proj-editbtn" title="تعديل" onclick="event.stopPropagation();openLeadForm(9)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+              </button>
+                              <button class="proj-del" title="حذف" onclick="event.stopPropagation();deleteLead(9, '\u0633\u0628\u064a\u0633 \u062c\u064a\u0645')">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg>
+                </button>
+                          </div>
+          </div>
+
+          <div class="company">رياضة · إنستجرام</div>
+
+          
+          <div class="lead-badges">
+                                  </div>
+
+                      <div class="lead-lost">سبب الخسارة: السعر</div>
+          
+                  </div>
+          </div>
+  </div>
+    </div>
+  </div>
+</div>
+
+
+<button class="mobile-fab" onclick="location.href='./scheduling'" title="تحديث سريع من الموقع">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="13" r="4"/><path d="M5 7h2l1-2h8l1 2h2a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9a2 2 0 012-2z"/></svg>
+</button>
+
+<div class="overlay" id="overlay" onclick="if(event.target===this) closeModal()">
+  <div class="modal" id="modalBox"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/app.js"></script>
+<script>
+/* ---------- جرس الإشعارات (مشترك لكل الصفحات) ---------- */
+const NOTIF_URL = ".\/notifications";
+const NOTIF_READ_URL = ".\/notifications\/read-all";
+const NOTIF_OPEN = ".\/notifications";
+const NOTIF_CSRF = document.querySelector('meta[name=csrf-token]').content;
+const NOTIF_ICONS = {
+  task: '<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>',
+  returned: '<polyline points="9 14 4 9 9 4"/><path d="M20 20v-7a4 4 0 00-4-4H4"/>',
+  completed: '<path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>',
+  deadline: '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+};
+
+function loadNotifications() {
+  fetch(NOTIF_URL, { headers: { 'Accept': 'application/json' } })
+    .then(r => r.json())
+    .then(d => {
+      if (!d.ok) return;
+
+      // شارة العدّاد + اهتزاز الجرس لما يوصل جديد
+      const badge = document.getElementById('notif-badge');
+      const bell = document.getElementById('notif-bell');
+      const prev = parseInt(badge.dataset.count || '0');
+      badge.textContent = d.unread > 99 ? '99+' : d.unread;
+      badge.style.display = d.unread > 0 ? 'flex' : 'none';
+      badge.dataset.count = d.unread;
+      if (d.unread > prev) {
+        bell.classList.add('is-ringing');
+        setTimeout(() => bell.classList.remove('is-ringing'), 900);
+      }
+
+      const list = document.getElementById('notif-list');
+      if (!d.items.length) {
+        list.innerHTML = '<div class="muted notif-empty">مفيش إشعارات جديدة</div>';
+        return;
+      }
+      list.innerHTML = d.items.map(n => `
+        <a href="${NOTIF_OPEN}/${n.id}" class="notif-item ${n.unread ? 'is-unread' : ''}">
+          <span class="notif-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${NOTIF_ICONS[n.icon] || NOTIF_ICONS.task}</svg></span>
+          <span class="notif-body">
+            <span class="notif-title"></span>
+            <span class="notif-text"></span>
+            <span class="muted notif-time">${n.time}</span>
+          </span>
+        </a>`).join('');
+      // النصوص بتتحط كـtextContent عشان أي محتوى من الداتابيز يفضل آمن
+      list.querySelectorAll('.notif-item').forEach((el, i) => {
+        el.querySelector('.notif-title').textContent = d.items[i].title;
+        el.querySelector('.notif-text').textContent = d.items[i].body || '';
+      });
+    }).catch(() => {});
+}
+
+function toggleNotifications(e) {
+  e.stopPropagation();
+  const panel = document.getElementById('notif-panel');
+  panel.classList.toggle('open');
+  if (panel.classList.contains('open')) loadNotifications();
+}
+
+function markAllRead() {
+  fetch(NOTIF_READ_URL, { method: 'POST', headers: { 'Accept': 'application/json', 'X-CSRF-TOKEN': NOTIF_CSRF } })
+    .then(r => r.json()).then(d => { showToast(d.message); loadNotifications(); })
+    .catch(() => showToast('تعذّر الاتصال بالخادم.'));
+}
+
+document.addEventListener('click', e => {
+  const panel = document.getElementById('notif-panel');
+  if (panel && !panel.contains(e.target)) panel.classList.remove('open');
+});
+
+document.addEventListener('DOMContentLoaded', loadNotifications);
+setInterval(loadNotifications, 60000); // تحديث كل دقيقة
+</script>
+<script>
+const CSRF = document.querySelector('meta[name=csrf-token]').content;
+const LEADS = [{"id":6,"name":"\u0643\u0627\u0631\u0632 \u0647\u0628","company":"\u0633\u064a\u0627\u0631\u0627\u062a","phone":null,"email":null,"whatsapp":null,"source":"\u0645\u0648\u0642\u0639 \u0627\u0644\u0634\u0631\u0643\u0629","stage":"proposal","owner_id":null,"next_follow_up_date":null,"notes":null},{"id":5,"name":"\u0628\u064a\u0648\u062a\u064a \u0644\u0627\u0628","company":"\u062a\u062c\u0645\u064a\u0644","phone":"01010000005","email":null,"whatsapp":null,"source":"\u0625\u0646\u0633\u062a\u062c\u0631\u0627\u0645","stage":"proposal","owner_id":null,"next_follow_up_date":null,"notes":null},{"id":7,"name":"\u062c\u0631\u064a\u0646 \u0641\u0627\u0631\u0645","company":"\u0632\u0631\u0627\u0639\u0629","phone":"01010000007","email":null,"whatsapp":null,"source":"\u0645\u0624\u062a\u0645\u0631","stage":"negotiation","owner_id":null,"next_follow_up_date":null,"notes":null},{"id":8,"name":"\u0648\u0627\u064a\u062a \u0633\u062a\u0648\u0646 \u0627\u0644\u0639\u0642\u0627\u0631\u064a\u0629","company":"\u0639\u0642\u0627\u0631\u0627\u062a","phone":null,"email":null,"whatsapp":null,"source":"\u0625\u062d\u0627\u0644\u0629","stage":"won","owner_id":null,"next_follow_up_date":null,"notes":null},{"id":9,"name":"\u0633\u0628\u064a\u0633 \u062c\u064a\u0645","company":"\u0631\u064a\u0627\u0636\u0629","phone":null,"email":null,"whatsapp":null,"source":"\u0625\u0646\u0633\u062a\u062c\u0631\u0627\u0645","stage":"lost","owner_id":null,"next_follow_up_date":null,"notes":null},{"id":1,"name":"\u0634\u0631\u0643\u0629 \u062f\u0644\u062a\u0627 \u0641\u0627\u0631\u0645\u0627","company":"\u0642\u0637\u0627\u0639 \u062f\u0648\u0627\u0626\u064a","phone":"01010000001","email":null,"whatsapp":null,"source":"\u0625\u062d\u0627\u0644\u0629","stage":"new","owner_id":null,"next_follow_up_date":"2026-08-16","notes":null},{"id":2,"name":"\u0645\u062c\u0645\u0648\u0639\u0629 \u0633\u064a\u0644\u0641\u0631 \u0645\u0648\u0644","company":"\u062a\u062c\u0632\u0626\u0629","phone":null,"email":"contact@silver.test","whatsapp":null,"source":"\u0645\u0648\u0642\u0639 \u0627\u0644\u0634\u0631\u0643\u0629","stage":"new","owner_id":null,"next_follow_up_date":null,"notes":null},{"id":3,"name":"\u0645\u0637\u0627\u0639\u0645 \u062a\u064a\u0633\u062a\u064a","company":"\u0645\u0637\u0627\u0639\u0645","phone":null,"email":null,"whatsapp":"201010000003","source":"\u0644\u064a\u0646\u0643\u062f\u0625\u0646","stage":"contacted","owner_id":null,"next_follow_up_date":null,"notes":null},{"id":4,"name":"\u0623\u0643\u0627\u062f\u064a\u0645\u064a\u0629 \u0646\u0648\u0631 \u0627\u0644\u062a\u0639\u0644\u064a\u0645\u064a\u0629","company":"\u062a\u0639\u0644\u064a\u0645","phone":null,"email":null,"whatsapp":null,"source":"\u0625\u062d\u0627\u0644\u0629","stage":"contacted","owner_id":null,"next_follow_up_date":"2026-08-14","notes":null}];
+const OWNERS = [{"id":1,"name":"\u0623\u0648\u0646\u0631 \u0627\u0644\u0646\u0638\u0627\u0645"}];
+const STAGES = {"new":"\u062c\u062f\u064a\u062f","contacted":"\u062a\u0645 \u0627\u0644\u062a\u0648\u0627\u0635\u0644","proposal":"\u0639\u0631\u0636 \u0633\u0639\u0631","negotiation":"\u062a\u0641\u0627\u0648\u0636","won":"\u062a\u0645 \u0627\u0644\u0641\u0648\u0632","lost":"\u0641\u0642\u062f\u0646\u0627 \u0627\u0644\u0639\u0645\u064a\u0644"};
+const LOST_REASONS = ["\u0627\u0644\u0633\u0639\u0631","\u0627\u0644\u062a\u0648\u0642\u064a\u062a","\u0645\u0646\u0627\u0641\u0633","\u0645\u0641\u064a\u0634 \u0645\u064a\u0632\u0627\u0646\u064a\u0629"];
+
+function val(id) { const el = document.getElementById(id); return el ? el.value : ''; }
+function field(id, label, type, value) {
+  return `<div class="field"><label for="${id}">${label}</label><input id="${id}" type="${type}" value="${(value ?? '').toString().replace(/"/g,'&quot;')}"></div>`;
+}
+
+/* ---------- إضافة / تعديل عميل محتمل ---------- */
+function openLeadForm(id) {
+  const l = id ? LEADS.find(x => x.id === id) : null;
+  const stageOpts = Object.entries(STAGES).map(([v, lbl]) =>
+    `<option value="${v}" ${(l ? l.stage : 'new') === v ? 'selected' : ''}>${lbl}</option>`).join('');
+  const ownerOpts = ['<option value="">— بدون مسؤول —</option>'].concat(
+    OWNERS.map(u => `<option value="${u.id}" ${l && l.owner_id === u.id ? 'selected' : ''}>${u.name}</option>`)).join('');
+
+  document.getElementById('modalBox').innerHTML = `
+    <div class="modal-head"><h3>${l ? 'تعديل العميل المحتمل' : 'إضافة عميل محتمل'}</h3><button class="close-x" onclick="closeModal()">✕</button></div>
+    <div class="modal-body">
+      <div id="l-error" class="auth-error" style="display:none;"></div>
+      ${field('l-name', 'الاسم', 'text', l?.name)}
+      <div class="grid grid-2" style="gap:12px;margin-top:12px;">
+        ${field('l-company', 'الشركة / القسم', 'text', l?.company)}
+        ${field('l-source', 'المصدر', 'text', l?.source)}
+      </div>
+      <div class="grid grid-2" style="gap:12px;margin-top:12px;">
+        ${field('l-phone', 'تليفون', 'text', l?.phone)}
+        ${field('l-whatsapp', 'واتساب', 'text', l?.whatsapp)}
+      </div>
+      <div style="margin-top:12px;">${field('l-email', 'إيميل', 'email', l?.email)}</div>
+      <div class="grid grid-2" style="gap:12px;margin-top:12px;">
+        <div class="field"><label for="l-stage">المرحلة</label><select id="l-stage" class="form-select">${stageOpts}</select></div>
+        <div class="field"><label for="l-owner">المسؤول عن المتابعة</label><select id="l-owner" class="form-select">${ownerOpts}</select></div>
+      </div>
+      <div style="margin-top:12px;">${field('l-followup', 'تاريخ متابعة قادم (اختياري)', 'date', l?.next_follow_up_date)}</div>
+      <div class="field" style="margin-top:12px;"><label for="l-notes">ملاحظات</label><textarea id="l-notes" rows="3"></textarea></div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:14px;" onclick="submitLead(this, ${l ? l.id : 'null'})">${l ? 'حفظ التعديلات' : 'حفظ العميل المحتمل'}</button>
+    </div>`;
+  document.getElementById('overlay').classList.add('active');
+  if (l?.notes) document.getElementById('l-notes').value = l.notes;
+}
+
+function submitLead(btn, id) {
+  const err = document.getElementById('l-error');
+  err.style.display = 'none';
+  if (!val('l-name').trim()) { err.textContent = 'اكتب اسم العميل المحتمل.'; err.style.display = 'flex'; return; }
+
+  btn.disabled = true;
+  fetch(id ? `./crm/leads/${id}` : './crm/leads', {
+    method: id ? 'PUT' : 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
+    body: JSON.stringify({
+      name: val('l-name').trim(),
+      company: val('l-company').trim() || null,
+      phone: val('l-phone').trim() || null,
+      email: val('l-email').trim() || null,
+      whatsapp: val('l-whatsapp').trim() || null,
+      source: val('l-source').trim() || null,
+      stage: val('l-stage'),
+      owner_id: val('l-owner') || null,
+      next_follow_up_date: val('l-followup') || null,
+      notes: val('l-notes').trim() || null,
+    }),
+  }).then(async r => {
+    const d = await r.json();
+    if (r.ok && d.ok) { closeModal(); showToast(d.message); setTimeout(() => location.reload(), 500); }
+    else { btn.disabled = false; err.textContent = d.errors ? Object.values(d.errors)[0][0] : (d.message || 'حدث خطأ.'); err.style.display = 'flex'; }
+  }).catch(() => { btn.disabled = false; err.textContent = 'تعذّر الاتصال بالخادم.'; err.style.display = 'flex'; });
+}
+
+function deleteLead(id, name) {
+  if (!confirm('متأكد من حذف العميل المحتمل "' + name + '"؟')) return;
+  fetch(`./crm/leads/${id}`, {
+    method: 'DELETE', headers: { 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
+  }).then(async r => {
+    const d = await r.json();
+    showToast(d.message);
+    if (r.ok && d.ok) setTimeout(() => location.reload(), 500);
+  }).catch(() => showToast('تعذّر الاتصال بالخادم.'));
+}
+
+/* ---------- السحب بين المراحل ---------- */
+function dragLead(e, id) { window._draggedLeadId = id; e.target.classList.add('dragging'); }
+
+function dropLead(e, stage) {
+  e.currentTarget.classList.remove('over');
+  const id = window._draggedLeadId;
+  if (!id) return;
+  window._draggedLeadId = null;
+
+  // "فقدنا العميل" لازم سبب خسارة الأول
+  if (stage === 'lost') { openLostReasonModal(id); return; }
+  sendStage(id, stage, null);
+}
+
+function openLostReasonModal(id) {
+  const opts = LOST_REASONS.map(r => `<option value="${r}">${r}</option>`).join('');
+  document.getElementById('modalBox').innerHTML = `
+    <div class="modal-head"><h3>سبب خسارة العميل</h3><button class="close-x" onclick="closeModal()">✕</button></div>
+    <div class="modal-body">
+      <div id="lr-error" class="auth-error" style="display:none;"></div>
+      <p class="muted" style="font-size:12.5px;margin-bottom:14px;line-height:1.8;">لازم تحدد سبب الخسارة قبل نقل العميل لمرحلة "فقدنا العميل" — بيساعدك تعرف بتخسر فين.</p>
+      <div class="field">
+        <label for="lr-reason">السبب</label>
+        <select id="lr-reason" class="form-select" onchange="toggleOther(this.value)">
+          ${opts}
+          <option value="__other">أخرى (اكتب السبب)</option>
+        </select>
+      </div>
+      <div class="field" id="lr-other-wrap" style="display:none;margin-top:12px;">
+        <label for="lr-other">اكتب السبب</label>
+        <input id="lr-other" type="text" placeholder="مثال: العميل أجّل المشروع للسنة الجاية">
+      </div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:14px;" onclick="confirmLost(this, ${id})">تأكيد النقل</button>
+    </div>`;
+  document.getElementById('overlay').classList.add('active');
+}
+
+function toggleOther(v) {
+  document.getElementById('lr-other-wrap').style.display = v === '__other' ? 'flex' : 'none';
+}
+
+function confirmLost(btn, id) {
+  const sel = val('lr-reason');
+  const reason = sel === '__other' ? val('lr-other').trim() : sel;
+  const err = document.getElementById('lr-error');
+  if (!reason) { err.textContent = 'اكتب سبب الخسارة.'; err.style.display = 'flex'; return; }
+  btn.disabled = true;
+  sendStage(id, 'lost', reason, btn);
+}
+
+function sendStage(id, stage, lostReason, btn) {
+  fetch(`./crm/leads/${id}/stage`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
+    body: JSON.stringify({ stage, lost_reason: lostReason }),
+  }).then(async r => {
+    const d = await r.json();
+    if (r.ok && d.ok) { closeModal(); showToast(d.message); setTimeout(() => location.reload(), 400); }
+    else {
+      if (btn) btn.disabled = false;
+      showToast(d.message || 'تعذّر تحديث الحالة.');
+    }
+  }).catch(() => { if (btn) btn.disabled = false; showToast('تعذّر الاتصال بالخادم.'); });
+}
+
+/* ---------- التحويل لعميل فعلي ---------- */
+function convertLead(id) {
+  if (!confirm('تحويل العميل المحتمل ده لعميل فعلي + مشروع بدء؟')) return;
+  fetch(`./crm/leads/${id}/convert`, {
+    method: 'POST', headers: { 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
+  }).then(async r => {
+    const d = await r.json();
+    showToast(d.message);
+    if (r.ok && d.ok && d.redirect) setTimeout(() => location.href = d.redirect, 600);
+  }).catch(() => showToast('تعذّر الاتصال بالخادم.'));
+}
+</script>
+<script src="js/prototype.js"></script>
+</body>
+</html>
