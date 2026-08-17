@@ -185,7 +185,7 @@
       </div>
       <div class="field">
         <label for="f-due">تاريخ الاستحقاق <span style="color:var(--red);">*</span></label>
-        <input id="f-due" type="date" value="2026-08-05">
+        <input id="f-due" type="date" value="2026-06-25">
       </div>
     </div>
   </div>
@@ -319,7 +319,7 @@ setInterval(loadNotifications, 60000); // تحديث كل دقيقة
 const CSRF = document.querySelector('meta[name=csrf-token]').content;
 const IS_EDIT = true;
 const INVOICE_ID = 4;
-const EXISTING_ITEMS = [{"description":"\u0623\u062a\u0639\u0627\u0628 \u0625\u062f\u0627\u0631\u0629 \u0627\u0644\u062d\u0645\u0644\u0629 \u0648\u0627\u0644\u0645\u062d\u062a\u0648\u0649","amount":15400},{"description":"\u0625\u0646\u062a\u0627\u062c \u0648\u062a\u0635\u0648\u064a\u0631","amount":6600}];
+const EXISTING_ITEMS = [];
 
 function val(id) { const el = document.getElementById(id); return el ? el.value : ''; }
 

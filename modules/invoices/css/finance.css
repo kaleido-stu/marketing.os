@@ -2,7 +2,6 @@
 
 /* ===================== INVOICES / MANAGER ROLE ===================== */
 /* زر اعتماد الفاتورة */
-.ra-approve:hover{ background:var(--green-tint); color:var(--green); }
 
 /* ملاحظات صفحة الصلاحيات */
 .perm-notes{ margin-top:14px; display:flex; flex-direction:column; gap:8px; }
@@ -29,7 +28,6 @@
   background:var(--primary-tint); border-radius:var(--radius); padding:20px 22px;
 }
 .inv-total-value{ font-family:'Cairo',sans-serif; font-weight:800; font-size:26px; color:var(--primary-dark); }
-.ra-approve:hover{ background:var(--green-tint); color:var(--green); }
 
 @media (max-width: 1100px){ .pipeline{ grid-template-columns:repeat(2,1fr); } }
 @media (max-width: 700px){

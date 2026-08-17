@@ -1,19 +1,50 @@
 /* ستايل موديول CRM — بيتحمّل بعد core.css. */
 
 /* ===================== CRM: عملاء محتملون + عملاء + سجل تواصل ===================== */
-/* --- كارت العميل المحتمل في الكانبان --- */
-.lead-card-top{ display:flex; align-items:flex-start; justify-content:space-between; gap:8px; }
-.lead-link{ font-weight:700; font-size:13.5px; }
-.lead-link:hover{ color:var(--blue); }
-.lead-actions{ display:flex; gap:4px; opacity:0; transition:.15s; flex-shrink:0; }
-.kanban-card:hover .lead-actions{ opacity:1; }
-.lead-actions .proj-del{ width:26px; height:26px; border-radius:7px; }
-.lead-actions .proj-del svg{ width:13px; height:13px; }
-.lead-owner{ display:flex; align-items:center; gap:6px; margin-top:8px; font-size:11.5px; color:var(--gray-700); }
-.lead-owner .avatar-sm{ width:22px; height:22px; font-size:9.5px; }
-.lead-badges{ display:flex; flex-wrap:wrap; gap:5px; margin-top:8px; }
-.lead-badges .badge{ font-size:10.5px; padding:2px 8px; }
-.lead-lost{ margin-top:8px; font-size:11px; color:var(--red); background:var(--red-tint); padding:5px 8px; border-radius:6px; }
+
+/* --- تابات مراحل مسار البيع (فوق جدول العملاء المحتملين) --- */
+.stage-tabs{
+  display:flex; gap:5px; flex-wrap:wrap; background:#fff; padding:6px;
+  border-radius:16px; box-shadow:var(--shadow); margin-bottom:16px; width:fit-content; max-width:100%;
+}
+.stage-tab{
+  display:inline-flex; align-items:center; gap:7px; padding:8px 14px; border-radius:12px;
+  font-family:inherit; font-size:12.5px; font-weight:700; color:var(--gray-700);
+  background:none; border:none; cursor:pointer; transition:.18s; white-space:nowrap;
+}
+.stage-tab:hover{ color:var(--primary); background:var(--primary-tint); }
+.stage-tab.active{ background:var(--primary); color:#fff; box-shadow:0 4px 12px rgba(108,79,216,.28); }
+.st-count{
+  background:var(--gray-150); color:var(--gray-700); border-radius:20px;
+  padding:1px 7px; font-size:10.5px; font-weight:800; min-width:20px; text-align:center;
+}
+.stage-tab.active .st-count{ background:rgba(255,255,255,.24); color:#fff; }
+
+/* التاب المكسوب والضايع بلون دلالي حتى وهو غير نشط */
+.stage-tab.stt-won.active{ background:var(--green); box-shadow:0 4px 12px rgba(31,158,107,.28); }
+.stage-tab.stt-lost.active{ background:var(--red); box-shadow:0 4px 12px rgba(226,86,106,.28); }
+
+/* --- دروب داون المرحلة داخل صف الجدول --- */
+.status-select.stg-new{ color:var(--gray-700); }
+.status-select.stg-contacted{ color:var(--blue-dark); border-color:var(--blue); background:var(--blue-tint); }
+.status-select.stg-proposal{ color:var(--primary-dark); border-color:var(--primary-soft); background:var(--primary-tint); }
+.status-select.stg-negotiation{ color:var(--amber); border-color:var(--amber); background:var(--amber-tint); }
+.status-select.stg-won{ color:var(--green); border-color:var(--green); background:var(--green-tint); }
+.status-select.stg-lost{ color:var(--red); border-color:var(--red); background:var(--red-tint); }
+
+/* --- خلية مسؤول المتابعة --- */
+.owner-cell{ display:inline-flex; align-items:center; gap:7px; font-size:12.5px; }
+.owner-cell .avatar-sm{ width:24px; height:24px; font-size:10px; flex-shrink:0; }
+
+/* --- سبب الخسارة تحت اسم العميل المحتمل --- */
+.lead-reason{
+  margin-top:5px; font-size:11px; font-weight:500; color:var(--red);
+  background:var(--red-tint); padding:4px 8px; border-radius:6px; display:inline-block;
+}
+
+/* زر "تحويل" الأخضر — كان معرَّف في ستايل موديول الفواتير، ونُقل هنا
+   عشان CRM مايعتمدش على موديول تاني في الستايل. */
+.ra-approve:hover{ background:var(--green-tint); color:var(--green); }
 
 /* --- شبكة بيانات (صفحات التفاصيل) --- */
 .info-grid{ display:grid; grid-template-columns:auto 1fr; gap:10px 16px; margin:0; font-size:13px; }
