@@ -155,3 +155,6 @@
 /* بريف المشروع */
 .project-brief{ margin-bottom:16px; }
 .project-brief h3{ margin-bottom:8px; }
+
+/* --- الفريلانسر في فريق المهمة --- */
+.avatar-sm.is-freelancer{ background:var(--amber-tint); color:var(--amber); }

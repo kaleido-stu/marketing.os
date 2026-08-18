@@ -43,7 +43,7 @@
                             <div class="nav-group-label">المبيعات والعملاء</div>
                         <a href="crm-pipeline.html" class="nav-item active">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M2 21v-2a5 5 0 015-5h4a5 5 0 015 5v2"/><circle cx="18" cy="8" r="2.3"/><path d="M16 21v-1.6a4 4 0 00-1.2-2.9"/></svg>
-                <span>العملاء المحتملون (CRM)</span>
+                <span>العملاء (CRM)</span>
                                 <span class="badge">7</span>
                             </a>
                         <a href="projects.html" class="nav-item ">
@@ -58,7 +58,7 @@
                             </a>
                         <a href="freelancers.html" class="nav-item ">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
-                <span>الفريلانسرز والموردين</span>
+                <span>الفريلانسرز</span>
                             </a>
                         <a href="departments.html" class="nav-item ">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-5h6v5"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01"/></svg>
@@ -88,8 +88,8 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
         </button>
         <div>
-          <div class="topbar-title">العملاء المحتملون</div>
-          <div class="topbar-sub">تابع كل عميل من أول تواصل لحد التعاقد</div>
+          <div class="topbar-title">العملاء (CRM)</div>
+          <div class="topbar-sub">مسار البيع — تابع كل عميل محتمل من أول تواصل لحد التعاقد</div>
         </div>
               </div>
       <div class="topbar-right">
@@ -148,30 +148,70 @@
   </button>
 </div>
 
-
-<div class="stage-tabs" id="stage-tabs">
-  <button type="button" class="stage-tab" data-stage="all" onclick="showStage('all', this)">
-    الكل <span class="st-count">9</span>
-  </button>
-      <button type="button" class="stage-tab stt-new" data-stage="new" onclick="showStage('new', this)">
-      جديد <span class="st-count">2</span>
-    </button>
-      <button type="button" class="stage-tab stt-contacted" data-stage="contacted" onclick="showStage('contacted', this)">
-      تم التواصل <span class="st-count">2</span>
-    </button>
-      <button type="button" class="stage-tab stt-proposal" data-stage="proposal" onclick="showStage('proposal', this)">
-      عرض سعر <span class="st-count">2</span>
-    </button>
-      <button type="button" class="stage-tab stt-negotiation" data-stage="negotiation" onclick="showStage('negotiation', this)">
-      تفاوض <span class="st-count">1</span>
-    </button>
-      <button type="button" class="stage-tab stt-won" data-stage="won" onclick="showStage('won', this)">
-      تم الفوز <span class="st-count">1</span>
-    </button>
-      <button type="button" class="stage-tab stt-lost" data-stage="lost" onclick="showStage('lost', this)">
-      فقدنا العميل <span class="st-count">1</span>
-    </button>
+<form class="card table-filters" id="lead-filters" onsubmit="event.preventDefault(); applyLeadFilters();">
+  <div class="tf-field tf-grow">
+    <label for="lf-q">بحث بالاسم</label>
+    <div class="tf-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input id="lf-q" type="text" name="q" value="" placeholder="ابحث باسم العميل المحتمل أو الشركة..." autocomplete="off" oninput="debouncedLeadFilters()">
+    </div>
   </div>
+
+  <div class="tf-field">
+    <label for="lf-stage">المرحلة</label>
+    <select id="lf-stage" name="stage" class="form-select" onchange="applyLeadFilters()">
+      <option value="">كل المراحل</option>
+              <option value="new" >جديد</option>
+              <option value="contacted" >تم التواصل</option>
+              <option value="proposal" >عرض سعر</option>
+              <option value="negotiation" >تفاوض</option>
+              <option value="won" >تم الفوز</option>
+              <option value="lost" >فقدنا العميل</option>
+          </select>
+  </div>
+
+  <div class="tf-field">
+    <label for="lf-company">الشركة / القطاع</label>
+    <select id="lf-company" name="company" class="form-select" onchange="applyLeadFilters()">
+      <option value="">كل الشركات</option>
+              <option value="تجزئة" >تجزئة</option>
+              <option value="تجميل" >تجميل</option>
+              <option value="تعليم" >تعليم</option>
+              <option value="رياضة" >رياضة</option>
+              <option value="زراعة" >زراعة</option>
+              <option value="سيارات" >سيارات</option>
+              <option value="عقارات" >عقارات</option>
+              <option value="قطاع دوائي" >قطاع دوائي</option>
+              <option value="مطاعم" >مطاعم</option>
+          </select>
+  </div>
+
+  <div class="tf-field">
+    <label for="lf-source">المصدر</label>
+    <select id="lf-source" name="source" class="form-select" onchange="applyLeadFilters()">
+      <option value="">كل المصادر</option>
+              <option value="إحالة" >إحالة</option>
+              <option value="إنستجرام" >إنستجرام</option>
+              <option value="لينكدإن" >لينكدإن</option>
+              <option value="مؤتمر" >مؤتمر</option>
+              <option value="موقع الشركة" >موقع الشركة</option>
+          </select>
+  </div>
+
+  <div class="tf-field">
+    <label for="lf-owner">مسؤول التواصل</label>
+    <select id="lf-owner" name="owner" class="form-select" onchange="applyLeadFilters()">
+      <option value="">الكل</option>
+              <option value="1" >أونر النظام</option>
+          </select>
+  </div>
+
+  <div class="tf-actions">
+    <button type="button" class="btn btn-ghost btn-sm" id="lf-clear" onclick="clearLeadFilters()" style="display:none;">مسح الفلتر</button>
+  </div>
+
+  <span class="tf-count" id="lf-count">9 نتيجة</span>
+</form>
 
 <div class="card" style="overflow-x:auto;">
 <table>
@@ -181,417 +221,414 @@
       <th>الشركة / القطاع</th>
       <th>المصدر</th>
       <th>المرحلة</th>
-      <th>مسؤول المتابعة</th>
+      <th>مسؤول التواصل</th>
       <th>المتابعة القادمة</th>
       <th>إجراءات</th>
     </tr>
   </thead>
   <tbody id="leads-body">
-      <tr data-stage="new" data-lead-row="1">
-      <td style="font-weight:700;">
-        <a href="crm-leads-1.html" class="link-blue">شركة دلتا فارما</a>
-                      </td>
+    <tr data-lead-row="1">
+    <td style="font-weight:700;">
+      <a href="crm-leads-1.html" class="link-blue">شركة دلتا فارما</a>
+                </td>
 
-      <td>قطاع دوائي</td>
-      <td class="muted" style="font-size:12.5px;">إحالة</td>
+    <td>قطاع دوائي</td>
+    <td class="muted" style="font-size:12.5px;">إحالة</td>
 
-      <td>
-        
-        <select class="form-select status-select stg-new"
-                data-current="new"
-                onchange="changeStage(1, this)">
-                      <option value="new" selected>جديد</option>
-                      <option value="contacted" >تم التواصل</option>
-                      <option value="proposal" >عرض سعر</option>
-                      <option value="negotiation" >تفاوض</option>
-                      <option value="won" >تم الفوز</option>
-                      <option value="lost" >فقدنا العميل</option>
-                  </select>
-      </td>
+    <td>
+      
+      <select class="form-select status-select stg-new"
+              data-current="new"
+              onchange="changeStage(1, this)">
+                  <option value="new" selected>جديد</option>
+                  <option value="contacted" >تم التواصل</option>
+                  <option value="proposal" >عرض سعر</option>
+                  <option value="negotiation" >تفاوض</option>
+                  <option value="won" >تم الفوز</option>
+                  <option value="lost" >فقدنا العميل</option>
+              </select>
+    </td>
 
-      <td>
-                  <span class="muted">—</span>
-              </td>
+    <td>
+              <span class="muted">—</span>
+          </td>
 
-      <td>
-                  <span class="badge badge-red">مستحقة 08/17</span>
-              </td>
+    <td>
+              <span class="badge badge-red">مستحقة 08/18</span>
+          </td>
 
-      <td>
-        <div class="row-actions">
-          <a href="crm-leads-1.html" class="ra-btn" title="عرض">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          </a>
-          <button class="ra-btn" title="تعديل" onclick="openLeadForm(1)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+    <td>
+      <div class="row-actions">
+        <a href="crm-leads-1.html" class="ra-btn" title="عرض">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </a>
+        <button class="ra-btn" title="تعديل" onclick="openLeadForm(1)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+        </button>
+                          <button class="ra-btn ra-danger" title="حذف" onclick="deleteLead(1, '\u0634\u0631\u0643\u0629 \u062f\u0644\u062a\u0627 \u0641\u0627\u0631\u0645\u0627')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
           </button>
-                                <button class="ra-btn ra-danger" title="حذف" onclick="deleteLead(1, '\u0634\u0631\u0643\u0629 \u062f\u0644\u062a\u0627 \u0641\u0627\u0631\u0645\u0627')">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
-            </button>
-                  </div>
-      </td>
-    </tr>
-      <tr data-stage="new" data-lead-row="2">
-      <td style="font-weight:700;">
-        <a href="crm-leads-2.html" class="link-blue">مجموعة سيلفر مول</a>
-                      </td>
+              </div>
+    </td>
+  </tr>
+  <tr data-lead-row="2">
+    <td style="font-weight:700;">
+      <a href="crm-leads-2.html" class="link-blue">مجموعة سيلفر مول</a>
+                </td>
 
-      <td>تجزئة</td>
-      <td class="muted" style="font-size:12.5px;">موقع الشركة</td>
+    <td>تجزئة</td>
+    <td class="muted" style="font-size:12.5px;">موقع الشركة</td>
 
-      <td>
-        
-        <select class="form-select status-select stg-new"
-                data-current="new"
-                onchange="changeStage(2, this)">
-                      <option value="new" selected>جديد</option>
-                      <option value="contacted" >تم التواصل</option>
-                      <option value="proposal" >عرض سعر</option>
-                      <option value="negotiation" >تفاوض</option>
-                      <option value="won" >تم الفوز</option>
-                      <option value="lost" >فقدنا العميل</option>
-                  </select>
-      </td>
+    <td>
+      
+      <select class="form-select status-select stg-new"
+              data-current="new"
+              onchange="changeStage(2, this)">
+                  <option value="new" selected>جديد</option>
+                  <option value="contacted" >تم التواصل</option>
+                  <option value="proposal" >عرض سعر</option>
+                  <option value="negotiation" >تفاوض</option>
+                  <option value="won" >تم الفوز</option>
+                  <option value="lost" >فقدنا العميل</option>
+              </select>
+    </td>
 
-      <td>
-                  <span class="muted">—</span>
-              </td>
+    <td>
+              <span class="muted">—</span>
+          </td>
 
-      <td>
-                  <span class="muted">—</span>
-              </td>
+    <td>
+              <span class="muted">—</span>
+          </td>
 
-      <td>
-        <div class="row-actions">
-          <a href="crm-leads-2.html" class="ra-btn" title="عرض">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          </a>
-          <button class="ra-btn" title="تعديل" onclick="openLeadForm(2)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+    <td>
+      <div class="row-actions">
+        <a href="crm-leads-2.html" class="ra-btn" title="عرض">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </a>
+        <button class="ra-btn" title="تعديل" onclick="openLeadForm(2)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+        </button>
+                          <button class="ra-btn ra-danger" title="حذف" onclick="deleteLead(2, '\u0645\u062c\u0645\u0648\u0639\u0629 \u0633\u064a\u0644\u0641\u0631 \u0645\u0648\u0644')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
           </button>
-                                <button class="ra-btn ra-danger" title="حذف" onclick="deleteLead(2, '\u0645\u062c\u0645\u0648\u0639\u0629 \u0633\u064a\u0644\u0641\u0631 \u0645\u0648\u0644')">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
-            </button>
-                  </div>
-      </td>
-    </tr>
-      <tr data-stage="contacted" data-lead-row="3">
-      <td style="font-weight:700;">
-        <a href="crm-leads-3.html" class="link-blue">مطاعم تيستي</a>
-                      </td>
+              </div>
+    </td>
+  </tr>
+  <tr data-lead-row="3">
+    <td style="font-weight:700;">
+      <a href="crm-leads-3.html" class="link-blue">مطاعم تيستي</a>
+                </td>
 
-      <td>مطاعم</td>
-      <td class="muted" style="font-size:12.5px;">لينكدإن</td>
+    <td>مطاعم</td>
+    <td class="muted" style="font-size:12.5px;">لينكدإن</td>
 
-      <td>
-        
-        <select class="form-select status-select stg-contacted"
-                data-current="contacted"
-                onchange="changeStage(3, this)">
-                      <option value="new" >جديد</option>
-                      <option value="contacted" selected>تم التواصل</option>
-                      <option value="proposal" >عرض سعر</option>
-                      <option value="negotiation" >تفاوض</option>
-                      <option value="won" >تم الفوز</option>
-                      <option value="lost" >فقدنا العميل</option>
-                  </select>
-      </td>
+    <td>
+      
+      <select class="form-select status-select stg-contacted"
+              data-current="contacted"
+              onchange="changeStage(3, this)">
+                  <option value="new" >جديد</option>
+                  <option value="contacted" selected>تم التواصل</option>
+                  <option value="proposal" >عرض سعر</option>
+                  <option value="negotiation" >تفاوض</option>
+                  <option value="won" >تم الفوز</option>
+                  <option value="lost" >فقدنا العميل</option>
+              </select>
+    </td>
 
-      <td>
-                  <span class="muted">—</span>
-              </td>
+    <td>
+              <span class="muted">—</span>
+          </td>
 
-      <td>
-                  <span class="muted">—</span>
-              </td>
+    <td>
+              <span class="muted">—</span>
+          </td>
 
-      <td>
-        <div class="row-actions">
-          <a href="crm-leads-3.html" class="ra-btn" title="عرض">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          </a>
-          <button class="ra-btn" title="تعديل" onclick="openLeadForm(3)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+    <td>
+      <div class="row-actions">
+        <a href="crm-leads-3.html" class="ra-btn" title="عرض">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </a>
+        <button class="ra-btn" title="تعديل" onclick="openLeadForm(3)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+        </button>
+                          <button class="ra-btn ra-danger" title="حذف" onclick="deleteLead(3, '\u0645\u0637\u0627\u0639\u0645 \u062a\u064a\u0633\u062a\u064a')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
           </button>
-                                <button class="ra-btn ra-danger" title="حذف" onclick="deleteLead(3, '\u0645\u0637\u0627\u0639\u0645 \u062a\u064a\u0633\u062a\u064a')">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
-            </button>
-                  </div>
-      </td>
-    </tr>
-      <tr data-stage="contacted" data-lead-row="4">
-      <td style="font-weight:700;">
-        <a href="crm-leads-4.html" class="link-blue">أكاديمية نور التعليمية</a>
-                      </td>
+              </div>
+    </td>
+  </tr>
+  <tr data-lead-row="4">
+    <td style="font-weight:700;">
+      <a href="crm-leads-4.html" class="link-blue">أكاديمية نور التعليمية</a>
+                </td>
 
-      <td>تعليم</td>
-      <td class="muted" style="font-size:12.5px;">إحالة</td>
+    <td>تعليم</td>
+    <td class="muted" style="font-size:12.5px;">إحالة</td>
 
-      <td>
-        
-        <select class="form-select status-select stg-contacted"
-                data-current="contacted"
-                onchange="changeStage(4, this)">
-                      <option value="new" >جديد</option>
-                      <option value="contacted" selected>تم التواصل</option>
-                      <option value="proposal" >عرض سعر</option>
-                      <option value="negotiation" >تفاوض</option>
-                      <option value="won" >تم الفوز</option>
-                      <option value="lost" >فقدنا العميل</option>
-                  </select>
-      </td>
+    <td>
+      
+      <select class="form-select status-select stg-contacted"
+              data-current="contacted"
+              onchange="changeStage(4, this)">
+                  <option value="new" >جديد</option>
+                  <option value="contacted" selected>تم التواصل</option>
+                  <option value="proposal" >عرض سعر</option>
+                  <option value="negotiation" >تفاوض</option>
+                  <option value="won" >تم الفوز</option>
+                  <option value="lost" >فقدنا العميل</option>
+              </select>
+    </td>
 
-      <td>
-                  <span class="muted">—</span>
-              </td>
+    <td>
+              <span class="muted">—</span>
+          </td>
 
-      <td>
-                  <span class="badge badge-red">مستحقة 08/15</span>
-              </td>
+    <td>
+              <span class="badge badge-red">مستحقة 08/16</span>
+          </td>
 
-      <td>
-        <div class="row-actions">
-          <a href="crm-leads-4.html" class="ra-btn" title="عرض">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          </a>
-          <button class="ra-btn" title="تعديل" onclick="openLeadForm(4)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+    <td>
+      <div class="row-actions">
+        <a href="crm-leads-4.html" class="ra-btn" title="عرض">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </a>
+        <button class="ra-btn" title="تعديل" onclick="openLeadForm(4)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+        </button>
+                          <button class="ra-btn ra-danger" title="حذف" onclick="deleteLead(4, '\u0623\u0643\u0627\u062f\u064a\u0645\u064a\u0629 \u0646\u0648\u0631 \u0627\u0644\u062a\u0639\u0644\u064a\u0645\u064a\u0629')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
           </button>
-                                <button class="ra-btn ra-danger" title="حذف" onclick="deleteLead(4, '\u0623\u0643\u0627\u062f\u064a\u0645\u064a\u0629 \u0646\u0648\u0631 \u0627\u0644\u062a\u0639\u0644\u064a\u0645\u064a\u0629')">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
-            </button>
-                  </div>
-      </td>
-    </tr>
-      <tr data-stage="proposal" data-lead-row="5">
-      <td style="font-weight:700;">
-        <a href="crm-leads-5.html" class="link-blue">بيوتي لاب</a>
-                      </td>
+              </div>
+    </td>
+  </tr>
+  <tr data-lead-row="5">
+    <td style="font-weight:700;">
+      <a href="crm-leads-5.html" class="link-blue">بيوتي لاب</a>
+                </td>
 
-      <td>تجميل</td>
-      <td class="muted" style="font-size:12.5px;">إنستجرام</td>
+    <td>تجميل</td>
+    <td class="muted" style="font-size:12.5px;">إنستجرام</td>
 
-      <td>
-        
-        <select class="form-select status-select stg-proposal"
-                data-current="proposal"
-                onchange="changeStage(5, this)">
-                      <option value="new" >جديد</option>
-                      <option value="contacted" >تم التواصل</option>
-                      <option value="proposal" selected>عرض سعر</option>
-                      <option value="negotiation" >تفاوض</option>
-                      <option value="won" >تم الفوز</option>
-                      <option value="lost" >فقدنا العميل</option>
-                  </select>
-      </td>
+    <td>
+      
+      <select class="form-select status-select stg-proposal"
+              data-current="proposal"
+              onchange="changeStage(5, this)">
+                  <option value="new" >جديد</option>
+                  <option value="contacted" >تم التواصل</option>
+                  <option value="proposal" selected>عرض سعر</option>
+                  <option value="negotiation" >تفاوض</option>
+                  <option value="won" >تم الفوز</option>
+                  <option value="lost" >فقدنا العميل</option>
+              </select>
+    </td>
 
-      <td>
-                  <span class="muted">—</span>
-              </td>
+    <td>
+              <span class="muted">—</span>
+          </td>
 
-      <td>
-                  <span class="muted">—</span>
-              </td>
+    <td>
+              <span class="muted">—</span>
+          </td>
 
-      <td>
-        <div class="row-actions">
-          <a href="crm-leads-5.html" class="ra-btn" title="عرض">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          </a>
-          <button class="ra-btn" title="تعديل" onclick="openLeadForm(5)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+    <td>
+      <div class="row-actions">
+        <a href="crm-leads-5.html" class="ra-btn" title="عرض">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </a>
+        <button class="ra-btn" title="تعديل" onclick="openLeadForm(5)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+        </button>
+                          <button class="ra-btn ra-danger" title="حذف" onclick="deleteLead(5, '\u0628\u064a\u0648\u062a\u064a \u0644\u0627\u0628')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
           </button>
-                                <button class="ra-btn ra-danger" title="حذف" onclick="deleteLead(5, '\u0628\u064a\u0648\u062a\u064a \u0644\u0627\u0628')">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
-            </button>
-                  </div>
-      </td>
-    </tr>
-      <tr data-stage="proposal" data-lead-row="6">
-      <td style="font-weight:700;">
-        <a href="crm-leads-6.html" class="link-blue">كارز هب</a>
-                      </td>
+              </div>
+    </td>
+  </tr>
+  <tr data-lead-row="6">
+    <td style="font-weight:700;">
+      <a href="crm-leads-6.html" class="link-blue">كارز هب</a>
+                </td>
 
-      <td>سيارات</td>
-      <td class="muted" style="font-size:12.5px;">موقع الشركة</td>
+    <td>سيارات</td>
+    <td class="muted" style="font-size:12.5px;">موقع الشركة</td>
 
-      <td>
-        
-        <select class="form-select status-select stg-proposal"
-                data-current="proposal"
-                onchange="changeStage(6, this)">
-                      <option value="new" >جديد</option>
-                      <option value="contacted" >تم التواصل</option>
-                      <option value="proposal" selected>عرض سعر</option>
-                      <option value="negotiation" >تفاوض</option>
-                      <option value="won" >تم الفوز</option>
-                      <option value="lost" >فقدنا العميل</option>
-                  </select>
-      </td>
+    <td>
+      
+      <select class="form-select status-select stg-proposal"
+              data-current="proposal"
+              onchange="changeStage(6, this)">
+                  <option value="new" >جديد</option>
+                  <option value="contacted" >تم التواصل</option>
+                  <option value="proposal" selected>عرض سعر</option>
+                  <option value="negotiation" >تفاوض</option>
+                  <option value="won" >تم الفوز</option>
+                  <option value="lost" >فقدنا العميل</option>
+              </select>
+    </td>
 
-      <td>
-                  <span class="muted">—</span>
-              </td>
+    <td>
+              <span class="muted">—</span>
+          </td>
 
-      <td>
-                  <span class="muted">—</span>
-              </td>
+    <td>
+              <span class="muted">—</span>
+          </td>
 
-      <td>
-        <div class="row-actions">
-          <a href="crm-leads-6.html" class="ra-btn" title="عرض">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          </a>
-          <button class="ra-btn" title="تعديل" onclick="openLeadForm(6)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+    <td>
+      <div class="row-actions">
+        <a href="crm-leads-6.html" class="ra-btn" title="عرض">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </a>
+        <button class="ra-btn" title="تعديل" onclick="openLeadForm(6)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+        </button>
+                          <button class="ra-btn ra-danger" title="حذف" onclick="deleteLead(6, '\u0643\u0627\u0631\u0632 \u0647\u0628')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
           </button>
-                                <button class="ra-btn ra-danger" title="حذف" onclick="deleteLead(6, '\u0643\u0627\u0631\u0632 \u0647\u0628')">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
-            </button>
-                  </div>
-      </td>
-    </tr>
-      <tr data-stage="negotiation" data-lead-row="7">
-      <td style="font-weight:700;">
-        <a href="crm-leads-7.html" class="link-blue">جرين فارم</a>
-                      </td>
+              </div>
+    </td>
+  </tr>
+  <tr data-lead-row="7">
+    <td style="font-weight:700;">
+      <a href="crm-leads-7.html" class="link-blue">جرين فارم</a>
+                </td>
 
-      <td>زراعة</td>
-      <td class="muted" style="font-size:12.5px;">مؤتمر</td>
+    <td>زراعة</td>
+    <td class="muted" style="font-size:12.5px;">مؤتمر</td>
 
-      <td>
-        
-        <select class="form-select status-select stg-negotiation"
-                data-current="negotiation"
-                onchange="changeStage(7, this)">
-                      <option value="new" >جديد</option>
-                      <option value="contacted" >تم التواصل</option>
-                      <option value="proposal" >عرض سعر</option>
-                      <option value="negotiation" selected>تفاوض</option>
-                      <option value="won" >تم الفوز</option>
-                      <option value="lost" >فقدنا العميل</option>
-                  </select>
-      </td>
+    <td>
+      
+      <select class="form-select status-select stg-negotiation"
+              data-current="negotiation"
+              onchange="changeStage(7, this)">
+                  <option value="new" >جديد</option>
+                  <option value="contacted" >تم التواصل</option>
+                  <option value="proposal" >عرض سعر</option>
+                  <option value="negotiation" selected>تفاوض</option>
+                  <option value="won" >تم الفوز</option>
+                  <option value="lost" >فقدنا العميل</option>
+              </select>
+    </td>
 
-      <td>
-                  <span class="muted">—</span>
-              </td>
+    <td>
+              <span class="muted">—</span>
+          </td>
 
-      <td>
-                  <span class="muted">—</span>
-              </td>
+    <td>
+              <span class="muted">—</span>
+          </td>
 
-      <td>
-        <div class="row-actions">
-          <a href="crm-leads-7.html" class="ra-btn" title="عرض">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          </a>
-          <button class="ra-btn" title="تعديل" onclick="openLeadForm(7)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+    <td>
+      <div class="row-actions">
+        <a href="crm-leads-7.html" class="ra-btn" title="عرض">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </a>
+        <button class="ra-btn" title="تعديل" onclick="openLeadForm(7)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+        </button>
+                          <button class="ra-btn ra-danger" title="حذف" onclick="deleteLead(7, '\u062c\u0631\u064a\u0646 \u0641\u0627\u0631\u0645')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
           </button>
-                                <button class="ra-btn ra-danger" title="حذف" onclick="deleteLead(7, '\u062c\u0631\u064a\u0646 \u0641\u0627\u0631\u0645')">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
-            </button>
-                  </div>
-      </td>
-    </tr>
-      <tr data-stage="won" data-lead-row="8">
-      <td style="font-weight:700;">
-        <a href="crm-leads-8.html" class="link-blue">وايت ستون العقارية</a>
-                      </td>
+              </div>
+    </td>
+  </tr>
+  <tr data-lead-row="8">
+    <td style="font-weight:700;">
+      <a href="crm-leads-8.html" class="link-blue">وايت ستون العقارية</a>
+                </td>
 
-      <td>عقارات</td>
-      <td class="muted" style="font-size:12.5px;">إحالة</td>
+    <td>عقارات</td>
+    <td class="muted" style="font-size:12.5px;">إحالة</td>
 
-      <td>
-        
-        <select class="form-select status-select stg-won"
-                data-current="won"
-                onchange="changeStage(8, this)">
-                      <option value="new" >جديد</option>
-                      <option value="contacted" >تم التواصل</option>
-                      <option value="proposal" >عرض سعر</option>
-                      <option value="negotiation" >تفاوض</option>
-                      <option value="won" selected>تم الفوز</option>
-                      <option value="lost" >فقدنا العميل</option>
-                  </select>
-      </td>
+    <td>
+      
+      <select class="form-select status-select stg-won"
+              data-current="won"
+              onchange="changeStage(8, this)">
+                  <option value="new" >جديد</option>
+                  <option value="contacted" >تم التواصل</option>
+                  <option value="proposal" >عرض سعر</option>
+                  <option value="negotiation" >تفاوض</option>
+                  <option value="won" selected>تم الفوز</option>
+                  <option value="lost" >فقدنا العميل</option>
+              </select>
+    </td>
 
-      <td>
-                  <span class="muted">—</span>
-              </td>
+    <td>
+              <span class="muted">—</span>
+          </td>
 
-      <td>
-                  <span class="muted">—</span>
-              </td>
+    <td>
+              <span class="muted">—</span>
+          </td>
 
-      <td>
-        <div class="row-actions">
-          <a href="crm-leads-8.html" class="ra-btn" title="عرض">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          </a>
-          <button class="ra-btn" title="تعديل" onclick="openLeadForm(8)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+    <td>
+      <div class="row-actions">
+        <a href="crm-leads-8.html" class="ra-btn" title="عرض">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </a>
+        <button class="ra-btn" title="تعديل" onclick="openLeadForm(8)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+        </button>
+                  <button class="ra-btn ra-approve" title="تحويل لعميل فعلي + مشروع" onclick="convertLead(8)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
           </button>
-                      <button class="ra-btn ra-approve" title="تحويل لعميل فعلي + مشروع" onclick="convertLead(8)">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
-            </button>
-                                <button class="ra-btn ra-danger" title="حذف" onclick="deleteLead(8, '\u0648\u0627\u064a\u062a \u0633\u062a\u0648\u0646 \u0627\u0644\u0639\u0642\u0627\u0631\u064a\u0629')">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
-            </button>
-                  </div>
-      </td>
-    </tr>
-      <tr data-stage="lost" data-lead-row="9">
-      <td style="font-weight:700;">
-        <a href="crm-leads-9.html" class="link-blue">سبيس جيم</a>
-                          <div class="lead-reason">سبب الخسارة: السعر</div>
-              </td>
-
-      <td>رياضة</td>
-      <td class="muted" style="font-size:12.5px;">إنستجرام</td>
-
-      <td>
-        
-        <select class="form-select status-select stg-lost"
-                data-current="lost"
-                onchange="changeStage(9, this)">
-                      <option value="new" >جديد</option>
-                      <option value="contacted" >تم التواصل</option>
-                      <option value="proposal" >عرض سعر</option>
-                      <option value="negotiation" >تفاوض</option>
-                      <option value="won" >تم الفوز</option>
-                      <option value="lost" selected>فقدنا العميل</option>
-                  </select>
-      </td>
-
-      <td>
-                  <span class="muted">—</span>
-              </td>
-
-      <td>
-                  <span class="muted">—</span>
-              </td>
-
-      <td>
-        <div class="row-actions">
-          <a href="crm-leads-9.html" class="ra-btn" title="عرض">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          </a>
-          <button class="ra-btn" title="تعديل" onclick="openLeadForm(9)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+                          <button class="ra-btn ra-danger" title="حذف" onclick="deleteLead(8, '\u0648\u0627\u064a\u062a \u0633\u062a\u0648\u0646 \u0627\u0644\u0639\u0642\u0627\u0631\u064a\u0629')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
           </button>
-                                <button class="ra-btn ra-danger" title="حذف" onclick="deleteLead(9, '\u0633\u0628\u064a\u0633 \u062c\u064a\u0645')">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
-            </button>
-                  </div>
-      </td>
-    </tr>
-    </tbody>
+              </div>
+    </td>
+  </tr>
+  <tr data-lead-row="9">
+    <td style="font-weight:700;">
+      <a href="crm-leads-9.html" class="link-blue">سبيس جيم</a>
+                    <div class="lead-reason">سبب الخسارة: السعر</div>
+          </td>
+
+    <td>رياضة</td>
+    <td class="muted" style="font-size:12.5px;">إنستجرام</td>
+
+    <td>
+      
+      <select class="form-select status-select stg-lost"
+              data-current="lost"
+              onchange="changeStage(9, this)">
+                  <option value="new" >جديد</option>
+                  <option value="contacted" >تم التواصل</option>
+                  <option value="proposal" >عرض سعر</option>
+                  <option value="negotiation" >تفاوض</option>
+                  <option value="won" >تم الفوز</option>
+                  <option value="lost" selected>فقدنا العميل</option>
+              </select>
+    </td>
+
+    <td>
+              <span class="muted">—</span>
+          </td>
+
+    <td>
+              <span class="muted">—</span>
+          </td>
+
+    <td>
+      <div class="row-actions">
+        <a href="crm-leads-9.html" class="ra-btn" title="عرض">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </a>
+        <button class="ra-btn" title="تعديل" onclick="openLeadForm(9)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+        </button>
+                          <button class="ra-btn ra-danger" title="حذف" onclick="deleteLead(9, '\u0633\u0628\u064a\u0633 \u062c\u064a\u0645')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
+          </button>
+              </div>
+    </td>
+  </tr>
+  </tbody>
 </table>
-
-
-<div class="empty" id="leads-empty" style="display:none;">مفيش عملاء محتملين في المرحلة دي.</div>
 </div>
     </div>
   </div>
@@ -685,7 +722,7 @@ setInterval(loadNotifications, 60000); // تحديث كل دقيقة
 </script>
 <script>
 const CSRF = document.querySelector('meta[name=csrf-token]').content;
-const LEADS = [{"id":1,"name":"\u0634\u0631\u0643\u0629 \u062f\u0644\u062a\u0627 \u0641\u0627\u0631\u0645\u0627","company":"\u0642\u0637\u0627\u0639 \u062f\u0648\u0627\u0626\u064a","phone":"01010000001","email":null,"whatsapp":null,"source":"\u0625\u062d\u0627\u0644\u0629","stage":"new","owner_id":null,"next_follow_up_date":"2026-08-17","notes":null},{"id":2,"name":"\u0645\u062c\u0645\u0648\u0639\u0629 \u0633\u064a\u0644\u0641\u0631 \u0645\u0648\u0644","company":"\u062a\u062c\u0632\u0626\u0629","phone":null,"email":"contact@silver.test","whatsapp":null,"source":"\u0645\u0648\u0642\u0639 \u0627\u0644\u0634\u0631\u0643\u0629","stage":"new","owner_id":null,"next_follow_up_date":null,"notes":null},{"id":3,"name":"\u0645\u0637\u0627\u0639\u0645 \u062a\u064a\u0633\u062a\u064a","company":"\u0645\u0637\u0627\u0639\u0645","phone":null,"email":null,"whatsapp":"201010000003","source":"\u0644\u064a\u0646\u0643\u062f\u0625\u0646","stage":"contacted","owner_id":null,"next_follow_up_date":null,"notes":null},{"id":4,"name":"\u0623\u0643\u0627\u062f\u064a\u0645\u064a\u0629 \u0646\u0648\u0631 \u0627\u0644\u062a\u0639\u0644\u064a\u0645\u064a\u0629","company":"\u062a\u0639\u0644\u064a\u0645","phone":null,"email":null,"whatsapp":null,"source":"\u0625\u062d\u0627\u0644\u0629","stage":"contacted","owner_id":null,"next_follow_up_date":"2026-08-15","notes":null},{"id":5,"name":"\u0628\u064a\u0648\u062a\u064a \u0644\u0627\u0628","company":"\u062a\u062c\u0645\u064a\u0644","phone":"01010000005","email":null,"whatsapp":null,"source":"\u0625\u0646\u0633\u062a\u062c\u0631\u0627\u0645","stage":"proposal","owner_id":null,"next_follow_up_date":null,"notes":null},{"id":6,"name":"\u0643\u0627\u0631\u0632 \u0647\u0628","company":"\u0633\u064a\u0627\u0631\u0627\u062a","phone":null,"email":null,"whatsapp":null,"source":"\u0645\u0648\u0642\u0639 \u0627\u0644\u0634\u0631\u0643\u0629","stage":"proposal","owner_id":null,"next_follow_up_date":null,"notes":null},{"id":7,"name":"\u062c\u0631\u064a\u0646 \u0641\u0627\u0631\u0645","company":"\u0632\u0631\u0627\u0639\u0629","phone":"01010000007","email":null,"whatsapp":null,"source":"\u0645\u0624\u062a\u0645\u0631","stage":"negotiation","owner_id":null,"next_follow_up_date":null,"notes":null},{"id":8,"name":"\u0648\u0627\u064a\u062a \u0633\u062a\u0648\u0646 \u0627\u0644\u0639\u0642\u0627\u0631\u064a\u0629","company":"\u0639\u0642\u0627\u0631\u0627\u062a","phone":null,"email":null,"whatsapp":null,"source":"\u0625\u062d\u0627\u0644\u0629","stage":"won","owner_id":null,"next_follow_up_date":null,"notes":null},{"id":9,"name":"\u0633\u0628\u064a\u0633 \u062c\u064a\u0645","company":"\u0631\u064a\u0627\u0636\u0629","phone":null,"email":null,"whatsapp":null,"source":"\u0625\u0646\u0633\u062a\u062c\u0631\u0627\u0645","stage":"lost","owner_id":null,"next_follow_up_date":null,"notes":null}];
+const LEADS = [{"id":4,"name":"\u0623\u0643\u0627\u062f\u064a\u0645\u064a\u0629 \u0646\u0648\u0631 \u0627\u0644\u062a\u0639\u0644\u064a\u0645\u064a\u0629","company":"\u062a\u0639\u0644\u064a\u0645","phone":null,"email":null,"whatsapp":null,"source":"\u0625\u062d\u0627\u0644\u0629","stage":"contacted","owner_id":null,"next_follow_up_date":"2026-08-16","notes":null},{"id":5,"name":"\u0628\u064a\u0648\u062a\u064a \u0644\u0627\u0628","company":"\u062a\u062c\u0645\u064a\u0644","phone":"01010000005","email":null,"whatsapp":null,"source":"\u0625\u0646\u0633\u062a\u062c\u0631\u0627\u0645","stage":"proposal","owner_id":null,"next_follow_up_date":null,"notes":null},{"id":7,"name":"\u062c\u0631\u064a\u0646 \u0641\u0627\u0631\u0645","company":"\u0632\u0631\u0627\u0639\u0629","phone":"01010000007","email":null,"whatsapp":null,"source":"\u0645\u0624\u062a\u0645\u0631","stage":"negotiation","owner_id":null,"next_follow_up_date":null,"notes":null},{"id":9,"name":"\u0633\u0628\u064a\u0633 \u062c\u064a\u0645","company":"\u0631\u064a\u0627\u0636\u0629","phone":null,"email":null,"whatsapp":null,"source":"\u0625\u0646\u0633\u062a\u062c\u0631\u0627\u0645","stage":"lost","owner_id":null,"next_follow_up_date":null,"notes":null},{"id":1,"name":"\u0634\u0631\u0643\u0629 \u062f\u0644\u062a\u0627 \u0641\u0627\u0631\u0645\u0627","company":"\u0642\u0637\u0627\u0639 \u062f\u0648\u0627\u0626\u064a","phone":"01010000001","email":null,"whatsapp":null,"source":"\u0625\u062d\u0627\u0644\u0629","stage":"new","owner_id":null,"next_follow_up_date":"2026-08-18","notes":null},{"id":6,"name":"\u0643\u0627\u0631\u0632 \u0647\u0628","company":"\u0633\u064a\u0627\u0631\u0627\u062a","phone":null,"email":null,"whatsapp":null,"source":"\u0645\u0648\u0642\u0639 \u0627\u0644\u0634\u0631\u0643\u0629","stage":"proposal","owner_id":null,"next_follow_up_date":null,"notes":null},{"id":2,"name":"\u0645\u062c\u0645\u0648\u0639\u0629 \u0633\u064a\u0644\u0641\u0631 \u0645\u0648\u0644","company":"\u062a\u062c\u0632\u0626\u0629","phone":null,"email":"contact@silver.test","whatsapp":null,"source":"\u0645\u0648\u0642\u0639 \u0627\u0644\u0634\u0631\u0643\u0629","stage":"new","owner_id":null,"next_follow_up_date":null,"notes":null},{"id":3,"name":"\u0645\u0637\u0627\u0639\u0645 \u062a\u064a\u0633\u062a\u064a","company":"\u0645\u0637\u0627\u0639\u0645","phone":null,"email":null,"whatsapp":"201010000003","source":"\u0644\u064a\u0646\u0643\u062f\u0625\u0646","stage":"contacted","owner_id":null,"next_follow_up_date":null,"notes":null},{"id":8,"name":"\u0648\u0627\u064a\u062a \u0633\u062a\u0648\u0646 \u0627\u0644\u0639\u0642\u0627\u0631\u064a\u0629","company":"\u0639\u0642\u0627\u0631\u0627\u062a","phone":null,"email":null,"whatsapp":null,"source":"\u0625\u062d\u0627\u0644\u0629","stage":"won","owner_id":null,"next_follow_up_date":null,"notes":null}];
 const OWNERS = [{"id":1,"name":"\u0623\u0648\u0646\u0631 \u0627\u0644\u0646\u0638\u0627\u0645"}];
 const STAGES = {"new":"\u062c\u062f\u064a\u062f","contacted":"\u062a\u0645 \u0627\u0644\u062a\u0648\u0627\u0635\u0644","proposal":"\u0639\u0631\u0636 \u0633\u0639\u0631","negotiation":"\u062a\u0641\u0627\u0648\u0636","won":"\u062a\u0645 \u0627\u0644\u0641\u0648\u0632","lost":"\u0641\u0642\u062f\u0646\u0627 \u0627\u0644\u0639\u0645\u064a\u0644"};
 const LOST_REASONS = ["\u0627\u0644\u0633\u0639\u0631","\u0627\u0644\u062a\u0648\u0642\u064a\u062a","\u0645\u0646\u0627\u0641\u0633","\u0645\u0641\u064a\u0634 \u0645\u064a\u0632\u0627\u0646\u064a\u0629"];
@@ -695,41 +732,72 @@ function field(id, label, type, value) {
   return `<div class="field"><label for="${id}">${label}</label><input id="${id}" type="${type}" value="${(value ?? '').toString().replace(/"/g,'&quot;')}"></div>`;
 }
 
-/* ==================== تابات المراحل ==================== */
+/* ==================== فلترة الجدول بالـAJAX ==================== */
 
 /**
- * فلترة الجدول بالمرحلة — إخفاء/إظهار صفوف من غير طلب للسيرفر.
- * المرحلة بتتكتب في الـURL عشان تفضل بعد أي reload (الحفظ/الحذف بيعملوا reload).
+ * بتجيب صفوف الجدول المفلترة من السيرفر وتستبدل الـtbody — من غير إعادة
+ * تحميل للصفحة.
+ *
+ * ⚠️ الفلاتر بتتكتب في الـURL كمان، فأي reload (بيحصل بعد الحفظ أو الحذف)
+ * بيرجع بنفس الفلتر مش من الأول.
  */
-function showStage(stage, btn) {
-  document.querySelectorAll('.stage-tab').forEach(function (b) {
-    b.classList.toggle('active', b === btn);
-  });
+let leadFilterTimer = null;
+let leadFilterSeq = 0;
 
-  let visible = 0;
-  document.querySelectorAll('#leads-body tr[data-stage]').forEach(function (tr) {
-    const show = stage === 'all' || tr.dataset.stage === stage;
-    tr.style.display = show ? '' : 'none';
-    if (show) visible++;
-  });
-
-  const empty = document.getElementById('leads-empty');
-  const hasRows = document.querySelectorAll('#leads-body tr[data-stage]').length > 0;
-  if (empty) empty.style.display = (hasRows && visible === 0) ? 'block' : 'none';
-
-  // تحديث الـURL من غير إعادة تحميل
-  const url = new URL(window.location.href);
-  if (stage === 'all') url.searchParams.delete('stage');
-  else url.searchParams.set('stage', stage);
-  history.replaceState(null, '', url);
+function debouncedLeadFilters() {
+  clearTimeout(leadFilterTimer);
+  leadFilterTimer = setTimeout(applyLeadFilters, 300);
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  const wanted = new URLSearchParams(window.location.search).get('stage') || 'all';
-  const btn = document.querySelector('.stage-tab[data-stage="' + wanted + '"]')
-           || document.querySelector('.stage-tab[data-stage="all"]');
-  if (btn) showStage(btn.dataset.stage, btn);
-});
+function currentLeadFilters() {
+  return {
+    q: val('lf-q').trim(),
+    stage: val('lf-stage'),
+    company: val('lf-company'),
+    source: val('lf-source'),
+    owner: val('lf-owner'),
+  };
+}
+
+function applyLeadFilters() {
+  const filters = currentLeadFilters();
+  const params = new URLSearchParams();
+  Object.entries(filters).forEach(([k, v]) => { if (v) params.set(k, v); });
+
+  const body = document.getElementById('leads-body');
+  body.classList.add('is-loading');
+
+  // ترتيب الردود مضمون: أحدث طلب بس هو اللي بيتعرض
+  const seq = ++leadFilterSeq;
+
+  fetch('./crm/leads/search?' + params.toString(), {
+    headers: { 'X-Requested-With': 'XMLHttpRequest' },
+  }).then(r => r.text()).then(html => {
+    if (seq !== leadFilterSeq) return;
+    body.innerHTML = html;
+    body.classList.remove('is-loading');
+
+    const rows = body.querySelectorAll('tr[data-lead-row]').length;
+    document.getElementById('lf-count').textContent = rows + ' نتيجة';
+    document.getElementById('lf-clear').style.display = params.toString() ? '' : 'none';
+
+    // الفلتر بيتحفظ في الـURL عشان يفضل بعد أي reload
+    const url = new URL(window.location.href);
+    url.search = params.toString();
+    history.replaceState(null, '', url);
+  }).catch(() => {
+    body.classList.remove('is-loading');
+    showToast('تعذّر تحميل النتائج.');
+  });
+}
+
+function clearLeadFilters() {
+  ['lf-q', 'lf-stage', 'lf-company', 'lf-source', 'lf-owner'].forEach(function (id) {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+  applyLeadFilters();
+}
 
 /* ==================== إضافة / تعديل عميل محتمل ==================== */
 

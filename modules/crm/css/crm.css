@@ -2,27 +2,8 @@
 
 /* ===================== CRM: عملاء محتملون + عملاء + سجل تواصل ===================== */
 
-/* --- تابات مراحل مسار البيع (فوق جدول العملاء المحتملين) --- */
-.stage-tabs{
-  display:flex; gap:5px; flex-wrap:wrap; background:#fff; padding:6px;
-  border-radius:16px; box-shadow:var(--shadow); margin-bottom:16px; width:fit-content; max-width:100%;
-}
-.stage-tab{
-  display:inline-flex; align-items:center; gap:7px; padding:8px 14px; border-radius:12px;
-  font-family:inherit; font-size:12.5px; font-weight:700; color:var(--gray-700);
-  background:none; border:none; cursor:pointer; transition:.18s; white-space:nowrap;
-}
-.stage-tab:hover{ color:var(--primary); background:var(--primary-tint); }
-.stage-tab.active{ background:var(--primary); color:#fff; box-shadow:0 4px 12px rgba(108,79,216,.28); }
-.st-count{
-  background:var(--gray-150); color:var(--gray-700); border-radius:20px;
-  padding:1px 7px; font-size:10.5px; font-weight:800; min-width:20px; text-align:center;
-}
-.stage-tab.active .st-count{ background:rgba(255,255,255,.24); color:#fff; }
-
-/* التاب المكسوب والضايع بلون دلالي حتى وهو غير نشط */
-.stage-tab.stt-won.active{ background:var(--green); box-shadow:0 4px 12px rgba(31,158,107,.28); }
-.stage-tab.stt-lost.active{ background:var(--red); box-shadow:0 4px 12px rgba(226,86,106,.28); }
+/* --- حالة تحميل صفوف الجدول أثناء الفلترة بالـAJAX --- */
+#leads-body.is-loading{ opacity:.45; transition:opacity .12s; pointer-events:none; }
 
 /* --- دروب داون المرحلة داخل صف الجدول --- */
 .status-select.stg-new{ color:var(--gray-700); }
