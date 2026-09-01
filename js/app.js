@@ -40,6 +40,13 @@ function toggleSidebar(open) {
   document.getElementById('backdrop').classList.toggle('active', open);
 }
 
+function toggleNavSubmenu(id) {
+  const parent = document.getElementById(id);
+  if (!parent) return;
+  const open = parent.classList.toggle('open');
+  parent.querySelector('.nav-parent-toggle')?.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+
 function openModal(html) {
   document.getElementById('modalBox').innerHTML = html;
   document.getElementById('overlay').classList.add('active');

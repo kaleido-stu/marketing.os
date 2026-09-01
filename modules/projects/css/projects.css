@@ -70,7 +70,7 @@
   position:relative; margin-bottom:18px; max-width:460px;
 }
 .search-bar > svg{
-  position:absolute; right:14px; top:50%; transform:translateY(-50%);
+  position:absolute; inset-inline-start:14px; top:50%; transform:translateY(-50%);
   width:18px; height:18px; color:var(--gray-500); pointer-events:none;
 }
 .search-bar input{
@@ -79,9 +79,25 @@
 }
 .search-bar input:focus{ outline:none; border-color:var(--blue); box-shadow:0 0 0 3px var(--blue-tint); }
 .search-spinner{
-  position:absolute; left:14px; top:50%; transform:translateY(-50%);
+  position:absolute; inset-inline-end:14px; top:50%; transform:translateY(-50%);
   width:16px; height:16px; border:2px solid var(--gray-300); border-top-color:var(--blue);
   border-radius:50%; opacity:0; transition:.15s;
 }
 .search-spinner.on{ opacity:1; animation:spin .6s linear infinite; }
 @keyframes spin{ to{ transform:translateY(-50%) rotate(360deg); } }
+.project-page-heading{display:flex;flex-direction:column;gap:4px;}
+.project-page-heading p{margin:0;color:var(--gray-500);font-size:13px;font-weight:600;}
+.project-task-metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:18px 0 22px;}
+.project-task-metric{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;gap:8px;min-height:105px;padding:17px 18px;}
+.project-task-metric::before{content:"";position:absolute;inset-block:0;inset-inline-start:0;width:4px;background:var(--gray-400);}
+.project-task-metric span{font-size:12px;font-weight:700;color:var(--gray-600);}
+.project-task-metric strong{font-family:'Cairo',sans-serif;font-size:27px;color:var(--ink);}
+.project-task-metric.is-new::before{background:var(--gray-500);}
+.project-task-metric.is-progress::before{background:var(--primary);}
+.project-task-metric.is-completed::before{background:var(--green);}
+.project-task-metric.is-review::before{background:var(--amber);}
+.project-task-metric.is-overdue::before{background:var(--red);}
+.project-task-metric.is-overdue strong{color:var(--red);}
+@media(max-width:1100px){.project-task-metrics{grid-template-columns:repeat(3,minmax(0,1fr));}}
+@media(max-width:700px){.project-task-metrics{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:430px){.project-task-metrics{grid-template-columns:1fr;}}

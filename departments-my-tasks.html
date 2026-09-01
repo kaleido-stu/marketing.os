@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="csrf-token" content="prototype">
+<meta name="csrf-token" content="ej8JW8vQZ0VUhbnlyJYxDvoQs7IJxkm9Ik8iMW5t">
 <title>Kaleido O.S | نظام إدارة شركات الماركتينج والبرودكشن</title>
 <link rel="stylesheet" href="fonts/fonts.css">
 <script src="js/chart.min.js"></script>
@@ -36,49 +36,75 @@
 
     <nav class="nav">
                 <div class="nav-group-label">الرئيسية</div>
-                        <a href="index.html" class="nav-item ">
+                                    <a href="index.html" class="nav-item ">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h8V3H3v10zM13 21h8V11h-8v10zM13 3v6h8V3h-8zM3 21h8v-6H3v6z"/></svg>
                 <span>لوحة التحكم</span>
                             </a>
-                            <div class="nav-group-label">المبيعات والعملاء</div>
-                        <a href="crm-pipeline.html" class="nav-item ">
+                                        <div class="nav-group-label">المبيعات والعملاء</div>
+                                    <a href="crm-pipeline.html" class="nav-item ">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M2 21v-2a5 5 0 015-5h4a5 5 0 015 5v2"/><circle cx="18" cy="8" r="2.3"/><path d="M16 21v-1.6a4 4 0 00-1.2-2.9"/></svg>
                 <span>العملاء (CRM)</span>
-                                <span class="badge">7</span>
                             </a>
-                        <a href="projects.html" class="nav-item ">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
-                <span>المشاريع والحملات</span>
-                                <span class="badge">4</span>
-                            </a>
-                            <div class="nav-group-label">العمليات</div>
-                        <a href="scheduling.html" class="nav-item ">
+                                                            <div class="nav-parent " id="projects-nav-parent">
+                <button type="button" class="nav-item nav-parent-toggle "
+                        onclick="toggleNavSubmenu('projects-nav-parent')" aria-expanded="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
+                    <span>المشاريع</span>
+                                        <span class="badge">1</span>
+                                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+                <div class="nav-submenu">
+                    <a href="projects.html" class="nav-subitem ">
+                        <span class="nav-sub-dot"></span>
+                        <span>كل المشاريع</span>
+                    </a>
+                    <a href="tasks.html" class="nav-subitem ">
+                        <span class="nav-sub-dot"></span>
+                        <span>كل التاسكات</span>
+                    </a>
+                </div>
+            </div>
+                                        <div class="nav-group-label">العمليات</div>
+                                    <a href="scheduling.html" class="nav-item ">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                 <span>جدولة التصوير والمعدات</span>
                             </a>
-                        <a href="freelancers.html" class="nav-item ">
+                                                <a href="freelancers.html" class="nav-item ">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
                 <span>الفريلانسرز</span>
                             </a>
-                        <a href="departments.html" class="nav-item active">
+                                                <a href="departments.html" class="nav-item active">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-5h6v5"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01"/></svg>
                 <span>الأقسام</span>
                             </a>
-                            <div class="nav-group-label">العميل والمال</div>
-                        <a href="reports.html" class="nav-item ">
+                                        <div class="nav-group-label">العميل والمال</div>
+                                    <a href="reports.html" class="nav-item ">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9M12 21V3M20 21v-7"/></svg>
                 <span>تقارير الربحية</span>
                             </a>
-                        <a href="invoices.html" class="nav-item ">
+                                                <a href="invoices.html" class="nav-item ">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l3 3v17H6z"/><line x1="9" y1="8" x2="14" y2="8"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="12" y2="16"/></svg>
                 <span>الفواتير</span>
                             </a>
-                            <div class="nav-group-label">النظام</div>
-                        <a href="settings-users.html" class="nav-item ">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
-                <span>الإعدادات</span>
-                            </a>
-                        </nav>
+                                        <div class="nav-group-label">النظام</div>
+                                                <div class="nav-parent " id="settings-nav-parent">
+                <button type="button" class="nav-item nav-parent-toggle "
+                        onclick="toggleNavSubmenu('settings-nav-parent')" aria-expanded="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                    <span>الإعدادات</span>
+                    <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+                <div class="nav-submenu">
+                    <a href="settings-users.html" class="nav-subitem ">
+                        <span class="nav-sub-dot"></span>
+                        <span>إدارة المستخدمين</span>
+                    </a>
+                    <a href="settings-company.html" class="nav-subitem ">
+                        <span class="nav-sub-dot"></span><span>بيانات الشركة</span>
+                    </a>
+                </div>
+            </div>
+                                    </nav>
 </aside>
 
   <div class="main">
@@ -94,12 +120,13 @@
               </div>
       <div class="topbar-right">
         
-                <div class="rec-pill">
-          <span class="rec-dot"></span>
-          <span class="txt">2 تصوير جاري دلوقتي</span>
-        </div>
         
-                
+                <a class="language-switch" href="#"
+           title="Switch to English"
+           aria-label="Switch to English">
+          <span class="language-switch-code">EN</span>
+        </a>
+        
         <div class="notif-wrap">
           <button class="notif-bell" id="notif-bell" onclick="toggleNotifications(event)" title="الإشعارات">
             
@@ -121,13 +148,13 @@
         </div>
 
         <div class="topbar-user">
-          <div class="user-avatar">أو</div>
+          <div class="user-avatar">Ow</div>
           <div class="tu-meta">
-            <div class="tu-name">أونر النظام</div>
+            <div class="tu-name">Owner</div>
             <div class="tu-role">الأونر</div>
           </div>
-          <form method="POST" action="#" data-proto-dead="/logout" style="display:flex;">
-            <input type="hidden" name="_token" value="prototype" autocomplete="off">            <button type="submit" class="tu-logout" title="تسجيل خروج">
+          <form method="POST" action="#" style="display:flex;">
+            <input type="hidden" name="_token" value="ej8JW8vQZ0VUhbnlyJYxDvoQs7IJxkm9Ik8iMW5t" autocomplete="off">            <button type="submit" class="tu-logout" title="تسجيل خروج">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
             </button>
           </form>
@@ -137,7 +164,7 @@
 
     <div class="content">
       <div class="section-head">
-  <h2>تاسكات قسمي <span class="muted" style="font-size:14px;font-weight:400;">(18 مهمة)</span></h2>
+  <h2>تاسكات قسمي <span class="muted" style="font-size:14px;font-weight:400;">(7 مهمة)</span></h2>
   <a href="departments.html" class="btn btn-ghost btn-sm">← رجوع للأقسام</a>
 </div>
 
@@ -146,32 +173,36 @@
     <div class="dept-group-head">
       <span class="dept-dot" style="background:#E8590C;"></span>
       <h3>البرودكشن</h3>
-      <span class="badge badge-gray">6 مهمة</span>
+      <span class="badge badge-gray">1 مهمة</span>
     </div>
 
-          <div class="card task-card" id="task-17">
-  <div class="task-head" onclick="toggleTask(17)">
-    <button type="button" class="task-caret" id="caret-17" aria-label="توسيع">
+          <div class="card task-card" id="task-44">
+  <div class="task-head" onclick="toggleTask(44)">
+    <button type="button" class="task-caret" id="caret-44" aria-label="توسيع">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
     </button>
 
     <div class="task-head-main">
-      <h3>دليل الهوية</h3>
+      <h3>تصوير</h3>
       <div class="task-head-meta">
                   <span class="dept-tag" style="--dept:#E8590C;">البرودكشن</span>
-                          <a href="projects-6.html" class="task-proj" onclick="event.stopPropagation();">
+                          <a href="projects-32.html" class="task-proj" onclick="event.stopPropagation();">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
-            إعادة تصميم الهوية الرقمية
-            <span class="muted">· كليوباترا تكنولوجي</span>
+            ميديا لشركه سكرين ميديا
+            <span class="muted">· أحمد السيد حماد</span>
           </a>
-                              </div>
+                                  <span class="deadline-pill ">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            2026/08/31
+          </span>
+              </div>
     </div>
 
     <div class="task-head-side" onclick="event.stopPropagation();">
       <div class="task-owner">
                   <span class="muted" style="font-size:12px;">— بدون مسؤول —</span>
                       </div>
-            <select class="form-select status-select st-completed" onchange="updateStatus(17, this)" title="حالة المهمة">
+            <select class="form-select status-select st-completed" onchange="updateStatus(44, this)" title="حالة المهمة">
                   <option value="new" >جديد</option>
                   <option value="in_progress" >جاري التنفيذ</option>
                   <option value="review" >مراجعة</option>
@@ -181,11 +212,11 @@
           </div>
   </div>
 
-  <div class="task-body" id="body-17" style="display:none;">
+  <div class="task-body" id="body-44" style="display:none;">
     
           <div class="task-section deadline-row">
-        <label for="dl-17">الديدلاين</label>
-        <input id="dl-17" type="date" value="" onchange="saveDeadline(17, this)">
+        <label for="dl-44">الديدلاين</label>
+        <input id="dl-44" type="date" value="2026-08-31" onchange="saveDeadline(44, this)">
       </div>
     
     
@@ -196,20 +227,21 @@
         <span class="muted" style="font-size:11.5px;">المسؤول واحد، والمنفّذون أي عدد — كلهم بيشوفوا التاسك</span>
       </div>
 
-      <div class="crew-list" id="crew-17">
+      <div class="crew-list" id="crew-44">
         
         
         
                           
-                  <div class="muted crew-empty" id="crew-empty-17" style="font-size:12.5px;">مفيش منفّذين مضافين — المسؤول بس.</div>
+                  <div class="muted crew-empty" id="crew-empty-44" style="font-size:12.5px;">مفيش منفّذين مضافين — المسؤول بس.</div>
               </div>
 
               <div class="crew-add">
           
-          <select class="form-select" id="crew-sel-17">
+          <select class="form-select" id="crew-sel-44">
             <option value="">— اختر مين يتضاف للمهمة —</option>
                           <optgroup label="موظفو الشركة">
-                                  <option value="u:1" data-initials="أو" data-role="الأونر">أونر النظام (الأونر)</option>
+                                  <option value="u:74" data-initials="De" data-role="الأونر">Owner (الأونر)</option>
+                                  <option value="u:49" data-initials="Ow" data-role="الأونر">Owner (الأونر)</option>
                               </optgroup>
                                       <optgroup label="الفريلانسرز">
                                   <option value="f:1" data-initials="أم" data-role="مصور فيديو">أمير توفيق (مصور فيديو)</option>
@@ -220,7 +252,7 @@
                                   <option value="f:3" data-initials="ما" data-role="مونتير">مازن سعيد (مونتير)</option>
                               </optgroup>
                       </select>
-          <button class="btn btn-outline btn-sm" onclick="addCrew(17)">إضافة للمهمة</button>
+          <button class="btn btn-outline btn-sm" onclick="addCrew(44)">إضافة للمهمة</button>
         </div>
           </div>
 
@@ -228,20 +260,20 @@
     <div class="task-section">
       <div class="task-section-head">
         <h4 class="task-section-title">الخطوات الفرعية</h4>
-        <span class="steps-progress" id="prog-17">0 من 0 خطوات</span>
+        <span class="steps-progress" id="prog-44">0 من 0 خطوات</span>
       </div>
       <p class="muted steps-note">
         إنهاء كل الخطوات <b>ما بيقفلش المهمة تلقائيًا</b> — حالة المهمة بتتغيّر بإيدك من فوق.
       </p>
 
-      <div class="step-list" id="steps-17">
-                  <div class="muted step-empty" id="steps-empty-17" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
+      <div class="step-list" id="steps-44">
+                  <div class="muted step-empty" id="steps-empty-44" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
               </div>
 
       <div class="step-add">
-        <input type="text" id="st-title-17" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(17)">
-        <input type="text" id="st-details-17" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(17)">
-        <button class="btn btn-outline btn-sm" onclick="addStep(17)">أضف خطوة</button>
+        <input type="text" id="st-title-44" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(44)">
+        <input type="text" id="st-details-44" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(44)">
+        <button class="btn btn-outline btn-sm" onclick="addStep(44)">أضف خطوة</button>
       </div>
     </div>
 
@@ -252,13 +284,13 @@
         <span class="muted" style="font-size:11.5px;">ملفات داخلية بين الفريق — مش تسليمات العميل</span>
       </div>
 
-      <div class="attach-list" id="attachments-17">
-                  <div class="muted attach-empty" id="attach-empty-17" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
+      <div class="attach-list" id="attachments-44">
+                  <div class="muted attach-empty" id="attach-empty-44" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
               </div>
 
       <div class="attach-add">
-        <input type="file" id="file-17" class="attach-input" onchange="uploadFile(17)">
-        <label for="file-17" class="btn btn-outline btn-sm">
+        <input type="file" id="file-44" class="attach-input" onchange="uploadFile(44)">
+        <label for="file-44" class="btn btn-outline btn-sm">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
           رفع ملف جديد
         </label>
@@ -269,662 +301,12 @@
     
     <div class="comments">
       <h4 class="comments-title">التعليقات</h4>
-      <div class="comment-list" id="comments-17">
-                  <div class="muted comment-empty" id="empty-17" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
+      <div class="comment-list" id="comments-44">
+                  <div class="muted comment-empty" id="empty-44" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
               </div>
       <div class="comment-form">
-        <input type="text" id="ci-17" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(17)">
-        <button class="btn btn-primary btn-sm" onclick="addComment(17)">إرسال</button>
-      </div>
-    </div>
-  </div>
-</div>
-          <div class="card task-card" id="task-14">
-  <div class="task-head" onclick="toggleTask(14)">
-    <button type="button" class="task-caret" id="caret-14" aria-label="توسيع">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
-
-    <div class="task-head-main">
-      <h3>زيارة الموقع</h3>
-      <div class="task-head-meta">
-                  <span class="dept-tag" style="--dept:#E8590C;">البرودكشن</span>
-                          <a href="projects-5.html" class="task-proj" onclick="event.stopPropagation();">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
-            كامبين افتتاح فرع جديد
-            <span class="muted">· مطاعم البيت الشامي</span>
-          </a>
-                              </div>
-    </div>
-
-    <div class="task-head-side" onclick="event.stopPropagation();">
-      <div class="task-owner">
-                  <span class="muted" style="font-size:12px;">— بدون مسؤول —</span>
-                      </div>
-            <select class="form-select status-select st-completed" onchange="updateStatus(14, this)" title="حالة المهمة">
-                  <option value="new" >جديد</option>
-                  <option value="in_progress" >جاري التنفيذ</option>
-                  <option value="review" >مراجعة</option>
-                  <option value="completed" selected>اكتمل</option>
-              </select>
-
-          </div>
-  </div>
-
-  <div class="task-body" id="body-14" style="display:none;">
-    
-          <div class="task-section deadline-row">
-        <label for="dl-14">الديدلاين</label>
-        <input id="dl-14" type="date" value="" onchange="saveDeadline(14, this)">
-      </div>
-    
-    
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">الفريق على التاسك</h4>
-        <span class="muted" style="font-size:11.5px;">المسؤول واحد، والمنفّذون أي عدد — كلهم بيشوفوا التاسك</span>
-      </div>
-
-      <div class="crew-list" id="crew-14">
-        
-        
-        
-                          
-                  <div class="muted crew-empty" id="crew-empty-14" style="font-size:12.5px;">مفيش منفّذين مضافين — المسؤول بس.</div>
-              </div>
-
-              <div class="crew-add">
-          
-          <select class="form-select" id="crew-sel-14">
-            <option value="">— اختر مين يتضاف للمهمة —</option>
-                          <optgroup label="موظفو الشركة">
-                                  <option value="u:1" data-initials="أو" data-role="الأونر">أونر النظام (الأونر)</option>
-                              </optgroup>
-                                      <optgroup label="الفريلانسرز">
-                                  <option value="f:1" data-initials="أم" data-role="مصور فيديو">أمير توفيق (مصور فيديو)</option>
-                                  <option value="f:2" data-initials="دي" data-role="مصممة جرافيك">دينا الشريف (مصممة جرافيك)</option>
-                                  <option value="f:4" data-initials="ري" data-role="كاتبة محتوى">ريم عادل (كاتبة محتوى)</option>
-                                  <option value="f:6" data-initials="سا" data-role="مديرة إعلانات ممولة">سارة يوسف (مديرة إعلانات ممولة)</option>
-                                  <option value="f:5" data-initials="طا" data-role="مصور فوتوغرافي">طارق منصور (مصور فوتوغرافي)</option>
-                                  <option value="f:3" data-initials="ما" data-role="مونتير">مازن سعيد (مونتير)</option>
-                              </optgroup>
-                      </select>
-          <button class="btn btn-outline btn-sm" onclick="addCrew(14)">إضافة للمهمة</button>
-        </div>
-          </div>
-
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">الخطوات الفرعية</h4>
-        <span class="steps-progress" id="prog-14">0 من 0 خطوات</span>
-      </div>
-      <p class="muted steps-note">
-        إنهاء كل الخطوات <b>ما بيقفلش المهمة تلقائيًا</b> — حالة المهمة بتتغيّر بإيدك من فوق.
-      </p>
-
-      <div class="step-list" id="steps-14">
-                  <div class="muted step-empty" id="steps-empty-14" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
-              </div>
-
-      <div class="step-add">
-        <input type="text" id="st-title-14" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(14)">
-        <input type="text" id="st-details-14" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(14)">
-        <button class="btn btn-outline btn-sm" onclick="addStep(14)">أضف خطوة</button>
-      </div>
-    </div>
-
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">ملفات الشغل</h4>
-        <span class="muted" style="font-size:11.5px;">ملفات داخلية بين الفريق — مش تسليمات العميل</span>
-      </div>
-
-      <div class="attach-list" id="attachments-14">
-                  <div class="muted attach-empty" id="attach-empty-14" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
-              </div>
-
-      <div class="attach-add">
-        <input type="file" id="file-14" class="attach-input" onchange="uploadFile(14)">
-        <label for="file-14" class="btn btn-outline btn-sm">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-          رفع ملف جديد
-        </label>
-        <span class="muted attach-hint">أقصى حجم 20 م.ب — صور، فيديو، مستندات، ملفات مضغوطة.</span>
-      </div>
-    </div>
-
-    
-    <div class="comments">
-      <h4 class="comments-title">التعليقات</h4>
-      <div class="comment-list" id="comments-14">
-                  <div class="muted comment-empty" id="empty-14" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
-              </div>
-      <div class="comment-form">
-        <input type="text" id="ci-14" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(14)">
-        <button class="btn btn-primary btn-sm" onclick="addComment(14)">إرسال</button>
-      </div>
-    </div>
-  </div>
-</div>
-          <div class="card task-card" id="task-11">
-  <div class="task-head" onclick="toggleTask(11)">
-    <button type="button" class="task-caret" id="caret-11" aria-label="توسيع">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
-
-    <div class="task-head-main">
-      <h3>مراجعة العميل</h3>
-      <div class="task-head-meta">
-                  <span class="dept-tag" style="--dept:#E8590C;">البرودكشن</span>
-                          <a href="projects-3.html" class="task-proj" onclick="event.stopPropagation();">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
-            فيديو تسويقي - مشروع النخيل
-            <span class="muted">· مجموعة نايل ريزيدنس</span>
-          </a>
-                              </div>
-    </div>
-
-    <div class="task-head-side" onclick="event.stopPropagation();">
-      <div class="task-owner">
-                  <span class="muted" style="font-size:12px;">— بدون مسؤول —</span>
-                      </div>
-            <select class="form-select status-select st-in_progress" onchange="updateStatus(11, this)" title="حالة المهمة">
-                  <option value="new" >جديد</option>
-                  <option value="in_progress" selected>جاري التنفيذ</option>
-                  <option value="review" >مراجعة</option>
-                  <option value="completed" >اكتمل</option>
-              </select>
-
-          </div>
-  </div>
-
-  <div class="task-body" id="body-11" style="display:none;">
-    
-          <div class="task-section deadline-row">
-        <label for="dl-11">الديدلاين</label>
-        <input id="dl-11" type="date" value="" onchange="saveDeadline(11, this)">
-      </div>
-    
-    
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">الفريق على التاسك</h4>
-        <span class="muted" style="font-size:11.5px;">المسؤول واحد، والمنفّذون أي عدد — كلهم بيشوفوا التاسك</span>
-      </div>
-
-      <div class="crew-list" id="crew-11">
-        
-        
-        
-                          
-                  <div class="muted crew-empty" id="crew-empty-11" style="font-size:12.5px;">مفيش منفّذين مضافين — المسؤول بس.</div>
-              </div>
-
-              <div class="crew-add">
-          
-          <select class="form-select" id="crew-sel-11">
-            <option value="">— اختر مين يتضاف للمهمة —</option>
-                          <optgroup label="موظفو الشركة">
-                                  <option value="u:1" data-initials="أو" data-role="الأونر">أونر النظام (الأونر)</option>
-                              </optgroup>
-                                      <optgroup label="الفريلانسرز">
-                                  <option value="f:1" data-initials="أم" data-role="مصور فيديو">أمير توفيق (مصور فيديو)</option>
-                                  <option value="f:2" data-initials="دي" data-role="مصممة جرافيك">دينا الشريف (مصممة جرافيك)</option>
-                                  <option value="f:4" data-initials="ري" data-role="كاتبة محتوى">ريم عادل (كاتبة محتوى)</option>
-                                  <option value="f:6" data-initials="سا" data-role="مديرة إعلانات ممولة">سارة يوسف (مديرة إعلانات ممولة)</option>
-                                  <option value="f:5" data-initials="طا" data-role="مصور فوتوغرافي">طارق منصور (مصور فوتوغرافي)</option>
-                                  <option value="f:3" data-initials="ما" data-role="مونتير">مازن سعيد (مونتير)</option>
-                              </optgroup>
-                      </select>
-          <button class="btn btn-outline btn-sm" onclick="addCrew(11)">إضافة للمهمة</button>
-        </div>
-          </div>
-
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">الخطوات الفرعية</h4>
-        <span class="steps-progress" id="prog-11">0 من 0 خطوات</span>
-      </div>
-      <p class="muted steps-note">
-        إنهاء كل الخطوات <b>ما بيقفلش المهمة تلقائيًا</b> — حالة المهمة بتتغيّر بإيدك من فوق.
-      </p>
-
-      <div class="step-list" id="steps-11">
-                  <div class="muted step-empty" id="steps-empty-11" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
-              </div>
-
-      <div class="step-add">
-        <input type="text" id="st-title-11" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(11)">
-        <input type="text" id="st-details-11" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(11)">
-        <button class="btn btn-outline btn-sm" onclick="addStep(11)">أضف خطوة</button>
-      </div>
-    </div>
-
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">ملفات الشغل</h4>
-        <span class="muted" style="font-size:11.5px;">ملفات داخلية بين الفريق — مش تسليمات العميل</span>
-      </div>
-
-      <div class="attach-list" id="attachments-11">
-                  <div class="muted attach-empty" id="attach-empty-11" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
-              </div>
-
-      <div class="attach-add">
-        <input type="file" id="file-11" class="attach-input" onchange="uploadFile(11)">
-        <label for="file-11" class="btn btn-outline btn-sm">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-          رفع ملف جديد
-        </label>
-        <span class="muted attach-hint">أقصى حجم 20 م.ب — صور، فيديو، مستندات، ملفات مضغوطة.</span>
-      </div>
-    </div>
-
-    
-    <div class="comments">
-      <h4 class="comments-title">التعليقات</h4>
-      <div class="comment-list" id="comments-11">
-                  <div class="muted comment-empty" id="empty-11" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
-              </div>
-      <div class="comment-form">
-        <input type="text" id="ci-11" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(11)">
-        <button class="btn btn-primary btn-sm" onclick="addComment(11)">إرسال</button>
-      </div>
-    </div>
-  </div>
-</div>
-          <div class="card task-card" id="task-8">
-  <div class="task-head" onclick="toggleTask(8)">
-    <button type="button" class="task-caret" id="caret-8" aria-label="توسيع">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
-
-    <div class="task-head-main">
-      <h3>اعتماد الميزانية النهائية</h3>
-      <div class="task-head-meta">
-                  <span class="dept-tag" style="--dept:#E8590C;">البرودكشن</span>
-                          <a href="projects-2.html" class="task-proj" onclick="event.stopPropagation();">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
-            إطلاق منتج بطاقة أفانتي بلاك
-            <span class="muted">· بنك أفانتي</span>
-          </a>
-                              </div>
-    </div>
-
-    <div class="task-head-side" onclick="event.stopPropagation();">
-      <div class="task-owner">
-                  <span class="muted" style="font-size:12px;">— بدون مسؤول —</span>
-                      </div>
-            <select class="form-select status-select st-in_progress" onchange="updateStatus(8, this)" title="حالة المهمة">
-                  <option value="new" >جديد</option>
-                  <option value="in_progress" selected>جاري التنفيذ</option>
-                  <option value="review" >مراجعة</option>
-                  <option value="completed" >اكتمل</option>
-              </select>
-
-          </div>
-  </div>
-
-  <div class="task-body" id="body-8" style="display:none;">
-    
-          <div class="task-section deadline-row">
-        <label for="dl-8">الديدلاين</label>
-        <input id="dl-8" type="date" value="" onchange="saveDeadline(8, this)">
-      </div>
-    
-    
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">الفريق على التاسك</h4>
-        <span class="muted" style="font-size:11.5px;">المسؤول واحد، والمنفّذون أي عدد — كلهم بيشوفوا التاسك</span>
-      </div>
-
-      <div class="crew-list" id="crew-8">
-        
-        
-        
-                          
-                  <div class="muted crew-empty" id="crew-empty-8" style="font-size:12.5px;">مفيش منفّذين مضافين — المسؤول بس.</div>
-              </div>
-
-              <div class="crew-add">
-          
-          <select class="form-select" id="crew-sel-8">
-            <option value="">— اختر مين يتضاف للمهمة —</option>
-                          <optgroup label="موظفو الشركة">
-                                  <option value="u:1" data-initials="أو" data-role="الأونر">أونر النظام (الأونر)</option>
-                              </optgroup>
-                                      <optgroup label="الفريلانسرز">
-                                  <option value="f:1" data-initials="أم" data-role="مصور فيديو">أمير توفيق (مصور فيديو)</option>
-                                  <option value="f:2" data-initials="دي" data-role="مصممة جرافيك">دينا الشريف (مصممة جرافيك)</option>
-                                  <option value="f:4" data-initials="ري" data-role="كاتبة محتوى">ريم عادل (كاتبة محتوى)</option>
-                                  <option value="f:6" data-initials="سا" data-role="مديرة إعلانات ممولة">سارة يوسف (مديرة إعلانات ممولة)</option>
-                                  <option value="f:5" data-initials="طا" data-role="مصور فوتوغرافي">طارق منصور (مصور فوتوغرافي)</option>
-                                  <option value="f:3" data-initials="ما" data-role="مونتير">مازن سعيد (مونتير)</option>
-                              </optgroup>
-                      </select>
-          <button class="btn btn-outline btn-sm" onclick="addCrew(8)">إضافة للمهمة</button>
-        </div>
-          </div>
-
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">الخطوات الفرعية</h4>
-        <span class="steps-progress" id="prog-8">0 من 0 خطوات</span>
-      </div>
-      <p class="muted steps-note">
-        إنهاء كل الخطوات <b>ما بيقفلش المهمة تلقائيًا</b> — حالة المهمة بتتغيّر بإيدك من فوق.
-      </p>
-
-      <div class="step-list" id="steps-8">
-                  <div class="muted step-empty" id="steps-empty-8" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
-              </div>
-
-      <div class="step-add">
-        <input type="text" id="st-title-8" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(8)">
-        <input type="text" id="st-details-8" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(8)">
-        <button class="btn btn-outline btn-sm" onclick="addStep(8)">أضف خطوة</button>
-      </div>
-    </div>
-
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">ملفات الشغل</h4>
-        <span class="muted" style="font-size:11.5px;">ملفات داخلية بين الفريق — مش تسليمات العميل</span>
-      </div>
-
-      <div class="attach-list" id="attachments-8">
-                  <div class="muted attach-empty" id="attach-empty-8" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
-              </div>
-
-      <div class="attach-add">
-        <input type="file" id="file-8" class="attach-input" onchange="uploadFile(8)">
-        <label for="file-8" class="btn btn-outline btn-sm">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-          رفع ملف جديد
-        </label>
-        <span class="muted attach-hint">أقصى حجم 20 م.ب — صور، فيديو، مستندات، ملفات مضغوطة.</span>
-      </div>
-    </div>
-
-    
-    <div class="comments">
-      <h4 class="comments-title">التعليقات</h4>
-      <div class="comment-list" id="comments-8">
-                  <div class="muted comment-empty" id="empty-8" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
-              </div>
-      <div class="comment-form">
-        <input type="text" id="ci-8" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(8)">
-        <button class="btn btn-primary btn-sm" onclick="addComment(8)">إرسال</button>
-      </div>
-    </div>
-  </div>
-</div>
-          <div class="card task-card" id="task-5">
-  <div class="task-head" onclick="toggleTask(5)">
-    <button type="button" class="task-caret" id="caret-5" aria-label="توسيع">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
-
-    <div class="task-head-main">
-      <h3>تصوير فيلم الإطلاق</h3>
-      <div class="task-head-meta">
-                  <span class="dept-tag" style="--dept:#E8590C;">البرودكشن</span>
-                          <a href="projects-2.html" class="task-proj" onclick="event.stopPropagation();">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
-            إطلاق منتج بطاقة أفانتي بلاك
-            <span class="muted">· بنك أفانتي</span>
-          </a>
-                              </div>
-    </div>
-
-    <div class="task-head-side" onclick="event.stopPropagation();">
-      <div class="task-owner">
-                  <span class="muted" style="font-size:12px;">— بدون مسؤول —</span>
-                      </div>
-            <select class="form-select status-select st-completed" onchange="updateStatus(5, this)" title="حالة المهمة">
-                  <option value="new" >جديد</option>
-                  <option value="in_progress" >جاري التنفيذ</option>
-                  <option value="review" >مراجعة</option>
-                  <option value="completed" selected>اكتمل</option>
-              </select>
-
-          </div>
-  </div>
-
-  <div class="task-body" id="body-5" style="display:none;">
-    
-          <div class="task-section deadline-row">
-        <label for="dl-5">الديدلاين</label>
-        <input id="dl-5" type="date" value="" onchange="saveDeadline(5, this)">
-      </div>
-    
-    
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">الفريق على التاسك</h4>
-        <span class="muted" style="font-size:11.5px;">المسؤول واحد، والمنفّذون أي عدد — كلهم بيشوفوا التاسك</span>
-      </div>
-
-      <div class="crew-list" id="crew-5">
-        
-        
-        
-                          
-                  <div class="muted crew-empty" id="crew-empty-5" style="font-size:12.5px;">مفيش منفّذين مضافين — المسؤول بس.</div>
-              </div>
-
-              <div class="crew-add">
-          
-          <select class="form-select" id="crew-sel-5">
-            <option value="">— اختر مين يتضاف للمهمة —</option>
-                          <optgroup label="موظفو الشركة">
-                                  <option value="u:1" data-initials="أو" data-role="الأونر">أونر النظام (الأونر)</option>
-                              </optgroup>
-                                      <optgroup label="الفريلانسرز">
-                                  <option value="f:1" data-initials="أم" data-role="مصور فيديو">أمير توفيق (مصور فيديو)</option>
-                                  <option value="f:2" data-initials="دي" data-role="مصممة جرافيك">دينا الشريف (مصممة جرافيك)</option>
-                                  <option value="f:4" data-initials="ري" data-role="كاتبة محتوى">ريم عادل (كاتبة محتوى)</option>
-                                  <option value="f:6" data-initials="سا" data-role="مديرة إعلانات ممولة">سارة يوسف (مديرة إعلانات ممولة)</option>
-                                  <option value="f:5" data-initials="طا" data-role="مصور فوتوغرافي">طارق منصور (مصور فوتوغرافي)</option>
-                                  <option value="f:3" data-initials="ما" data-role="مونتير">مازن سعيد (مونتير)</option>
-                              </optgroup>
-                      </select>
-          <button class="btn btn-outline btn-sm" onclick="addCrew(5)">إضافة للمهمة</button>
-        </div>
-          </div>
-
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">الخطوات الفرعية</h4>
-        <span class="steps-progress" id="prog-5">0 من 0 خطوات</span>
-      </div>
-      <p class="muted steps-note">
-        إنهاء كل الخطوات <b>ما بيقفلش المهمة تلقائيًا</b> — حالة المهمة بتتغيّر بإيدك من فوق.
-      </p>
-
-      <div class="step-list" id="steps-5">
-                  <div class="muted step-empty" id="steps-empty-5" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
-              </div>
-
-      <div class="step-add">
-        <input type="text" id="st-title-5" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(5)">
-        <input type="text" id="st-details-5" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(5)">
-        <button class="btn btn-outline btn-sm" onclick="addStep(5)">أضف خطوة</button>
-      </div>
-    </div>
-
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">ملفات الشغل</h4>
-        <span class="muted" style="font-size:11.5px;">ملفات داخلية بين الفريق — مش تسليمات العميل</span>
-      </div>
-
-      <div class="attach-list" id="attachments-5">
-                  <div class="muted attach-empty" id="attach-empty-5" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
-              </div>
-
-      <div class="attach-add">
-        <input type="file" id="file-5" class="attach-input" onchange="uploadFile(5)">
-        <label for="file-5" class="btn btn-outline btn-sm">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-          رفع ملف جديد
-        </label>
-        <span class="muted attach-hint">أقصى حجم 20 م.ب — صور، فيديو، مستندات، ملفات مضغوطة.</span>
-      </div>
-    </div>
-
-    
-    <div class="comments">
-      <h4 class="comments-title">التعليقات</h4>
-      <div class="comment-list" id="comments-5">
-                  <div class="muted comment-empty" id="empty-5" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
-              </div>
-      <div class="comment-form">
-        <input type="text" id="ci-5" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(5)">
-        <button class="btn btn-primary btn-sm" onclick="addComment(5)">إرسال</button>
-      </div>
-    </div>
-  </div>
-</div>
-          <div class="card task-card" id="task-2">
-  <div class="task-head" onclick="toggleTask(2)">
-    <button type="button" class="task-caret" id="caret-2" aria-label="توسيع">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
-
-    <div class="task-head-main">
-      <h3>تصميم البانرات</h3>
-      <div class="task-head-meta">
-                  <span class="dept-tag" style="--dept:#E8590C;">البرودكشن</span>
-                          <a href="projects-1.html" class="task-proj" onclick="event.stopPropagation();">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
-            حملة رمضان 2026
-            <span class="muted">· كافيه لومير</span>
-          </a>
-                              </div>
-    </div>
-
-    <div class="task-head-side" onclick="event.stopPropagation();">
-      <div class="task-owner">
-                  <span class="muted" style="font-size:12px;">— بدون مسؤول —</span>
-                      </div>
-            <select class="form-select status-select st-completed" onchange="updateStatus(2, this)" title="حالة المهمة">
-                  <option value="new" >جديد</option>
-                  <option value="in_progress" >جاري التنفيذ</option>
-                  <option value="review" >مراجعة</option>
-                  <option value="completed" selected>اكتمل</option>
-              </select>
-
-          </div>
-  </div>
-
-  <div class="task-body" id="body-2" style="display:none;">
-    
-          <div class="task-section deadline-row">
-        <label for="dl-2">الديدلاين</label>
-        <input id="dl-2" type="date" value="" onchange="saveDeadline(2, this)">
-      </div>
-    
-    
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">الفريق على التاسك</h4>
-        <span class="muted" style="font-size:11.5px;">المسؤول واحد، والمنفّذون أي عدد — كلهم بيشوفوا التاسك</span>
-      </div>
-
-      <div class="crew-list" id="crew-2">
-        
-        
-        
-                          
-                  <div class="muted crew-empty" id="crew-empty-2" style="font-size:12.5px;">مفيش منفّذين مضافين — المسؤول بس.</div>
-              </div>
-
-              <div class="crew-add">
-          
-          <select class="form-select" id="crew-sel-2">
-            <option value="">— اختر مين يتضاف للمهمة —</option>
-                          <optgroup label="موظفو الشركة">
-                                  <option value="u:1" data-initials="أو" data-role="الأونر">أونر النظام (الأونر)</option>
-                              </optgroup>
-                                      <optgroup label="الفريلانسرز">
-                                  <option value="f:1" data-initials="أم" data-role="مصور فيديو">أمير توفيق (مصور فيديو)</option>
-                                  <option value="f:2" data-initials="دي" data-role="مصممة جرافيك">دينا الشريف (مصممة جرافيك)</option>
-                                  <option value="f:4" data-initials="ري" data-role="كاتبة محتوى">ريم عادل (كاتبة محتوى)</option>
-                                  <option value="f:6" data-initials="سا" data-role="مديرة إعلانات ممولة">سارة يوسف (مديرة إعلانات ممولة)</option>
-                                  <option value="f:5" data-initials="طا" data-role="مصور فوتوغرافي">طارق منصور (مصور فوتوغرافي)</option>
-                                  <option value="f:3" data-initials="ما" data-role="مونتير">مازن سعيد (مونتير)</option>
-                              </optgroup>
-                      </select>
-          <button class="btn btn-outline btn-sm" onclick="addCrew(2)">إضافة للمهمة</button>
-        </div>
-          </div>
-
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">الخطوات الفرعية</h4>
-        <span class="steps-progress" id="prog-2">0 من 0 خطوات</span>
-      </div>
-      <p class="muted steps-note">
-        إنهاء كل الخطوات <b>ما بيقفلش المهمة تلقائيًا</b> — حالة المهمة بتتغيّر بإيدك من فوق.
-      </p>
-
-      <div class="step-list" id="steps-2">
-                  <div class="muted step-empty" id="steps-empty-2" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
-              </div>
-
-      <div class="step-add">
-        <input type="text" id="st-title-2" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(2)">
-        <input type="text" id="st-details-2" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(2)">
-        <button class="btn btn-outline btn-sm" onclick="addStep(2)">أضف خطوة</button>
-      </div>
-    </div>
-
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">ملفات الشغل</h4>
-        <span class="muted" style="font-size:11.5px;">ملفات داخلية بين الفريق — مش تسليمات العميل</span>
-      </div>
-
-      <div class="attach-list" id="attachments-2">
-                  <div class="muted attach-empty" id="attach-empty-2" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
-              </div>
-
-      <div class="attach-add">
-        <input type="file" id="file-2" class="attach-input" onchange="uploadFile(2)">
-        <label for="file-2" class="btn btn-outline btn-sm">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-          رفع ملف جديد
-        </label>
-        <span class="muted attach-hint">أقصى حجم 20 م.ب — صور، فيديو، مستندات، ملفات مضغوطة.</span>
-      </div>
-    </div>
-
-    
-    <div class="comments">
-      <h4 class="comments-title">التعليقات</h4>
-      <div class="comment-list" id="comments-2">
-                  <div class="muted comment-empty" id="empty-2" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
-              </div>
-      <div class="comment-form">
-        <input type="text" id="ci-2" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(2)">
-        <button class="btn btn-primary btn-sm" onclick="addComment(2)">إرسال</button>
+        <input type="text" id="ci-44" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(44)">
+        <button class="btn btn-primary btn-sm" onclick="addComment(44)">إرسال</button>
       </div>
     </div>
   </div>
@@ -935,32 +317,40 @@
     <div class="dept-group-head">
       <span class="dept-dot" style="background:#0EA5A5;"></span>
       <h3>برمجة</h3>
-      <span class="badge badge-gray">6 مهمة</span>
+      <span class="badge badge-gray">3 مهمة</span>
     </div>
 
-          <div class="card task-card" id="task-18">
-  <div class="task-head" onclick="toggleTask(18)">
-    <button type="button" class="task-caret" id="caret-18" aria-label="توسيع">
+          <div class="card task-card" id="task-49">
+  <div class="task-head" onclick="toggleTask(49)">
+    <button type="button" class="task-caret" id="caret-49" aria-label="توسيع">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
     </button>
 
     <div class="task-head-main">
-      <h3>تطبيق الهوية على السوشيال</h3>
+      <h3>عمل ويب سايب</h3>
       <div class="task-head-meta">
                   <span class="dept-tag" style="--dept:#0EA5A5;">برمجة</span>
-                          <a href="projects-6.html" class="task-proj" onclick="event.stopPropagation();">
+                          <a href="projects-32.html" class="task-proj" onclick="event.stopPropagation();">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
-            إعادة تصميم الهوية الرقمية
-            <span class="muted">· كليوباترا تكنولوجي</span>
+            ميديا لشركه سكرين ميديا
+            <span class="muted">· أحمد السيد حماد</span>
           </a>
-                              </div>
+                                  <span class="deadline-pill ">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            2026/09/02
+          </span>
+              </div>
     </div>
 
     <div class="task-head-side" onclick="event.stopPropagation();">
       <div class="task-owner">
-                  <span class="muted" style="font-size:12px;">— بدون مسؤول —</span>
-                      </div>
-            <select class="form-select status-select st-in_progress" onchange="updateStatus(18, this)" title="حالة المهمة">
+                  <span class="avatar-sm" title="المسؤول: Owner">Ow</span>
+          <span class="task-owner-name">Owner</span>
+                          <span class="crew-stack">
+                          <span class="avatar-sm" title="منفّذ: Owner">Ow</span>
+                      </span>
+              </div>
+            <select class="form-select status-select st-in_progress" onchange="updateStatus(49, this)" title="حالة المهمة">
                   <option value="new" >جديد</option>
                   <option value="in_progress" selected>جاري التنفيذ</option>
                   <option value="review" >مراجعة</option>
@@ -970,13 +360,17 @@
           </div>
   </div>
 
-  <div class="task-body" id="body-18" style="display:none;">
+  <div class="task-body" id="body-49" style="display:none;">
     
           <div class="task-section deadline-row">
-        <label for="dl-18">الديدلاين</label>
-        <input id="dl-18" type="date" value="" onchange="saveDeadline(18, this)">
+        <label for="dl-49">الديدلاين</label>
+        <input id="dl-49" type="date" value="2026-09-02" onchange="saveDeadline(49, this)">
       </div>
     
+          <div class="task-section">
+        <h4 class="task-section-title">الوصف</h4>
+        <p class="task-desc">الويب سايت هيبقي شوبيفاى</p>
+      </div>
     
     
     <div class="task-section">
@@ -985,20 +379,35 @@
         <span class="muted" style="font-size:11.5px;">المسؤول واحد، والمنفّذون أي عدد — كلهم بيشوفوا التاسك</span>
       </div>
 
-      <div class="crew-list" id="crew-18">
+      <div class="crew-list" id="crew-49">
+                  <div class="crew-row">
+            <span class="avatar-sm">Ow</span>
+            <span class="member-name">Owner</span>
+            <span class="badge badge-blue">المسؤول</span>
+            <span class="muted crew-role">الأونر</span>
+          </div>
         
+                  <div class="crew-row" id="crew-49-49">
+            <span class="avatar-sm">Ow</span>
+            <span class="member-name">Owner</span>
+            <span class="badge badge-gray">منفّذ</span>
+            <span class="muted crew-role">الأونر</span>
+                          <button class="ra-btn ra-danger" title="إزالة من التاسك" onclick="removeCrew(49, 49)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </button>
+                      </div>
         
         
                           
-                  <div class="muted crew-empty" id="crew-empty-18" style="font-size:12.5px;">مفيش منفّذين مضافين — المسؤول بس.</div>
               </div>
 
               <div class="crew-add">
           
-          <select class="form-select" id="crew-sel-18">
+          <select class="form-select" id="crew-sel-49">
             <option value="">— اختر مين يتضاف للمهمة —</option>
                           <optgroup label="موظفو الشركة">
-                                  <option value="u:1" data-initials="أو" data-role="الأونر">أونر النظام (الأونر)</option>
+                                  <option value="u:74" data-initials="De" data-role="الأونر">Owner (الأونر)</option>
+                                  <option value="u:49" data-initials="Ow" data-role="الأونر">Owner (الأونر)</option>
                               </optgroup>
                                       <optgroup label="الفريلانسرز">
                                   <option value="f:1" data-initials="أم" data-role="مصور فيديو">أمير توفيق (مصور فيديو)</option>
@@ -1009,7 +418,7 @@
                                   <option value="f:3" data-initials="ما" data-role="مونتير">مازن سعيد (مونتير)</option>
                               </optgroup>
                       </select>
-          <button class="btn btn-outline btn-sm" onclick="addCrew(18)">إضافة للمهمة</button>
+          <button class="btn btn-outline btn-sm" onclick="addCrew(49)">إضافة للمهمة</button>
         </div>
           </div>
 
@@ -1017,20 +426,20 @@
     <div class="task-section">
       <div class="task-section-head">
         <h4 class="task-section-title">الخطوات الفرعية</h4>
-        <span class="steps-progress" id="prog-18">0 من 0 خطوات</span>
+        <span class="steps-progress" id="prog-49">0 من 0 خطوات</span>
       </div>
       <p class="muted steps-note">
         إنهاء كل الخطوات <b>ما بيقفلش المهمة تلقائيًا</b> — حالة المهمة بتتغيّر بإيدك من فوق.
       </p>
 
-      <div class="step-list" id="steps-18">
-                  <div class="muted step-empty" id="steps-empty-18" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
+      <div class="step-list" id="steps-49">
+                  <div class="muted step-empty" id="steps-empty-49" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
               </div>
 
       <div class="step-add">
-        <input type="text" id="st-title-18" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(18)">
-        <input type="text" id="st-details-18" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(18)">
-        <button class="btn btn-outline btn-sm" onclick="addStep(18)">أضف خطوة</button>
+        <input type="text" id="st-title-49" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(49)">
+        <input type="text" id="st-details-49" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(49)">
+        <button class="btn btn-outline btn-sm" onclick="addStep(49)">أضف خطوة</button>
       </div>
     </div>
 
@@ -1041,13 +450,32 @@
         <span class="muted" style="font-size:11.5px;">ملفات داخلية بين الفريق — مش تسليمات العميل</span>
       </div>
 
-      <div class="attach-list" id="attachments-18">
-                  <div class="muted attach-empty" id="attach-empty-18" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
+      <div class="attach-list" id="attachments-49">
+                  <div class="attach-row" id="attach-3">
+            <span class="attach-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+            </span>
+            <a href="#" class="attach-name">images.jpg</a>
+            <span class="attach-meta muted">8.7 ك.ب · Owner · منذ 20 ساعة</span>
+            <button class="ra-btn ra-danger" title="حذف الملف" onclick="deleteAttachment(3)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg>
+            </button>
+          </div>
+                  <div class="attach-row" id="attach-4">
+            <span class="attach-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+            </span>
+            <a href="#" class="attach-name">Website Content-2026073013135080.pdf</a>
+            <span class="attach-meta muted">38.8 ك.ب · Owner · منذ 20 ساعة</span>
+            <button class="ra-btn ra-danger" title="حذف الملف" onclick="deleteAttachment(4)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg>
+            </button>
+          </div>
               </div>
 
       <div class="attach-add">
-        <input type="file" id="file-18" class="attach-input" onchange="uploadFile(18)">
-        <label for="file-18" class="btn btn-outline btn-sm">
+        <input type="file" id="file-49" class="attach-input" onchange="uploadFile(49)">
+        <label for="file-49" class="btn btn-outline btn-sm">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
           رفع ملف جديد
         </label>
@@ -1058,53 +486,60 @@
     
     <div class="comments">
       <h4 class="comments-title">التعليقات</h4>
-      <div class="comment-list" id="comments-18">
-                  <div class="muted comment-empty" id="empty-18" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
+      <div class="comment-list" id="comments-49">
+                  <div class="muted comment-empty" id="empty-49" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
               </div>
       <div class="comment-form">
-        <input type="text" id="ci-18" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(18)">
-        <button class="btn btn-primary btn-sm" onclick="addComment(18)">إرسال</button>
+        <input type="text" id="ci-49" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(49)">
+        <button class="btn btn-primary btn-sm" onclick="addComment(49)">إرسال</button>
       </div>
     </div>
   </div>
 </div>
-          <div class="card task-card" id="task-15">
-  <div class="task-head" onclick="toggleTask(15)">
-    <button type="button" class="task-caret" id="caret-15" aria-label="توسيع">
+          <div class="card task-card" id="task-48">
+  <div class="task-head" onclick="toggleTask(48)">
+    <button type="button" class="task-caret" id="caret-48" aria-label="توسيع">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
     </button>
 
     <div class="task-head-main">
-      <h3>تحديد تاريخ التصوير</h3>
+      <h3>تطوير موقع</h3>
       <div class="task-head-meta">
                   <span class="dept-tag" style="--dept:#0EA5A5;">برمجة</span>
-                          <a href="projects-5.html" class="task-proj" onclick="event.stopPropagation();">
+                          <a href="projects-34.html" class="task-proj" onclick="event.stopPropagation();">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
-            كامبين افتتاح فرع جديد
-            <span class="muted">· مطاعم البيت الشامي</span>
+            مشروع جديد - محمد عبدالرحمن
+            <span class="muted">· محمد عبدالرحمن</span>
           </a>
-                              </div>
+                                  <span class="deadline-pill ">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            2026/09/11
+          </span>
+              </div>
     </div>
 
     <div class="task-head-side" onclick="event.stopPropagation();">
       <div class="task-owner">
                   <span class="muted" style="font-size:12px;">— بدون مسؤول —</span>
                       </div>
-            <select class="form-select status-select st-in_progress" onchange="updateStatus(15, this)" title="حالة المهمة">
+            <select class="form-select status-select st-review" onchange="updateStatus(48, this)" title="حالة المهمة">
                   <option value="new" >جديد</option>
-                  <option value="in_progress" selected>جاري التنفيذ</option>
-                  <option value="review" >مراجعة</option>
+                  <option value="in_progress" >جاري التنفيذ</option>
+                  <option value="review" selected>مراجعة</option>
                   <option value="completed" >اكتمل</option>
               </select>
 
+              <button class="btn btn-outline btn-sm" onclick="openReturnTask(48)" title="إرجاع التاسك لموظف">
+          إرجاع
+        </button>
           </div>
   </div>
 
-  <div class="task-body" id="body-15" style="display:none;">
+  <div class="task-body" id="body-48" style="display:none;">
     
           <div class="task-section deadline-row">
-        <label for="dl-15">الديدلاين</label>
-        <input id="dl-15" type="date" value="" onchange="saveDeadline(15, this)">
+        <label for="dl-48">الديدلاين</label>
+        <input id="dl-48" type="date" value="2026-09-11" onchange="saveDeadline(48, this)">
       </div>
     
     
@@ -1115,20 +550,21 @@
         <span class="muted" style="font-size:11.5px;">المسؤول واحد، والمنفّذون أي عدد — كلهم بيشوفوا التاسك</span>
       </div>
 
-      <div class="crew-list" id="crew-15">
+      <div class="crew-list" id="crew-48">
         
         
         
                           
-                  <div class="muted crew-empty" id="crew-empty-15" style="font-size:12.5px;">مفيش منفّذين مضافين — المسؤول بس.</div>
+                  <div class="muted crew-empty" id="crew-empty-48" style="font-size:12.5px;">مفيش منفّذين مضافين — المسؤول بس.</div>
               </div>
 
               <div class="crew-add">
           
-          <select class="form-select" id="crew-sel-15">
+          <select class="form-select" id="crew-sel-48">
             <option value="">— اختر مين يتضاف للمهمة —</option>
                           <optgroup label="موظفو الشركة">
-                                  <option value="u:1" data-initials="أو" data-role="الأونر">أونر النظام (الأونر)</option>
+                                  <option value="u:74" data-initials="De" data-role="الأونر">Owner (الأونر)</option>
+                                  <option value="u:49" data-initials="Ow" data-role="الأونر">Owner (الأونر)</option>
                               </optgroup>
                                       <optgroup label="الفريلانسرز">
                                   <option value="f:1" data-initials="أم" data-role="مصور فيديو">أمير توفيق (مصور فيديو)</option>
@@ -1139,7 +575,7 @@
                                   <option value="f:3" data-initials="ما" data-role="مونتير">مازن سعيد (مونتير)</option>
                               </optgroup>
                       </select>
-          <button class="btn btn-outline btn-sm" onclick="addCrew(15)">إضافة للمهمة</button>
+          <button class="btn btn-outline btn-sm" onclick="addCrew(48)">إضافة للمهمة</button>
         </div>
           </div>
 
@@ -1147,20 +583,20 @@
     <div class="task-section">
       <div class="task-section-head">
         <h4 class="task-section-title">الخطوات الفرعية</h4>
-        <span class="steps-progress" id="prog-15">0 من 0 خطوات</span>
+        <span class="steps-progress" id="prog-48">0 من 0 خطوات</span>
       </div>
       <p class="muted steps-note">
         إنهاء كل الخطوات <b>ما بيقفلش المهمة تلقائيًا</b> — حالة المهمة بتتغيّر بإيدك من فوق.
       </p>
 
-      <div class="step-list" id="steps-15">
-                  <div class="muted step-empty" id="steps-empty-15" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
+      <div class="step-list" id="steps-48">
+                  <div class="muted step-empty" id="steps-empty-48" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
               </div>
 
       <div class="step-add">
-        <input type="text" id="st-title-15" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(15)">
-        <input type="text" id="st-details-15" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(15)">
-        <button class="btn btn-outline btn-sm" onclick="addStep(15)">أضف خطوة</button>
+        <input type="text" id="st-title-48" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(48)">
+        <input type="text" id="st-details-48" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(48)">
+        <button class="btn btn-outline btn-sm" onclick="addStep(48)">أضف خطوة</button>
       </div>
     </div>
 
@@ -1171,13 +607,13 @@
         <span class="muted" style="font-size:11.5px;">ملفات داخلية بين الفريق — مش تسليمات العميل</span>
       </div>
 
-      <div class="attach-list" id="attachments-15">
-                  <div class="muted attach-empty" id="attach-empty-15" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
+      <div class="attach-list" id="attachments-48">
+                  <div class="muted attach-empty" id="attach-empty-48" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
               </div>
 
       <div class="attach-add">
-        <input type="file" id="file-15" class="attach-input" onchange="uploadFile(15)">
-        <label for="file-15" class="btn btn-outline btn-sm">
+        <input type="file" id="file-48" class="attach-input" onchange="uploadFile(48)">
+        <label for="file-48" class="btn btn-outline btn-sm">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
           رفع ملف جديد
         </label>
@@ -1188,39 +624,43 @@
     
     <div class="comments">
       <h4 class="comments-title">التعليقات</h4>
-      <div class="comment-list" id="comments-15">
-                  <div class="muted comment-empty" id="empty-15" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
+      <div class="comment-list" id="comments-48">
+                  <div class="muted comment-empty" id="empty-48" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
               </div>
       <div class="comment-form">
-        <input type="text" id="ci-15" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(15)">
-        <button class="btn btn-primary btn-sm" onclick="addComment(15)">إرسال</button>
+        <input type="text" id="ci-48" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(48)">
+        <button class="btn btn-primary btn-sm" onclick="addComment(48)">إرسال</button>
       </div>
     </div>
   </div>
 </div>
-          <div class="card task-card" id="task-12">
-  <div class="task-head" onclick="toggleTask(12)">
-    <button type="button" class="task-caret" id="caret-12" aria-label="توسيع">
+          <div class="card task-card" id="task-45">
+  <div class="task-head" onclick="toggleTask(45)">
+    <button type="button" class="task-caret" id="caret-45" aria-label="توسيع">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
     </button>
 
     <div class="task-head-main">
-      <h3>تصوير 4 ريلز</h3>
+      <h3>عمل سيستم</h3>
       <div class="task-head-meta">
                   <span class="dept-tag" style="--dept:#0EA5A5;">برمجة</span>
-                          <a href="projects-4.html" class="task-proj" onclick="event.stopPropagation();">
+                          <a href="projects-32.html" class="task-proj" onclick="event.stopPropagation();">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
-            محتوى شهري - فاست فيت
-            <span class="muted">· فاست فيت</span>
+            ميديا لشركه سكرين ميديا
+            <span class="muted">· أحمد السيد حماد</span>
           </a>
-                              </div>
+                                  <span class="deadline-pill ">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            2026/08/21
+          </span>
+              </div>
     </div>
 
     <div class="task-head-side" onclick="event.stopPropagation();">
       <div class="task-owner">
                   <span class="muted" style="font-size:12px;">— بدون مسؤول —</span>
                       </div>
-            <select class="form-select status-select st-completed" onchange="updateStatus(12, this)" title="حالة المهمة">
+            <select class="form-select status-select st-completed" onchange="updateStatus(45, this)" title="حالة المهمة">
                   <option value="new" >جديد</option>
                   <option value="in_progress" >جاري التنفيذ</option>
                   <option value="review" >مراجعة</option>
@@ -1230,11 +670,11 @@
           </div>
   </div>
 
-  <div class="task-body" id="body-12" style="display:none;">
+  <div class="task-body" id="body-45" style="display:none;">
     
           <div class="task-section deadline-row">
-        <label for="dl-12">الديدلاين</label>
-        <input id="dl-12" type="date" value="" onchange="saveDeadline(12, this)">
+        <label for="dl-45">الديدلاين</label>
+        <input id="dl-45" type="date" value="2026-08-21" onchange="saveDeadline(45, this)">
       </div>
     
     
@@ -1245,20 +685,21 @@
         <span class="muted" style="font-size:11.5px;">المسؤول واحد، والمنفّذون أي عدد — كلهم بيشوفوا التاسك</span>
       </div>
 
-      <div class="crew-list" id="crew-12">
+      <div class="crew-list" id="crew-45">
         
         
         
                           
-                  <div class="muted crew-empty" id="crew-empty-12" style="font-size:12.5px;">مفيش منفّذين مضافين — المسؤول بس.</div>
+                  <div class="muted crew-empty" id="crew-empty-45" style="font-size:12.5px;">مفيش منفّذين مضافين — المسؤول بس.</div>
               </div>
 
               <div class="crew-add">
           
-          <select class="form-select" id="crew-sel-12">
+          <select class="form-select" id="crew-sel-45">
             <option value="">— اختر مين يتضاف للمهمة —</option>
                           <optgroup label="موظفو الشركة">
-                                  <option value="u:1" data-initials="أو" data-role="الأونر">أونر النظام (الأونر)</option>
+                                  <option value="u:74" data-initials="De" data-role="الأونر">Owner (الأونر)</option>
+                                  <option value="u:49" data-initials="Ow" data-role="الأونر">Owner (الأونر)</option>
                               </optgroup>
                                       <optgroup label="الفريلانسرز">
                                   <option value="f:1" data-initials="أم" data-role="مصور فيديو">أمير توفيق (مصور فيديو)</option>
@@ -1269,7 +710,7 @@
                                   <option value="f:3" data-initials="ما" data-role="مونتير">مازن سعيد (مونتير)</option>
                               </optgroup>
                       </select>
-          <button class="btn btn-outline btn-sm" onclick="addCrew(12)">إضافة للمهمة</button>
+          <button class="btn btn-outline btn-sm" onclick="addCrew(45)">إضافة للمهمة</button>
         </div>
           </div>
 
@@ -1277,20 +718,20 @@
     <div class="task-section">
       <div class="task-section-head">
         <h4 class="task-section-title">الخطوات الفرعية</h4>
-        <span class="steps-progress" id="prog-12">0 من 0 خطوات</span>
+        <span class="steps-progress" id="prog-45">0 من 0 خطوات</span>
       </div>
       <p class="muted steps-note">
         إنهاء كل الخطوات <b>ما بيقفلش المهمة تلقائيًا</b> — حالة المهمة بتتغيّر بإيدك من فوق.
       </p>
 
-      <div class="step-list" id="steps-12">
-                  <div class="muted step-empty" id="steps-empty-12" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
+      <div class="step-list" id="steps-45">
+                  <div class="muted step-empty" id="steps-empty-45" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
               </div>
 
       <div class="step-add">
-        <input type="text" id="st-title-12" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(12)">
-        <input type="text" id="st-details-12" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(12)">
-        <button class="btn btn-outline btn-sm" onclick="addStep(12)">أضف خطوة</button>
+        <input type="text" id="st-title-45" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(45)">
+        <input type="text" id="st-details-45" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(45)">
+        <button class="btn btn-outline btn-sm" onclick="addStep(45)">أضف خطوة</button>
       </div>
     </div>
 
@@ -1301,13 +742,13 @@
         <span class="muted" style="font-size:11.5px;">ملفات داخلية بين الفريق — مش تسليمات العميل</span>
       </div>
 
-      <div class="attach-list" id="attachments-12">
-                  <div class="muted attach-empty" id="attach-empty-12" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
+      <div class="attach-list" id="attachments-45">
+                  <div class="muted attach-empty" id="attach-empty-45" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
               </div>
 
       <div class="attach-add">
-        <input type="file" id="file-12" class="attach-input" onchange="uploadFile(12)">
-        <label for="file-12" class="btn btn-outline btn-sm">
+        <input type="file" id="file-45" class="attach-input" onchange="uploadFile(45)">
+        <label for="file-45" class="btn btn-outline btn-sm">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
           رفع ملف جديد
         </label>
@@ -1318,410 +759,12 @@
     
     <div class="comments">
       <h4 class="comments-title">التعليقات</h4>
-      <div class="comment-list" id="comments-12">
-                  <div class="muted comment-empty" id="empty-12" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
+      <div class="comment-list" id="comments-45">
+                  <div class="muted comment-empty" id="empty-45" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
               </div>
       <div class="comment-form">
-        <input type="text" id="ci-12" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(12)">
-        <button class="btn btn-primary btn-sm" onclick="addComment(12)">إرسال</button>
-      </div>
-    </div>
-  </div>
-</div>
-          <div class="card task-card" id="task-9">
-  <div class="task-head" onclick="toggleTask(9)">
-    <button type="button" class="task-caret" id="caret-9" aria-label="توسيع">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
-
-    <div class="task-head-main">
-      <h3>تصوير درون للموقع</h3>
-      <div class="task-head-meta">
-                  <span class="dept-tag" style="--dept:#0EA5A5;">برمجة</span>
-                          <a href="projects-3.html" class="task-proj" onclick="event.stopPropagation();">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
-            فيديو تسويقي - مشروع النخيل
-            <span class="muted">· مجموعة نايل ريزيدنس</span>
-          </a>
-                              </div>
-    </div>
-
-    <div class="task-head-side" onclick="event.stopPropagation();">
-      <div class="task-owner">
-                  <span class="muted" style="font-size:12px;">— بدون مسؤول —</span>
-                      </div>
-            <select class="form-select status-select st-completed" onchange="updateStatus(9, this)" title="حالة المهمة">
-                  <option value="new" >جديد</option>
-                  <option value="in_progress" >جاري التنفيذ</option>
-                  <option value="review" >مراجعة</option>
-                  <option value="completed" selected>اكتمل</option>
-              </select>
-
-          </div>
-  </div>
-
-  <div class="task-body" id="body-9" style="display:none;">
-    
-          <div class="task-section deadline-row">
-        <label for="dl-9">الديدلاين</label>
-        <input id="dl-9" type="date" value="" onchange="saveDeadline(9, this)">
-      </div>
-    
-    
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">الفريق على التاسك</h4>
-        <span class="muted" style="font-size:11.5px;">المسؤول واحد، والمنفّذون أي عدد — كلهم بيشوفوا التاسك</span>
-      </div>
-
-      <div class="crew-list" id="crew-9">
-        
-        
-        
-                          
-                  <div class="muted crew-empty" id="crew-empty-9" style="font-size:12.5px;">مفيش منفّذين مضافين — المسؤول بس.</div>
-              </div>
-
-              <div class="crew-add">
-          
-          <select class="form-select" id="crew-sel-9">
-            <option value="">— اختر مين يتضاف للمهمة —</option>
-                          <optgroup label="موظفو الشركة">
-                                  <option value="u:1" data-initials="أو" data-role="الأونر">أونر النظام (الأونر)</option>
-                              </optgroup>
-                                      <optgroup label="الفريلانسرز">
-                                  <option value="f:1" data-initials="أم" data-role="مصور فيديو">أمير توفيق (مصور فيديو)</option>
-                                  <option value="f:2" data-initials="دي" data-role="مصممة جرافيك">دينا الشريف (مصممة جرافيك)</option>
-                                  <option value="f:4" data-initials="ري" data-role="كاتبة محتوى">ريم عادل (كاتبة محتوى)</option>
-                                  <option value="f:6" data-initials="سا" data-role="مديرة إعلانات ممولة">سارة يوسف (مديرة إعلانات ممولة)</option>
-                                  <option value="f:5" data-initials="طا" data-role="مصور فوتوغرافي">طارق منصور (مصور فوتوغرافي)</option>
-                                  <option value="f:3" data-initials="ما" data-role="مونتير">مازن سعيد (مونتير)</option>
-                              </optgroup>
-                      </select>
-          <button class="btn btn-outline btn-sm" onclick="addCrew(9)">إضافة للمهمة</button>
-        </div>
-          </div>
-
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">الخطوات الفرعية</h4>
-        <span class="steps-progress" id="prog-9">0 من 0 خطوات</span>
-      </div>
-      <p class="muted steps-note">
-        إنهاء كل الخطوات <b>ما بيقفلش المهمة تلقائيًا</b> — حالة المهمة بتتغيّر بإيدك من فوق.
-      </p>
-
-      <div class="step-list" id="steps-9">
-                  <div class="muted step-empty" id="steps-empty-9" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
-              </div>
-
-      <div class="step-add">
-        <input type="text" id="st-title-9" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(9)">
-        <input type="text" id="st-details-9" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(9)">
-        <button class="btn btn-outline btn-sm" onclick="addStep(9)">أضف خطوة</button>
-      </div>
-    </div>
-
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">ملفات الشغل</h4>
-        <span class="muted" style="font-size:11.5px;">ملفات داخلية بين الفريق — مش تسليمات العميل</span>
-      </div>
-
-      <div class="attach-list" id="attachments-9">
-                  <div class="muted attach-empty" id="attach-empty-9" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
-              </div>
-
-      <div class="attach-add">
-        <input type="file" id="file-9" class="attach-input" onchange="uploadFile(9)">
-        <label for="file-9" class="btn btn-outline btn-sm">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-          رفع ملف جديد
-        </label>
-        <span class="muted attach-hint">أقصى حجم 20 م.ب — صور، فيديو، مستندات، ملفات مضغوطة.</span>
-      </div>
-    </div>
-
-    
-    <div class="comments">
-      <h4 class="comments-title">التعليقات</h4>
-      <div class="comment-list" id="comments-9">
-                  <div class="muted comment-empty" id="empty-9" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
-              </div>
-      <div class="comment-form">
-        <input type="text" id="ci-9" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(9)">
-        <button class="btn btn-primary btn-sm" onclick="addComment(9)">إرسال</button>
-      </div>
-    </div>
-  </div>
-</div>
-          <div class="card task-card" id="task-6">
-  <div class="task-head" onclick="toggleTask(6)">
-    <button type="button" class="task-caret" id="caret-6" aria-label="توسيع">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
-
-    <div class="task-head-main">
-      <h3>تجهيز خطة الإعلانات</h3>
-      <div class="task-head-meta">
-                  <span class="dept-tag" style="--dept:#0EA5A5;">برمجة</span>
-                          <a href="projects-2.html" class="task-proj" onclick="event.stopPropagation();">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
-            إطلاق منتج بطاقة أفانتي بلاك
-            <span class="muted">· بنك أفانتي</span>
-          </a>
-                              </div>
-    </div>
-
-    <div class="task-head-side" onclick="event.stopPropagation();">
-      <div class="task-owner">
-                  <span class="muted" style="font-size:12px;">— بدون مسؤول —</span>
-                      </div>
-            <select class="form-select status-select st-in_progress" onchange="updateStatus(6, this)" title="حالة المهمة">
-                  <option value="new" >جديد</option>
-                  <option value="in_progress" selected>جاري التنفيذ</option>
-                  <option value="review" >مراجعة</option>
-                  <option value="completed" >اكتمل</option>
-              </select>
-
-          </div>
-  </div>
-
-  <div class="task-body" id="body-6" style="display:none;">
-    
-          <div class="task-section deadline-row">
-        <label for="dl-6">الديدلاين</label>
-        <input id="dl-6" type="date" value="" onchange="saveDeadline(6, this)">
-      </div>
-    
-    
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">الفريق على التاسك</h4>
-        <span class="muted" style="font-size:11.5px;">المسؤول واحد، والمنفّذون أي عدد — كلهم بيشوفوا التاسك</span>
-      </div>
-
-      <div class="crew-list" id="crew-6">
-        
-        
-        
-                          
-                  <div class="muted crew-empty" id="crew-empty-6" style="font-size:12.5px;">مفيش منفّذين مضافين — المسؤول بس.</div>
-              </div>
-
-              <div class="crew-add">
-          
-          <select class="form-select" id="crew-sel-6">
-            <option value="">— اختر مين يتضاف للمهمة —</option>
-                          <optgroup label="موظفو الشركة">
-                                  <option value="u:1" data-initials="أو" data-role="الأونر">أونر النظام (الأونر)</option>
-                              </optgroup>
-                                      <optgroup label="الفريلانسرز">
-                                  <option value="f:1" data-initials="أم" data-role="مصور فيديو">أمير توفيق (مصور فيديو)</option>
-                                  <option value="f:2" data-initials="دي" data-role="مصممة جرافيك">دينا الشريف (مصممة جرافيك)</option>
-                                  <option value="f:4" data-initials="ري" data-role="كاتبة محتوى">ريم عادل (كاتبة محتوى)</option>
-                                  <option value="f:6" data-initials="سا" data-role="مديرة إعلانات ممولة">سارة يوسف (مديرة إعلانات ممولة)</option>
-                                  <option value="f:5" data-initials="طا" data-role="مصور فوتوغرافي">طارق منصور (مصور فوتوغرافي)</option>
-                                  <option value="f:3" data-initials="ما" data-role="مونتير">مازن سعيد (مونتير)</option>
-                              </optgroup>
-                      </select>
-          <button class="btn btn-outline btn-sm" onclick="addCrew(6)">إضافة للمهمة</button>
-        </div>
-          </div>
-
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">الخطوات الفرعية</h4>
-        <span class="steps-progress" id="prog-6">0 من 0 خطوات</span>
-      </div>
-      <p class="muted steps-note">
-        إنهاء كل الخطوات <b>ما بيقفلش المهمة تلقائيًا</b> — حالة المهمة بتتغيّر بإيدك من فوق.
-      </p>
-
-      <div class="step-list" id="steps-6">
-                  <div class="muted step-empty" id="steps-empty-6" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
-              </div>
-
-      <div class="step-add">
-        <input type="text" id="st-title-6" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(6)">
-        <input type="text" id="st-details-6" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(6)">
-        <button class="btn btn-outline btn-sm" onclick="addStep(6)">أضف خطوة</button>
-      </div>
-    </div>
-
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">ملفات الشغل</h4>
-        <span class="muted" style="font-size:11.5px;">ملفات داخلية بين الفريق — مش تسليمات العميل</span>
-      </div>
-
-      <div class="attach-list" id="attachments-6">
-                  <div class="muted attach-empty" id="attach-empty-6" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
-              </div>
-
-      <div class="attach-add">
-        <input type="file" id="file-6" class="attach-input" onchange="uploadFile(6)">
-        <label for="file-6" class="btn btn-outline btn-sm">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-          رفع ملف جديد
-        </label>
-        <span class="muted attach-hint">أقصى حجم 20 م.ب — صور، فيديو، مستندات، ملفات مضغوطة.</span>
-      </div>
-    </div>
-
-    
-    <div class="comments">
-      <h4 class="comments-title">التعليقات</h4>
-      <div class="comment-list" id="comments-6">
-                  <div class="muted comment-empty" id="empty-6" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
-              </div>
-      <div class="comment-form">
-        <input type="text" id="ci-6" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(6)">
-        <button class="btn btn-primary btn-sm" onclick="addComment(6)">إرسال</button>
-      </div>
-    </div>
-  </div>
-</div>
-          <div class="card task-card" id="task-3">
-  <div class="task-head" onclick="toggleTask(3)">
-    <button type="button" class="task-caret" id="caret-3" aria-label="توسيع">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
-
-    <div class="task-head-main">
-      <h3>اعتماد العميل على السكريبت</h3>
-      <div class="task-head-meta">
-                  <span class="dept-tag" style="--dept:#0EA5A5;">برمجة</span>
-                          <a href="projects-1.html" class="task-proj" onclick="event.stopPropagation();">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
-            حملة رمضان 2026
-            <span class="muted">· كافيه لومير</span>
-          </a>
-                              </div>
-    </div>
-
-    <div class="task-head-side" onclick="event.stopPropagation();">
-      <div class="task-owner">
-                  <span class="muted" style="font-size:12px;">— بدون مسؤول —</span>
-                      </div>
-            <select class="form-select status-select st-in_progress" onchange="updateStatus(3, this)" title="حالة المهمة">
-                  <option value="new" >جديد</option>
-                  <option value="in_progress" selected>جاري التنفيذ</option>
-                  <option value="review" >مراجعة</option>
-                  <option value="completed" >اكتمل</option>
-              </select>
-
-          </div>
-  </div>
-
-  <div class="task-body" id="body-3" style="display:none;">
-    
-          <div class="task-section deadline-row">
-        <label for="dl-3">الديدلاين</label>
-        <input id="dl-3" type="date" value="" onchange="saveDeadline(3, this)">
-      </div>
-    
-    
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">الفريق على التاسك</h4>
-        <span class="muted" style="font-size:11.5px;">المسؤول واحد، والمنفّذون أي عدد — كلهم بيشوفوا التاسك</span>
-      </div>
-
-      <div class="crew-list" id="crew-3">
-        
-        
-        
-                              <div class="crew-row" id="crewfl-3-1">
-              <span class="avatar-sm is-freelancer">أم</span>
-              <span class="member-name">أمير توفيق</span>
-              <span class="badge badge-amber">فريلانسر</span>
-              <span class="muted crew-role">مصور فيديو</span>
-                              <button class="ra-btn ra-danger" title="إزالة من التاسك" onclick="removeFreelancer(3, 1)">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                </button>
-                          </div>
-                  
-              </div>
-
-              <div class="crew-add">
-          
-          <select class="form-select" id="crew-sel-3">
-            <option value="">— اختر مين يتضاف للمهمة —</option>
-                          <optgroup label="موظفو الشركة">
-                                  <option value="u:1" data-initials="أو" data-role="الأونر">أونر النظام (الأونر)</option>
-                              </optgroup>
-                                      <optgroup label="الفريلانسرز">
-                                  <option value="f:1" data-initials="أم" data-role="مصور فيديو">أمير توفيق (مصور فيديو)</option>
-                                  <option value="f:2" data-initials="دي" data-role="مصممة جرافيك">دينا الشريف (مصممة جرافيك)</option>
-                                  <option value="f:4" data-initials="ري" data-role="كاتبة محتوى">ريم عادل (كاتبة محتوى)</option>
-                                  <option value="f:6" data-initials="سا" data-role="مديرة إعلانات ممولة">سارة يوسف (مديرة إعلانات ممولة)</option>
-                                  <option value="f:5" data-initials="طا" data-role="مصور فوتوغرافي">طارق منصور (مصور فوتوغرافي)</option>
-                                  <option value="f:3" data-initials="ما" data-role="مونتير">مازن سعيد (مونتير)</option>
-                              </optgroup>
-                      </select>
-          <button class="btn btn-outline btn-sm" onclick="addCrew(3)">إضافة للمهمة</button>
-        </div>
-          </div>
-
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">الخطوات الفرعية</h4>
-        <span class="steps-progress" id="prog-3">0 من 0 خطوات</span>
-      </div>
-      <p class="muted steps-note">
-        إنهاء كل الخطوات <b>ما بيقفلش المهمة تلقائيًا</b> — حالة المهمة بتتغيّر بإيدك من فوق.
-      </p>
-
-      <div class="step-list" id="steps-3">
-                  <div class="muted step-empty" id="steps-empty-3" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
-              </div>
-
-      <div class="step-add">
-        <input type="text" id="st-title-3" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(3)">
-        <input type="text" id="st-details-3" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(3)">
-        <button class="btn btn-outline btn-sm" onclick="addStep(3)">أضف خطوة</button>
-      </div>
-    </div>
-
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">ملفات الشغل</h4>
-        <span class="muted" style="font-size:11.5px;">ملفات داخلية بين الفريق — مش تسليمات العميل</span>
-      </div>
-
-      <div class="attach-list" id="attachments-3">
-                  <div class="muted attach-empty" id="attach-empty-3" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
-              </div>
-
-      <div class="attach-add">
-        <input type="file" id="file-3" class="attach-input" onchange="uploadFile(3)">
-        <label for="file-3" class="btn btn-outline btn-sm">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-          رفع ملف جديد
-        </label>
-        <span class="muted attach-hint">أقصى حجم 20 م.ب — صور، فيديو، مستندات، ملفات مضغوطة.</span>
-      </div>
-    </div>
-
-    
-    <div class="comments">
-      <h4 class="comments-title">التعليقات</h4>
-      <div class="comment-list" id="comments-3">
-                  <div class="muted comment-empty" id="empty-3" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
-              </div>
-      <div class="comment-form">
-        <input type="text" id="ci-3" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(3)">
-        <button class="btn btn-primary btn-sm" onclick="addComment(3)">إرسال</button>
+        <input type="text" id="ci-45" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(45)">
+        <button class="btn btn-primary btn-sm" onclick="addComment(45)">إرسال</button>
       </div>
     </div>
   </div>
@@ -1730,166 +773,40 @@
   
   <div class="dept-group">
     <div class="dept-group-head">
-      <span class="dept-dot" style="background:#1B4DFF;"></span>
+      <span class="dept-dot" style="background:#D2921F;"></span>
       <h3>ديجيتال ماركتينج</h3>
-      <span class="badge badge-gray">6 مهمة</span>
+      <span class="badge badge-gray">3 مهمة</span>
     </div>
 
-          <div class="card task-card" id="task-16">
-  <div class="task-head" onclick="toggleTask(16)">
-    <button type="button" class="task-caret" id="caret-16" aria-label="توسيع">
+          <div class="card task-card" id="task-47">
+  <div class="task-head" onclick="toggleTask(47)">
+    <button type="button" class="task-caret" id="caret-47" aria-label="توسيع">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
     </button>
 
     <div class="task-head-main">
-      <h3>تصميم اللوجو الجديد</h3>
+      <h3>براندينج</h3>
       <div class="task-head-meta">
-                  <span class="dept-tag" style="--dept:#1B4DFF;">ديجيتال ماركتينج</span>
-                          <a href="projects-6.html" class="task-proj" onclick="event.stopPropagation();">
+                  <span class="dept-tag" style="--dept:#D2921F;">ديجيتال ماركتينج</span>
+                          <a href="projects-34.html" class="task-proj" onclick="event.stopPropagation();">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
-            إعادة تصميم الهوية الرقمية
-            <span class="muted">· كليوباترا تكنولوجي</span>
+            مشروع جديد - محمد عبدالرحمن
+            <span class="muted">· محمد عبدالرحمن</span>
           </a>
-                              </div>
+                                  <span class="deadline-pill ">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            2026/09/11
+          </span>
+              </div>
     </div>
 
     <div class="task-head-side" onclick="event.stopPropagation();">
       <div class="task-owner">
                   <span class="muted" style="font-size:12px;">— بدون مسؤول —</span>
                       </div>
-            <select class="form-select status-select st-completed" onchange="updateStatus(16, this)" title="حالة المهمة">
-                  <option value="new" >جديد</option>
+            <select class="form-select status-select st-new" onchange="updateStatus(47, this)" title="حالة المهمة">
+                  <option value="new" selected>جديد</option>
                   <option value="in_progress" >جاري التنفيذ</option>
-                  <option value="review" >مراجعة</option>
-                  <option value="completed" selected>اكتمل</option>
-              </select>
-
-          </div>
-  </div>
-
-  <div class="task-body" id="body-16" style="display:none;">
-    
-          <div class="task-section deadline-row">
-        <label for="dl-16">الديدلاين</label>
-        <input id="dl-16" type="date" value="" onchange="saveDeadline(16, this)">
-      </div>
-    
-    
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">الفريق على التاسك</h4>
-        <span class="muted" style="font-size:11.5px;">المسؤول واحد، والمنفّذون أي عدد — كلهم بيشوفوا التاسك</span>
-      </div>
-
-      <div class="crew-list" id="crew-16">
-        
-        
-        
-                          
-                  <div class="muted crew-empty" id="crew-empty-16" style="font-size:12.5px;">مفيش منفّذين مضافين — المسؤول بس.</div>
-              </div>
-
-              <div class="crew-add">
-          
-          <select class="form-select" id="crew-sel-16">
-            <option value="">— اختر مين يتضاف للمهمة —</option>
-                          <optgroup label="موظفو الشركة">
-                                  <option value="u:1" data-initials="أو" data-role="الأونر">أونر النظام (الأونر)</option>
-                              </optgroup>
-                                      <optgroup label="الفريلانسرز">
-                                  <option value="f:1" data-initials="أم" data-role="مصور فيديو">أمير توفيق (مصور فيديو)</option>
-                                  <option value="f:2" data-initials="دي" data-role="مصممة جرافيك">دينا الشريف (مصممة جرافيك)</option>
-                                  <option value="f:4" data-initials="ري" data-role="كاتبة محتوى">ريم عادل (كاتبة محتوى)</option>
-                                  <option value="f:6" data-initials="سا" data-role="مديرة إعلانات ممولة">سارة يوسف (مديرة إعلانات ممولة)</option>
-                                  <option value="f:5" data-initials="طا" data-role="مصور فوتوغرافي">طارق منصور (مصور فوتوغرافي)</option>
-                                  <option value="f:3" data-initials="ما" data-role="مونتير">مازن سعيد (مونتير)</option>
-                              </optgroup>
-                      </select>
-          <button class="btn btn-outline btn-sm" onclick="addCrew(16)">إضافة للمهمة</button>
-        </div>
-          </div>
-
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">الخطوات الفرعية</h4>
-        <span class="steps-progress" id="prog-16">0 من 0 خطوات</span>
-      </div>
-      <p class="muted steps-note">
-        إنهاء كل الخطوات <b>ما بيقفلش المهمة تلقائيًا</b> — حالة المهمة بتتغيّر بإيدك من فوق.
-      </p>
-
-      <div class="step-list" id="steps-16">
-                  <div class="muted step-empty" id="steps-empty-16" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
-              </div>
-
-      <div class="step-add">
-        <input type="text" id="st-title-16" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(16)">
-        <input type="text" id="st-details-16" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(16)">
-        <button class="btn btn-outline btn-sm" onclick="addStep(16)">أضف خطوة</button>
-      </div>
-    </div>
-
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">ملفات الشغل</h4>
-        <span class="muted" style="font-size:11.5px;">ملفات داخلية بين الفريق — مش تسليمات العميل</span>
-      </div>
-
-      <div class="attach-list" id="attachments-16">
-                  <div class="muted attach-empty" id="attach-empty-16" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
-              </div>
-
-      <div class="attach-add">
-        <input type="file" id="file-16" class="attach-input" onchange="uploadFile(16)">
-        <label for="file-16" class="btn btn-outline btn-sm">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-          رفع ملف جديد
-        </label>
-        <span class="muted attach-hint">أقصى حجم 20 م.ب — صور، فيديو، مستندات، ملفات مضغوطة.</span>
-      </div>
-    </div>
-
-    
-    <div class="comments">
-      <h4 class="comments-title">التعليقات</h4>
-      <div class="comment-list" id="comments-16">
-                  <div class="muted comment-empty" id="empty-16" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
-              </div>
-      <div class="comment-form">
-        <input type="text" id="ci-16" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(16)">
-        <button class="btn btn-primary btn-sm" onclick="addComment(16)">إرسال</button>
-      </div>
-    </div>
-  </div>
-</div>
-          <div class="card task-card" id="task-13">
-  <div class="task-head" onclick="toggleTask(13)">
-    <button type="button" class="task-caret" id="caret-13" aria-label="توسيع">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
-
-    <div class="task-head-main">
-      <h3>تصميم بوستات الأسبوع</h3>
-      <div class="task-head-meta">
-                  <span class="dept-tag" style="--dept:#1B4DFF;">ديجيتال ماركتينج</span>
-                          <a href="projects-4.html" class="task-proj" onclick="event.stopPropagation();">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
-            محتوى شهري - فاست فيت
-            <span class="muted">· فاست فيت</span>
-          </a>
-                              </div>
-    </div>
-
-    <div class="task-head-side" onclick="event.stopPropagation();">
-      <div class="task-owner">
-                  <span class="muted" style="font-size:12px;">— بدون مسؤول —</span>
-                      </div>
-            <select class="form-select status-select st-in_progress" onchange="updateStatus(13, this)" title="حالة المهمة">
-                  <option value="new" >جديد</option>
-                  <option value="in_progress" selected>جاري التنفيذ</option>
                   <option value="review" >مراجعة</option>
                   <option value="completed" >اكتمل</option>
               </select>
@@ -1897,11 +814,11 @@
           </div>
   </div>
 
-  <div class="task-body" id="body-13" style="display:none;">
+  <div class="task-body" id="body-47" style="display:none;">
     
           <div class="task-section deadline-row">
-        <label for="dl-13">الديدلاين</label>
-        <input id="dl-13" type="date" value="" onchange="saveDeadline(13, this)">
+        <label for="dl-47">الديدلاين</label>
+        <input id="dl-47" type="date" value="2026-09-11" onchange="saveDeadline(47, this)">
       </div>
     
     
@@ -1912,406 +829,16 @@
         <span class="muted" style="font-size:11.5px;">المسؤول واحد، والمنفّذون أي عدد — كلهم بيشوفوا التاسك</span>
       </div>
 
-      <div class="crew-list" id="crew-13">
+      <div class="crew-list" id="crew-47">
         
         
         
-                          
-                  <div class="muted crew-empty" id="crew-empty-13" style="font-size:12.5px;">مفيش منفّذين مضافين — المسؤول بس.</div>
-              </div>
-
-              <div class="crew-add">
-          
-          <select class="form-select" id="crew-sel-13">
-            <option value="">— اختر مين يتضاف للمهمة —</option>
-                          <optgroup label="موظفو الشركة">
-                                  <option value="u:1" data-initials="أو" data-role="الأونر">أونر النظام (الأونر)</option>
-                              </optgroup>
-                                      <optgroup label="الفريلانسرز">
-                                  <option value="f:1" data-initials="أم" data-role="مصور فيديو">أمير توفيق (مصور فيديو)</option>
-                                  <option value="f:2" data-initials="دي" data-role="مصممة جرافيك">دينا الشريف (مصممة جرافيك)</option>
-                                  <option value="f:4" data-initials="ري" data-role="كاتبة محتوى">ريم عادل (كاتبة محتوى)</option>
-                                  <option value="f:6" data-initials="سا" data-role="مديرة إعلانات ممولة">سارة يوسف (مديرة إعلانات ممولة)</option>
-                                  <option value="f:5" data-initials="طا" data-role="مصور فوتوغرافي">طارق منصور (مصور فوتوغرافي)</option>
-                                  <option value="f:3" data-initials="ما" data-role="مونتير">مازن سعيد (مونتير)</option>
-                              </optgroup>
-                      </select>
-          <button class="btn btn-outline btn-sm" onclick="addCrew(13)">إضافة للمهمة</button>
-        </div>
-          </div>
-
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">الخطوات الفرعية</h4>
-        <span class="steps-progress" id="prog-13">0 من 0 خطوات</span>
-      </div>
-      <p class="muted steps-note">
-        إنهاء كل الخطوات <b>ما بيقفلش المهمة تلقائيًا</b> — حالة المهمة بتتغيّر بإيدك من فوق.
-      </p>
-
-      <div class="step-list" id="steps-13">
-                  <div class="muted step-empty" id="steps-empty-13" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
-              </div>
-
-      <div class="step-add">
-        <input type="text" id="st-title-13" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(13)">
-        <input type="text" id="st-details-13" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(13)">
-        <button class="btn btn-outline btn-sm" onclick="addStep(13)">أضف خطوة</button>
-      </div>
-    </div>
-
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">ملفات الشغل</h4>
-        <span class="muted" style="font-size:11.5px;">ملفات داخلية بين الفريق — مش تسليمات العميل</span>
-      </div>
-
-      <div class="attach-list" id="attachments-13">
-                  <div class="muted attach-empty" id="attach-empty-13" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
-              </div>
-
-      <div class="attach-add">
-        <input type="file" id="file-13" class="attach-input" onchange="uploadFile(13)">
-        <label for="file-13" class="btn btn-outline btn-sm">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-          رفع ملف جديد
-        </label>
-        <span class="muted attach-hint">أقصى حجم 20 م.ب — صور، فيديو، مستندات، ملفات مضغوطة.</span>
-      </div>
-    </div>
-
-    
-    <div class="comments">
-      <h4 class="comments-title">التعليقات</h4>
-      <div class="comment-list" id="comments-13">
-                  <div class="muted comment-empty" id="empty-13" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
-              </div>
-      <div class="comment-form">
-        <input type="text" id="ci-13" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(13)">
-        <button class="btn btn-primary btn-sm" onclick="addComment(13)">إرسال</button>
-      </div>
-    </div>
-  </div>
-</div>
-          <div class="card task-card" id="task-10">
-  <div class="task-head" onclick="toggleTask(10)">
-    <button type="button" class="task-caret" id="caret-10" aria-label="توسيع">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
-
-    <div class="task-head-main">
-      <h3>مونتاج النسخة الأولى</h3>
-      <div class="task-head-meta">
-                  <span class="dept-tag" style="--dept:#1B4DFF;">ديجيتال ماركتينج</span>
-                          <a href="projects-3.html" class="task-proj" onclick="event.stopPropagation();">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
-            فيديو تسويقي - مشروع النخيل
-            <span class="muted">· مجموعة نايل ريزيدنس</span>
-          </a>
-                              </div>
-    </div>
-
-    <div class="task-head-side" onclick="event.stopPropagation();">
-      <div class="task-owner">
-                  <span class="muted" style="font-size:12px;">— بدون مسؤول —</span>
-                      </div>
-            <select class="form-select status-select st-completed" onchange="updateStatus(10, this)" title="حالة المهمة">
-                  <option value="new" >جديد</option>
-                  <option value="in_progress" >جاري التنفيذ</option>
-                  <option value="review" >مراجعة</option>
-                  <option value="completed" selected>اكتمل</option>
-              </select>
-
-          </div>
-  </div>
-
-  <div class="task-body" id="body-10" style="display:none;">
-    
-          <div class="task-section deadline-row">
-        <label for="dl-10">الديدلاين</label>
-        <input id="dl-10" type="date" value="" onchange="saveDeadline(10, this)">
-      </div>
-    
-    
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">الفريق على التاسك</h4>
-        <span class="muted" style="font-size:11.5px;">المسؤول واحد، والمنفّذون أي عدد — كلهم بيشوفوا التاسك</span>
-      </div>
-
-      <div class="crew-list" id="crew-10">
-        
-        
-        
-                          
-                  <div class="muted crew-empty" id="crew-empty-10" style="font-size:12.5px;">مفيش منفّذين مضافين — المسؤول بس.</div>
-              </div>
-
-              <div class="crew-add">
-          
-          <select class="form-select" id="crew-sel-10">
-            <option value="">— اختر مين يتضاف للمهمة —</option>
-                          <optgroup label="موظفو الشركة">
-                                  <option value="u:1" data-initials="أو" data-role="الأونر">أونر النظام (الأونر)</option>
-                              </optgroup>
-                                      <optgroup label="الفريلانسرز">
-                                  <option value="f:1" data-initials="أم" data-role="مصور فيديو">أمير توفيق (مصور فيديو)</option>
-                                  <option value="f:2" data-initials="دي" data-role="مصممة جرافيك">دينا الشريف (مصممة جرافيك)</option>
-                                  <option value="f:4" data-initials="ري" data-role="كاتبة محتوى">ريم عادل (كاتبة محتوى)</option>
-                                  <option value="f:6" data-initials="سا" data-role="مديرة إعلانات ممولة">سارة يوسف (مديرة إعلانات ممولة)</option>
-                                  <option value="f:5" data-initials="طا" data-role="مصور فوتوغرافي">طارق منصور (مصور فوتوغرافي)</option>
-                                  <option value="f:3" data-initials="ما" data-role="مونتير">مازن سعيد (مونتير)</option>
-                              </optgroup>
-                      </select>
-          <button class="btn btn-outline btn-sm" onclick="addCrew(10)">إضافة للمهمة</button>
-        </div>
-          </div>
-
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">الخطوات الفرعية</h4>
-        <span class="steps-progress" id="prog-10">0 من 0 خطوات</span>
-      </div>
-      <p class="muted steps-note">
-        إنهاء كل الخطوات <b>ما بيقفلش المهمة تلقائيًا</b> — حالة المهمة بتتغيّر بإيدك من فوق.
-      </p>
-
-      <div class="step-list" id="steps-10">
-                  <div class="muted step-empty" id="steps-empty-10" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
-              </div>
-
-      <div class="step-add">
-        <input type="text" id="st-title-10" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(10)">
-        <input type="text" id="st-details-10" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(10)">
-        <button class="btn btn-outline btn-sm" onclick="addStep(10)">أضف خطوة</button>
-      </div>
-    </div>
-
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">ملفات الشغل</h4>
-        <span class="muted" style="font-size:11.5px;">ملفات داخلية بين الفريق — مش تسليمات العميل</span>
-      </div>
-
-      <div class="attach-list" id="attachments-10">
-                  <div class="muted attach-empty" id="attach-empty-10" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
-              </div>
-
-      <div class="attach-add">
-        <input type="file" id="file-10" class="attach-input" onchange="uploadFile(10)">
-        <label for="file-10" class="btn btn-outline btn-sm">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-          رفع ملف جديد
-        </label>
-        <span class="muted attach-hint">أقصى حجم 20 م.ب — صور، فيديو، مستندات، ملفات مضغوطة.</span>
-      </div>
-    </div>
-
-    
-    <div class="comments">
-      <h4 class="comments-title">التعليقات</h4>
-      <div class="comment-list" id="comments-10">
-                  <div class="muted comment-empty" id="empty-10" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
-              </div>
-      <div class="comment-form">
-        <input type="text" id="ci-10" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(10)">
-        <button class="btn btn-primary btn-sm" onclick="addComment(10)">إرسال</button>
-      </div>
-    </div>
-  </div>
-</div>
-          <div class="card task-card" id="task-7">
-  <div class="task-head" onclick="toggleTask(7)">
-    <button type="button" class="task-caret" id="caret-7" aria-label="توسيع">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
-
-    <div class="task-head-main">
-      <h3>تصميم الهوية البصرية للحملة</h3>
-      <div class="task-head-meta">
-                  <span class="dept-tag" style="--dept:#1B4DFF;">ديجيتال ماركتينج</span>
-                          <a href="projects-2.html" class="task-proj" onclick="event.stopPropagation();">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
-            إطلاق منتج بطاقة أفانتي بلاك
-            <span class="muted">· بنك أفانتي</span>
-          </a>
-                              </div>
-    </div>
-
-    <div class="task-head-side" onclick="event.stopPropagation();">
-      <div class="task-owner">
-                  <span class="muted" style="font-size:12px;">— بدون مسؤول —</span>
-                      </div>
-            <select class="form-select status-select st-completed" onchange="updateStatus(7, this)" title="حالة المهمة">
-                  <option value="new" >جديد</option>
-                  <option value="in_progress" >جاري التنفيذ</option>
-                  <option value="review" >مراجعة</option>
-                  <option value="completed" selected>اكتمل</option>
-              </select>
-
-          </div>
-  </div>
-
-  <div class="task-body" id="body-7" style="display:none;">
-    
-          <div class="task-section deadline-row">
-        <label for="dl-7">الديدلاين</label>
-        <input id="dl-7" type="date" value="" onchange="saveDeadline(7, this)">
-      </div>
-    
-    
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">الفريق على التاسك</h4>
-        <span class="muted" style="font-size:11.5px;">المسؤول واحد، والمنفّذون أي عدد — كلهم بيشوفوا التاسك</span>
-      </div>
-
-      <div class="crew-list" id="crew-7">
-        
-        
-        
-                          
-                  <div class="muted crew-empty" id="crew-empty-7" style="font-size:12.5px;">مفيش منفّذين مضافين — المسؤول بس.</div>
-              </div>
-
-              <div class="crew-add">
-          
-          <select class="form-select" id="crew-sel-7">
-            <option value="">— اختر مين يتضاف للمهمة —</option>
-                          <optgroup label="موظفو الشركة">
-                                  <option value="u:1" data-initials="أو" data-role="الأونر">أونر النظام (الأونر)</option>
-                              </optgroup>
-                                      <optgroup label="الفريلانسرز">
-                                  <option value="f:1" data-initials="أم" data-role="مصور فيديو">أمير توفيق (مصور فيديو)</option>
-                                  <option value="f:2" data-initials="دي" data-role="مصممة جرافيك">دينا الشريف (مصممة جرافيك)</option>
-                                  <option value="f:4" data-initials="ري" data-role="كاتبة محتوى">ريم عادل (كاتبة محتوى)</option>
-                                  <option value="f:6" data-initials="سا" data-role="مديرة إعلانات ممولة">سارة يوسف (مديرة إعلانات ممولة)</option>
-                                  <option value="f:5" data-initials="طا" data-role="مصور فوتوغرافي">طارق منصور (مصور فوتوغرافي)</option>
-                                  <option value="f:3" data-initials="ما" data-role="مونتير">مازن سعيد (مونتير)</option>
-                              </optgroup>
-                      </select>
-          <button class="btn btn-outline btn-sm" onclick="addCrew(7)">إضافة للمهمة</button>
-        </div>
-          </div>
-
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">الخطوات الفرعية</h4>
-        <span class="steps-progress" id="prog-7">0 من 0 خطوات</span>
-      </div>
-      <p class="muted steps-note">
-        إنهاء كل الخطوات <b>ما بيقفلش المهمة تلقائيًا</b> — حالة المهمة بتتغيّر بإيدك من فوق.
-      </p>
-
-      <div class="step-list" id="steps-7">
-                  <div class="muted step-empty" id="steps-empty-7" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
-              </div>
-
-      <div class="step-add">
-        <input type="text" id="st-title-7" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(7)">
-        <input type="text" id="st-details-7" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(7)">
-        <button class="btn btn-outline btn-sm" onclick="addStep(7)">أضف خطوة</button>
-      </div>
-    </div>
-
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">ملفات الشغل</h4>
-        <span class="muted" style="font-size:11.5px;">ملفات داخلية بين الفريق — مش تسليمات العميل</span>
-      </div>
-
-      <div class="attach-list" id="attachments-7">
-                  <div class="muted attach-empty" id="attach-empty-7" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
-              </div>
-
-      <div class="attach-add">
-        <input type="file" id="file-7" class="attach-input" onchange="uploadFile(7)">
-        <label for="file-7" class="btn btn-outline btn-sm">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-          رفع ملف جديد
-        </label>
-        <span class="muted attach-hint">أقصى حجم 20 م.ب — صور، فيديو، مستندات، ملفات مضغوطة.</span>
-      </div>
-    </div>
-
-    
-    <div class="comments">
-      <h4 class="comments-title">التعليقات</h4>
-      <div class="comment-list" id="comments-7">
-                  <div class="muted comment-empty" id="empty-7" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
-              </div>
-      <div class="comment-form">
-        <input type="text" id="ci-7" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(7)">
-        <button class="btn btn-primary btn-sm" onclick="addComment(7)">إرسال</button>
-      </div>
-    </div>
-  </div>
-</div>
-          <div class="card task-card" id="task-4">
-  <div class="task-head" onclick="toggleTask(4)">
-    <button type="button" class="task-caret" id="caret-4" aria-label="توسيع">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
-
-    <div class="task-head-main">
-      <h3>جدولة النشر</h3>
-      <div class="task-head-meta">
-                  <span class="dept-tag" style="--dept:#1B4DFF;">ديجيتال ماركتينج</span>
-                          <a href="projects-1.html" class="task-proj" onclick="event.stopPropagation();">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
-            حملة رمضان 2026
-            <span class="muted">· كافيه لومير</span>
-          </a>
-                              </div>
-    </div>
-
-    <div class="task-head-side" onclick="event.stopPropagation();">
-      <div class="task-owner">
-                  <span class="muted" style="font-size:12px;">— بدون مسؤول —</span>
-                      </div>
-            <select class="form-select status-select st-in_progress" onchange="updateStatus(4, this)" title="حالة المهمة">
-                  <option value="new" >جديد</option>
-                  <option value="in_progress" selected>جاري التنفيذ</option>
-                  <option value="review" >مراجعة</option>
-                  <option value="completed" >اكتمل</option>
-              </select>
-
-          </div>
-  </div>
-
-  <div class="task-body" id="body-4" style="display:none;">
-    
-          <div class="task-section deadline-row">
-        <label for="dl-4">الديدلاين</label>
-        <input id="dl-4" type="date" value="" onchange="saveDeadline(4, this)">
-      </div>
-    
-    
-    
-    <div class="task-section">
-      <div class="task-section-head">
-        <h4 class="task-section-title">الفريق على التاسك</h4>
-        <span class="muted" style="font-size:11.5px;">المسؤول واحد، والمنفّذون أي عدد — كلهم بيشوفوا التاسك</span>
-      </div>
-
-      <div class="crew-list" id="crew-4">
-        
-        
-        
-                              <div class="crew-row" id="crewfl-4-3">
-              <span class="avatar-sm is-freelancer">ما</span>
-              <span class="member-name">مازن سعيد</span>
+                              <div class="crew-row" id="crewfl-47-6">
+              <span class="avatar-sm is-freelancer">سا</span>
+              <span class="member-name">سارة يوسف</span>
               <span class="badge badge-amber">فريلانسر</span>
-              <span class="muted crew-role">مونتير</span>
-                              <button class="ra-btn ra-danger" title="إزالة من التاسك" onclick="removeFreelancer(4, 3)">
+              <span class="muted crew-role">مديرة إعلانات ممولة</span>
+                              <button class="ra-btn ra-danger" title="إزالة من التاسك" onclick="removeFreelancer(47, 6)">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
                 </button>
                           </div>
@@ -2320,10 +847,11 @@
 
               <div class="crew-add">
           
-          <select class="form-select" id="crew-sel-4">
+          <select class="form-select" id="crew-sel-47">
             <option value="">— اختر مين يتضاف للمهمة —</option>
                           <optgroup label="موظفو الشركة">
-                                  <option value="u:1" data-initials="أو" data-role="الأونر">أونر النظام (الأونر)</option>
+                                  <option value="u:74" data-initials="De" data-role="الأونر">Owner (الأونر)</option>
+                                  <option value="u:49" data-initials="Ow" data-role="الأونر">Owner (الأونر)</option>
                               </optgroup>
                                       <optgroup label="الفريلانسرز">
                                   <option value="f:1" data-initials="أم" data-role="مصور فيديو">أمير توفيق (مصور فيديو)</option>
@@ -2334,7 +862,7 @@
                                   <option value="f:3" data-initials="ما" data-role="مونتير">مازن سعيد (مونتير)</option>
                               </optgroup>
                       </select>
-          <button class="btn btn-outline btn-sm" onclick="addCrew(4)">إضافة للمهمة</button>
+          <button class="btn btn-outline btn-sm" onclick="addCrew(47)">إضافة للمهمة</button>
         </div>
           </div>
 
@@ -2342,20 +870,20 @@
     <div class="task-section">
       <div class="task-section-head">
         <h4 class="task-section-title">الخطوات الفرعية</h4>
-        <span class="steps-progress" id="prog-4">0 من 0 خطوات</span>
+        <span class="steps-progress" id="prog-47">0 من 0 خطوات</span>
       </div>
       <p class="muted steps-note">
         إنهاء كل الخطوات <b>ما بيقفلش المهمة تلقائيًا</b> — حالة المهمة بتتغيّر بإيدك من فوق.
       </p>
 
-      <div class="step-list" id="steps-4">
-                  <div class="muted step-empty" id="steps-empty-4" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
+      <div class="step-list" id="steps-47">
+                  <div class="muted step-empty" id="steps-empty-47" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
               </div>
 
       <div class="step-add">
-        <input type="text" id="st-title-4" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(4)">
-        <input type="text" id="st-details-4" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(4)">
-        <button class="btn btn-outline btn-sm" onclick="addStep(4)">أضف خطوة</button>
+        <input type="text" id="st-title-47" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(47)">
+        <input type="text" id="st-details-47" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(47)">
+        <button class="btn btn-outline btn-sm" onclick="addStep(47)">أضف خطوة</button>
       </div>
     </div>
 
@@ -2366,13 +894,13 @@
         <span class="muted" style="font-size:11.5px;">ملفات داخلية بين الفريق — مش تسليمات العميل</span>
       </div>
 
-      <div class="attach-list" id="attachments-4">
-                  <div class="muted attach-empty" id="attach-empty-4" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
+      <div class="attach-list" id="attachments-47">
+                  <div class="muted attach-empty" id="attach-empty-47" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
               </div>
 
       <div class="attach-add">
-        <input type="file" id="file-4" class="attach-input" onchange="uploadFile(4)">
-        <label for="file-4" class="btn btn-outline btn-sm">
+        <input type="file" id="file-47" class="attach-input" onchange="uploadFile(47)">
+        <label for="file-47" class="btn btn-outline btn-sm">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
           رفع ملف جديد
         </label>
@@ -2383,53 +911,57 @@
     
     <div class="comments">
       <h4 class="comments-title">التعليقات</h4>
-      <div class="comment-list" id="comments-4">
-                  <div class="muted comment-empty" id="empty-4" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
+      <div class="comment-list" id="comments-47">
+                  <div class="muted comment-empty" id="empty-47" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
               </div>
       <div class="comment-form">
-        <input type="text" id="ci-4" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(4)">
-        <button class="btn btn-primary btn-sm" onclick="addComment(4)">إرسال</button>
+        <input type="text" id="ci-47" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(47)">
+        <button class="btn btn-primary btn-sm" onclick="addComment(47)">إرسال</button>
       </div>
     </div>
   </div>
 </div>
-          <div class="card task-card" id="task-1">
-  <div class="task-head" onclick="toggleTask(1)">
-    <button type="button" class="task-caret" id="caret-1" aria-label="توسيع">
+          <div class="card task-card" id="task-46">
+  <div class="task-head" onclick="toggleTask(46)">
+    <button type="button" class="task-caret" id="caret-46" aria-label="توسيع">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
     </button>
 
     <div class="task-head-main">
-      <h3>تصوير محتوى الفيديو</h3>
+      <h3>بوسترات سوشيال ميديا</h3>
       <div class="task-head-meta">
-                  <span class="dept-tag" style="--dept:#1B4DFF;">ديجيتال ماركتينج</span>
-                          <a href="projects-1.html" class="task-proj" onclick="event.stopPropagation();">
+                  <span class="dept-tag" style="--dept:#D2921F;">ديجيتال ماركتينج</span>
+                          <a href="projects-33.html" class="task-proj" onclick="event.stopPropagation();">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
-            حملة رمضان 2026
-            <span class="muted">· كافيه لومير</span>
+            تطوير الشركه
+            <span class="muted">· أحمد السيد حماد</span>
           </a>
-                              </div>
+                                  <span class="deadline-pill ">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            2026/09/11
+          </span>
+              </div>
     </div>
 
     <div class="task-head-side" onclick="event.stopPropagation();">
       <div class="task-owner">
                   <span class="muted" style="font-size:12px;">— بدون مسؤول —</span>
                       </div>
-            <select class="form-select status-select st-completed" onchange="updateStatus(1, this)" title="حالة المهمة">
-                  <option value="new" >جديد</option>
+            <select class="form-select status-select st-new" onchange="updateStatus(46, this)" title="حالة المهمة">
+                  <option value="new" selected>جديد</option>
                   <option value="in_progress" >جاري التنفيذ</option>
                   <option value="review" >مراجعة</option>
-                  <option value="completed" selected>اكتمل</option>
+                  <option value="completed" >اكتمل</option>
               </select>
 
           </div>
   </div>
 
-  <div class="task-body" id="body-1" style="display:none;">
+  <div class="task-body" id="body-46" style="display:none;">
     
           <div class="task-section deadline-row">
-        <label for="dl-1">الديدلاين</label>
-        <input id="dl-1" type="date" value="" onchange="saveDeadline(1, this)">
+        <label for="dl-46">الديدلاين</label>
+        <input id="dl-46" type="date" value="2026-09-11" onchange="saveDeadline(46, this)">
       </div>
     
     
@@ -2440,20 +972,29 @@
         <span class="muted" style="font-size:11.5px;">المسؤول واحد، والمنفّذون أي عدد — كلهم بيشوفوا التاسك</span>
       </div>
 
-      <div class="crew-list" id="crew-1">
+      <div class="crew-list" id="crew-46">
         
         
         
-                          
-                  <div class="muted crew-empty" id="crew-empty-1" style="font-size:12.5px;">مفيش منفّذين مضافين — المسؤول بس.</div>
+                              <div class="crew-row" id="crewfl-46-4">
+              <span class="avatar-sm is-freelancer">ري</span>
+              <span class="member-name">ريم عادل</span>
+              <span class="badge badge-amber">فريلانسر</span>
+              <span class="muted crew-role">كاتبة محتوى</span>
+                              <button class="ra-btn ra-danger" title="إزالة من التاسك" onclick="removeFreelancer(46, 4)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </button>
+                          </div>
+                  
               </div>
 
               <div class="crew-add">
           
-          <select class="form-select" id="crew-sel-1">
+          <select class="form-select" id="crew-sel-46">
             <option value="">— اختر مين يتضاف للمهمة —</option>
                           <optgroup label="موظفو الشركة">
-                                  <option value="u:1" data-initials="أو" data-role="الأونر">أونر النظام (الأونر)</option>
+                                  <option value="u:74" data-initials="De" data-role="الأونر">Owner (الأونر)</option>
+                                  <option value="u:49" data-initials="Ow" data-role="الأونر">Owner (الأونر)</option>
                               </optgroup>
                                       <optgroup label="الفريلانسرز">
                                   <option value="f:1" data-initials="أم" data-role="مصور فيديو">أمير توفيق (مصور فيديو)</option>
@@ -2464,7 +1005,7 @@
                                   <option value="f:3" data-initials="ما" data-role="مونتير">مازن سعيد (مونتير)</option>
                               </optgroup>
                       </select>
-          <button class="btn btn-outline btn-sm" onclick="addCrew(1)">إضافة للمهمة</button>
+          <button class="btn btn-outline btn-sm" onclick="addCrew(46)">إضافة للمهمة</button>
         </div>
           </div>
 
@@ -2472,20 +1013,20 @@
     <div class="task-section">
       <div class="task-section-head">
         <h4 class="task-section-title">الخطوات الفرعية</h4>
-        <span class="steps-progress" id="prog-1">0 من 0 خطوات</span>
+        <span class="steps-progress" id="prog-46">0 من 0 خطوات</span>
       </div>
       <p class="muted steps-note">
         إنهاء كل الخطوات <b>ما بيقفلش المهمة تلقائيًا</b> — حالة المهمة بتتغيّر بإيدك من فوق.
       </p>
 
-      <div class="step-list" id="steps-1">
-                  <div class="muted step-empty" id="steps-empty-1" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
+      <div class="step-list" id="steps-46">
+                  <div class="muted step-empty" id="steps-empty-46" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
               </div>
 
       <div class="step-add">
-        <input type="text" id="st-title-1" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(1)">
-        <input type="text" id="st-details-1" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(1)">
-        <button class="btn btn-outline btn-sm" onclick="addStep(1)">أضف خطوة</button>
+        <input type="text" id="st-title-46" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(46)">
+        <input type="text" id="st-details-46" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(46)">
+        <button class="btn btn-outline btn-sm" onclick="addStep(46)">أضف خطوة</button>
       </div>
     </div>
 
@@ -2496,13 +1037,13 @@
         <span class="muted" style="font-size:11.5px;">ملفات داخلية بين الفريق — مش تسليمات العميل</span>
       </div>
 
-      <div class="attach-list" id="attachments-1">
-                  <div class="muted attach-empty" id="attach-empty-1" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
+      <div class="attach-list" id="attachments-46">
+                  <div class="muted attach-empty" id="attach-empty-46" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
               </div>
 
       <div class="attach-add">
-        <input type="file" id="file-1" class="attach-input" onchange="uploadFile(1)">
-        <label for="file-1" class="btn btn-outline btn-sm">
+        <input type="file" id="file-46" class="attach-input" onchange="uploadFile(46)">
+        <label for="file-46" class="btn btn-outline btn-sm">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
           رفع ملف جديد
         </label>
@@ -2513,12 +1054,151 @@
     
     <div class="comments">
       <h4 class="comments-title">التعليقات</h4>
-      <div class="comment-list" id="comments-1">
-                  <div class="muted comment-empty" id="empty-1" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
+      <div class="comment-list" id="comments-46">
+                  <div class="muted comment-empty" id="empty-46" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
               </div>
       <div class="comment-form">
-        <input type="text" id="ci-1" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(1)">
-        <button class="btn btn-primary btn-sm" onclick="addComment(1)">إرسال</button>
+        <input type="text" id="ci-46" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(46)">
+        <button class="btn btn-primary btn-sm" onclick="addComment(46)">إرسال</button>
+      </div>
+    </div>
+  </div>
+</div>
+          <div class="card task-card" id="task-43">
+  <div class="task-head" onclick="toggleTask(43)">
+    <button type="button" class="task-caret" id="caret-43" aria-label="توسيع">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <div class="task-head-main">
+      <h3>اجتماع بدء المشروع (Kick-off)</h3>
+      <div class="task-head-meta">
+                  <span class="dept-tag" style="--dept:#D2921F;">ديجيتال ماركتينج</span>
+                          <a href="projects-32.html" class="task-proj" onclick="event.stopPropagation();">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
+            ميديا لشركه سكرين ميديا
+            <span class="muted">· أحمد السيد حماد</span>
+          </a>
+                              </div>
+    </div>
+
+    <div class="task-head-side" onclick="event.stopPropagation();">
+      <div class="task-owner">
+                  <span class="muted" style="font-size:12px;">— بدون مسؤول —</span>
+                      </div>
+            <select class="form-select status-select st-completed" onchange="updateStatus(43, this)" title="حالة المهمة">
+                  <option value="new" >جديد</option>
+                  <option value="in_progress" >جاري التنفيذ</option>
+                  <option value="review" >مراجعة</option>
+                  <option value="completed" selected>اكتمل</option>
+              </select>
+
+          </div>
+  </div>
+
+  <div class="task-body" id="body-43" style="display:none;">
+    
+          <div class="task-section deadline-row">
+        <label for="dl-43">الديدلاين</label>
+        <input id="dl-43" type="date" value="" onchange="saveDeadline(43, this)">
+      </div>
+    
+    
+    
+    <div class="task-section">
+      <div class="task-section-head">
+        <h4 class="task-section-title">الفريق على التاسك</h4>
+        <span class="muted" style="font-size:11.5px;">المسؤول واحد، والمنفّذون أي عدد — كلهم بيشوفوا التاسك</span>
+      </div>
+
+      <div class="crew-list" id="crew-43">
+        
+        
+        
+                              <div class="crew-row" id="crewfl-43-1">
+              <span class="avatar-sm is-freelancer">أم</span>
+              <span class="member-name">أمير توفيق</span>
+              <span class="badge badge-amber">فريلانسر</span>
+              <span class="muted crew-role">مصور فيديو</span>
+                              <button class="ra-btn ra-danger" title="إزالة من التاسك" onclick="removeFreelancer(43, 1)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </button>
+                          </div>
+                  
+              </div>
+
+              <div class="crew-add">
+          
+          <select class="form-select" id="crew-sel-43">
+            <option value="">— اختر مين يتضاف للمهمة —</option>
+                          <optgroup label="موظفو الشركة">
+                                  <option value="u:74" data-initials="De" data-role="الأونر">Owner (الأونر)</option>
+                                  <option value="u:49" data-initials="Ow" data-role="الأونر">Owner (الأونر)</option>
+                              </optgroup>
+                                      <optgroup label="الفريلانسرز">
+                                  <option value="f:1" data-initials="أم" data-role="مصور فيديو">أمير توفيق (مصور فيديو)</option>
+                                  <option value="f:2" data-initials="دي" data-role="مصممة جرافيك">دينا الشريف (مصممة جرافيك)</option>
+                                  <option value="f:4" data-initials="ري" data-role="كاتبة محتوى">ريم عادل (كاتبة محتوى)</option>
+                                  <option value="f:6" data-initials="سا" data-role="مديرة إعلانات ممولة">سارة يوسف (مديرة إعلانات ممولة)</option>
+                                  <option value="f:5" data-initials="طا" data-role="مصور فوتوغرافي">طارق منصور (مصور فوتوغرافي)</option>
+                                  <option value="f:3" data-initials="ما" data-role="مونتير">مازن سعيد (مونتير)</option>
+                              </optgroup>
+                      </select>
+          <button class="btn btn-outline btn-sm" onclick="addCrew(43)">إضافة للمهمة</button>
+        </div>
+          </div>
+
+    
+    <div class="task-section">
+      <div class="task-section-head">
+        <h4 class="task-section-title">الخطوات الفرعية</h4>
+        <span class="steps-progress" id="prog-43">0 من 0 خطوات</span>
+      </div>
+      <p class="muted steps-note">
+        إنهاء كل الخطوات <b>ما بيقفلش المهمة تلقائيًا</b> — حالة المهمة بتتغيّر بإيدك من فوق.
+      </p>
+
+      <div class="step-list" id="steps-43">
+                  <div class="muted step-empty" id="steps-empty-43" style="font-size:12.5px;">لا توجد خطوات بعد — أضف أول خطوة.</div>
+              </div>
+
+      <div class="step-add">
+        <input type="text" id="st-title-43" placeholder="عنوان الخطوة..." onkeydown="if(event.key==='Enter')addStep(43)">
+        <input type="text" id="st-details-43" placeholder="تفاصيل الخطوة (اختياري)..." onkeydown="if(event.key==='Enter')addStep(43)">
+        <button class="btn btn-outline btn-sm" onclick="addStep(43)">أضف خطوة</button>
+      </div>
+    </div>
+
+    
+    <div class="task-section">
+      <div class="task-section-head">
+        <h4 class="task-section-title">ملفات الشغل</h4>
+        <span class="muted" style="font-size:11.5px;">ملفات داخلية بين الفريق — مش تسليمات العميل</span>
+      </div>
+
+      <div class="attach-list" id="attachments-43">
+                  <div class="muted attach-empty" id="attach-empty-43" style="font-size:12.5px;">لا توجد ملفات مرفوعة بعد.</div>
+              </div>
+
+      <div class="attach-add">
+        <input type="file" id="file-43" class="attach-input" onchange="uploadFile(43)">
+        <label for="file-43" class="btn btn-outline btn-sm">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          رفع ملف جديد
+        </label>
+        <span class="muted attach-hint">أقصى حجم 20 م.ب — صور، فيديو، مستندات، ملفات مضغوطة.</span>
+      </div>
+    </div>
+
+    
+    <div class="comments">
+      <h4 class="comments-title">التعليقات</h4>
+      <div class="comment-list" id="comments-43">
+                  <div class="muted comment-empty" id="empty-43" style="font-size:12.5px;">لا توجد تعليقات بعد — اكتب أول تعليق.</div>
+              </div>
+      <div class="comment-form">
+        <input type="text" id="ci-43" placeholder="اكتب تعليقًا..." onkeydown="if(event.key==='Enter')addComment(43)">
+        <button class="btn btn-primary btn-sm" onclick="addComment(43)">إرسال</button>
       </div>
     </div>
   </div>
@@ -2529,7 +1209,7 @@
 </div>
 
 
-<button class="mobile-fab" onclick="location.href='./scheduling'" title="تحديث سريع من الموقع">
+<button class="mobile-fab" onclick="location.href='scheduling.html'" title="تحديث سريع من الموقع">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="13" r="4"/><path d="M5 7h2l1-2h8l1 2h2a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9a2 2 0 012-2z"/></svg>
 </button>
 
@@ -2540,6 +1220,8 @@
 <div class="toast" id="toast"></div>
 
 <script src="js/app.js"></script>
+<script>window.UI_TRANSLATIONS = [];</script>
+<script src="js/i18n.js"></script>
 <script>
 /* ---------- جرس الإشعارات (مشترك لكل الصفحات) ---------- */
 const NOTIF_URL = ".\/notifications";
@@ -2629,7 +1311,7 @@ function toggleTask(id) {
 /* ---------- حالة التاسك (يدوية دايمًا) ---------- */
 function updateStatus(taskId, sel) {
   const prev = sel.dataset.prev || sel.value;
-  fetch(`./tasks/${taskId}/status`, {
+  fetch(`tasks.html/${taskId}/status`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
     body: JSON.stringify({ status: sel.value }),
@@ -2645,7 +1327,7 @@ function updateStatus(taskId, sel) {
 
 /* ---------- الديدلاين ---------- */
 function saveDeadline(taskId, input) {
-  fetch(`./tasks/${taskId}/deadline`, {
+  fetch(`tasks.html/${taskId}/deadline`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
     body: JSON.stringify({ deadline: input.value || null }),
@@ -2694,7 +1376,7 @@ function submitReturn(btn, taskId) {
   if (!userId) { err.textContent = 'ضيف منفّذ للتاسك الأول عشان ترجّعهوله.'; err.style.display = 'flex'; return; }
 
   btn.disabled = true;
-  fetch(`./tasks/${taskId}/return`, {
+  fetch(`tasks.html/${taskId}/return`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
     body: JSON.stringify({ user_id: parseInt(userId), review_note: document.getElementById('rt-note').value.trim() || null }),
@@ -2721,8 +1403,8 @@ function addCrew(taskId) {
   const id = parseInt(raw.slice(2), 10);
 
   const url = isFreelancer
-    ? `./tasks/${taskId}/freelancers`
-    : `./tasks/${taskId}/members`;
+    ? `tasks.html/${taskId}/freelancers`
+    : `tasks.html/${taskId}/members`;
 
   const payload = isFreelancer ? { freelancer_id: id } : { user_id: id };
 
@@ -2760,7 +1442,7 @@ function addCrew(taskId) {
 
 function removeCrew(taskId, userId) {
   if (!confirm('إزالة الموظف ده من التاسك؟')) return;
-  fetch(`./tasks/${taskId}/members/${userId}`, {
+  fetch(`tasks.html/${taskId}/members/${userId}`, {
     method: 'DELETE',
     headers: { 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
   }).then(async r => {
@@ -2777,7 +1459,7 @@ function removeCrew(taskId, userId) {
  */
 function removeFreelancer(taskId, freelancerId) {
   if (!confirm('إزالة الفريلانسر ده من المهمة؟')) return;
-  fetch(`./tasks/${taskId}/freelancers/${freelancerId}`, {
+  fetch(`tasks.html/${taskId}/freelancers/${freelancerId}`, {
     method: 'DELETE',
     headers: { 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
   }).then(async r => {
@@ -2803,7 +1485,7 @@ function addStep(taskId) {
   const title = titleEl.value.trim();
   if (!title) { showToast('اكتب عنوان الخطوة.'); return; }
 
-  fetch(`./tasks/${taskId}/steps`, {
+  fetch(`tasks.html/${taskId}/steps`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
     body: JSON.stringify({ title, details: detailsEl.value.trim() || null }),
@@ -2834,7 +1516,7 @@ function addStep(taskId) {
 
 // ملاحظة: ده بيحدّث عدّاد التقدّم بس — حالة التاسك ما بتتغيّرش تلقائيًا مهما خلصت الخطوات
 function toggleStep(stepId, taskId, box) {
-  fetch(`./tasks/steps/${stepId}/toggle`, {
+  fetch(`tasks.html/steps/${stepId}/toggle`, {
     method: 'POST',
     headers: { 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
   }).then(async r => {
@@ -2847,7 +1529,7 @@ function toggleStep(stepId, taskId, box) {
 
 function deleteStep(stepId, taskId) {
   if (!confirm('حذف الخطوة دي؟')) return;
-  fetch(`./tasks/steps/${stepId}`, {
+  fetch(`tasks.html/steps/${stepId}`, {
     method: 'DELETE',
     headers: { 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
   }).then(async r => {
@@ -2868,7 +1550,7 @@ function uploadFile(taskId) {
   form.append('file', input.files[0]);
 
   showToast('جاري رفع الملف...');
-  fetch(`./tasks/${taskId}/attachments`, {
+  fetch(`tasks.html/${taskId}/attachments`, {
     method: 'POST',
     headers: { 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
     body: form,
@@ -2887,7 +1569,7 @@ function uploadFile(taskId) {
     row.id = 'attach-' + d.attachment.id;
     row.innerHTML = `
       <span class="attach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/></svg></span>
-      <a href="#" data-proto-dead="/tasks/attachments/${d.attachment.id}/download" class="attach-name"></a>
+      <a href="#" class="attach-name"></a>
       <span class="attach-meta muted"></span>
       <button class="ra-btn ra-danger" title="حذف الملف" onclick="deleteAttachment(${d.attachment.id})">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg>
@@ -2901,7 +1583,7 @@ function uploadFile(taskId) {
 
 function deleteAttachment(id) {
   if (!confirm('حذف الملف ده نهائيًا؟')) return;
-  fetch(`./tasks/attachments/${id}`, {
+  fetch(`tasks.html/attachments/${id}`, {
     method: 'DELETE',
     headers: { 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
   }).then(async r => {
@@ -2918,7 +1600,7 @@ function addComment(taskId) {
   const body = input.value.trim();
   if (!body) return;
   input.disabled = true;
-  fetch(`./tasks/${taskId}/comments`, {
+  fetch(`tasks.html/${taskId}/comments`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
     body: JSON.stringify({ body }),
@@ -2939,6 +1621,5 @@ function addComment(taskId) {
   }).catch(() => { input.disabled = false; showToast('تعذّر الاتصال بالخادم.'); });
 }
 </script>
-<script src="js/prototype.js"></script>
-</body>
+<script src="js/prototype.js"></script></body>
 </html>
