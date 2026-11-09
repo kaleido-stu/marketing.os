@@ -3,109 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="csrf-token" content="ej8JW8vQZ0VUhbnlyJYxDvoQs7IJxkm9Ik8iMW5t">
+<meta name="csrf-token" content="offline-demo">
 <title>Kaleido O.S | نظام إدارة شركات الماركتينج والبرودكشن</title>
-<link rel="stylesheet" href="fonts/fonts.css">
-<script src="js/chart.min.js"></script>
-<link rel="stylesheet" href="css/core.css">
 
-<link rel="stylesheet" href="modules/departments/css/departments.css">
-<link rel="stylesheet" href="modules/crm/css/crm.css">
-<link rel="stylesheet" href="modules/tasks/css/tasks.css">
-<link rel="stylesheet" href="modules/projects/css/projects.css">
-<link rel="stylesheet" href="modules/scheduling/css/scheduling.css">
-<link rel="stylesheet" href="modules/freelancers/css/freelancers.css">
-<link rel="stylesheet" href="modules/invoices/css/finance.css">
-</head>
+<link href="assets/fonts/fonts.css" rel="stylesheet">
+<script src="assets/vendor/chart.js"></script>
+<link rel="stylesheet" href="assets/css/core.css">
+
+<link rel="stylesheet" href="assets/modules/departments/css/departments.css">
+<link rel="stylesheet" href="assets/modules/crm/css/crm.css">
+<link rel="stylesheet" href="assets/modules/tasks/css/tasks.css">
+<link rel="stylesheet" href="assets/modules/projects/css/projects.css">
+<link rel="stylesheet" href="assets/modules/scheduling/css/scheduling.css">
+<link rel="stylesheet" href="assets/calendar.css">
+<link rel="stylesheet" href="assets/modules/freelancers/css/freelancers.css">
+<link rel="stylesheet" href="assets/modules/invoices/css/finance.css">
+<link rel="stylesheet" href="assets/css/users.css"><link rel="stylesheet" href="assets/demo.css"><script src="assets/demo-data.js"></script><script src="assets/demo.js"></script></head>
 <body>
 
 <div class="app">
   <div class="sidebar-backdrop" id="backdrop" onclick="toggleSidebar(false)"></div>
 
-  <aside class="sidebar" id="sidebar">
-    <div class="brand">
-        <div class="brand-row">
-        <div class="brand-mark">K</div>
-        <div>
-            <div class="brand-name">Kaleido O.S</div>
-            <div class="brand-sub">MARKETING &amp; PRODUCTION OS</div>
-        </div>
-        </div>
-        <div class="clapper-stripe"></div>
-    </div>
-
-    <nav class="nav">
-                <div class="nav-group-label">الرئيسية</div>
-                                    <a href="index.html" class="nav-item ">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h8V3H3v10zM13 21h8V11h-8v10zM13 3v6h8V3h-8zM3 21h8v-6H3v6z"/></svg>
-                <span>لوحة التحكم</span>
-                            </a>
-                                        <div class="nav-group-label">المبيعات والعملاء</div>
-                                    <a href="crm-pipeline.html" class="nav-item ">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M2 21v-2a5 5 0 015-5h4a5 5 0 015 5v2"/><circle cx="18" cy="8" r="2.3"/><path d="M16 21v-1.6a4 4 0 00-1.2-2.9"/></svg>
-                <span>العملاء (CRM)</span>
-                            </a>
-                                                            <div class="nav-parent " id="projects-nav-parent">
-                <button type="button" class="nav-item nav-parent-toggle "
-                        onclick="toggleNavSubmenu('projects-nav-parent')" aria-expanded="false">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
-                    <span>المشاريع</span>
-                                        <span class="badge">1</span>
-                                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"/></svg>
-                </button>
-                <div class="nav-submenu">
-                    <a href="projects.html" class="nav-subitem ">
-                        <span class="nav-sub-dot"></span>
-                        <span>كل المشاريع</span>
-                    </a>
-                    <a href="tasks.html" class="nav-subitem ">
-                        <span class="nav-sub-dot"></span>
-                        <span>كل التاسكات</span>
-                    </a>
-                </div>
-            </div>
-                                        <div class="nav-group-label">العمليات</div>
-                                    <a href="scheduling.html" class="nav-item ">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                <span>جدولة التصوير والمعدات</span>
-                            </a>
-                                                <a href="freelancers.html" class="nav-item ">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
-                <span>الفريلانسرز</span>
-                            </a>
-                                                <a href="departments.html" class="nav-item ">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-5h6v5"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01"/></svg>
-                <span>الأقسام</span>
-                            </a>
-                                        <div class="nav-group-label">العميل والمال</div>
-                                    <a href="reports.html" class="nav-item ">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9M12 21V3M20 21v-7"/></svg>
-                <span>تقارير الربحية</span>
-                            </a>
-                                                <a href="invoices.html" class="nav-item ">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l3 3v17H6z"/><line x1="9" y1="8" x2="14" y2="8"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="12" y2="16"/></svg>
-                <span>الفواتير</span>
-                            </a>
-                                        <div class="nav-group-label">النظام</div>
-                                                <div class="nav-parent open" id="settings-nav-parent">
-                <button type="button" class="nav-item nav-parent-toggle active"
-                        onclick="toggleNavSubmenu('settings-nav-parent')" aria-expanded="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
-                    <span>الإعدادات</span>
-                    <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"/></svg>
-                </button>
-                <div class="nav-submenu">
-                    <a href="settings-users.html" class="nav-subitem active">
-                        <span class="nav-sub-dot"></span>
-                        <span>إدارة المستخدمين</span>
-                    </a>
-                    <a href="settings-company.html" class="nav-subitem ">
-                        <span class="nav-sub-dot"></span><span>بيانات الشركة</span>
-                    </a>
-                </div>
-            </div>
-                                    </nav>
-</aside>
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+        <div class="brand-row">
+        <div class="brand-mark">K</div>
+        <div>
+            <div class="brand-name">Kaleido O.S</div>
+            <div class="brand-sub">MARKETING &amp; PRODUCTION OS</div>
+        </div>
+        </div>
+        <div class="clapper-stripe"></div>
+    </div>
+
+    <nav class="nav">
+                <div class="nav-group-label">الرئيسية</div>
+                                    <a href="index.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h8V3H3v10zM13 21h8V11h-8v10zM13 3v6h8V3h-8zM3 21h8v-6H3v6z"/></svg>
+                <span>لوحة التحكم</span>
+                            </a>
+                                        <div class="nav-group-label">المبيعات والعملاء</div>
+                                    <a href="crm-pipeline.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M2 21v-2a5 5 0 015-5h4a5 5 0 015 5v2"/><circle cx="18" cy="8" r="2.3"/><path d="M16 21v-1.6a4 4 0 00-1.2-2.9"/></svg>
+                <span>العملاء (CRM)</span>
+                                <span class="badge">7</span>
+                            </a>
+                                                <a href="quotations.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l3 3v17H6z"/><path d="M14 2v4h4"/><path d="M9 10h6M9 14h6M9 18h3"/></svg>
+                <span>عروض الأسعار</span>
+                            </a>
+                                                            <div class="nav-parent " id="projects-nav-parent">
+                <button type="button" class="nav-item nav-parent-toggle "
+                        onclick="toggleNavSubmenu('projects-nav-parent')" aria-expanded="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
+                    <span>المشاريع</span>
+                                        <span class="badge">4</span>
+                                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+                <div class="nav-submenu">
+                    <a href="projects.html" class="nav-subitem ">
+                        <span class="nav-sub-dot"></span>
+                        <span>كل المشاريع</span>
+                    </a>
+                    <a href="tasks.html" class="nav-subitem ">
+                        <span class="nav-sub-dot"></span>
+                        <span>كل التاسكات</span>
+                    </a>
+                </div>
+            </div>
+                                        <div class="nav-group-label">العمليات</div>
+                                    <a href="scheduling.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>جدولة التصوير والمعدات</span>
+                            </a>
+                                                <a href="freelancers.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+                <span>الفريلانسرز</span>
+                            </a>
+                                                <a href="departments.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-5h6v5"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01"/></svg>
+                <span>الأقسام</span>
+                            </a>
+                                        <div class="nav-group-label">العميل والمال</div>
+                                    <a href="reports.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9M12 21V3M20 21v-7"/></svg>
+                <span>تقارير الربحية</span>
+                            </a>
+                                                <a href="invoices.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l3 3v17H6z"/><line x1="9" y1="8" x2="14" y2="8"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="12" y2="16"/></svg>
+                <span>الفواتير</span>
+                            </a>
+                                        <div class="nav-group-label">النظام</div>
+                                                <div class="nav-parent open" id="settings-nav-parent">
+                <button type="button" class="nav-item nav-parent-toggle active"
+                        onclick="toggleNavSubmenu('settings-nav-parent')" aria-expanded="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                    <span>الإعدادات</span>
+                    <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+                <div class="nav-submenu">
+                                        <a href="settings-users.html" class="nav-subitem active">
+                        <span class="nav-sub-dot"></span>
+                        <span>إدارة المستخدمين</span>
+                    </a>
+                    <a href="settings-company.html" class="nav-subitem ">
+                        <span class="nav-sub-dot"></span><span>بيانات الشركة</span>
+                    </a>
+                                                            <a href="activity.html" class="nav-subitem ">
+                        <span class="nav-sub-dot"></span><span>سجل النشاط</span>
+                    </a>
+                                    </div>
+            </div>
+                                                <a href="activity.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3h16v18H4z"/></svg>
+                <span>سجل النشاط</span>
+                            </a>
+                                    </nav>
+</aside>
 
   <div class="main">
     <div class="topbar">
@@ -114,14 +128,18 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
         </button>
         <div>
-          <div class="topbar-title">إدارة المستخدمين</div>
-          <div class="topbar-sub">المستخدمون والأدوار والصلاحيات</div>
+          <div class="topbar-title">المستخدمون</div>
+          <div class="topbar-sub"></div>
         </div>
               </div>
       <div class="topbar-right">
         
+                <div class="rec-pill">
+          <span class="rec-dot"></span>
+          <span class="txt">2 تصوير جاري دلوقتي</span>
+        </div>
         
-                <a class="language-switch" href="#"
+                <a class="btn btn-ghost btn-sm" href="account-security.html">أمان الحساب</a>        <a class="language-switch" href="http://demo.local/language/en"
            title="Switch to English"
            aria-label="Switch to English">
           <span class="language-switch-code">EN</span>
@@ -148,13 +166,13 @@
         </div>
 
         <div class="topbar-user">
-          <div class="user-avatar">Ow</div>
+          <div class="user-avatar">أح</div>
           <div class="tu-meta">
-            <div class="tu-name">Owner</div>
-            <div class="tu-role">الأونر</div>
+            <div class="tu-name">أحمد منصور</div>
+            <div class="tu-role">المالك</div>
           </div>
-          <form method="POST" action="#" style="display:flex;">
-            <input type="hidden" name="_token" value="ej8JW8vQZ0VUhbnlyJYxDvoQs7IJxkm9Ik8iMW5t" autocomplete="off">            <button type="submit" class="tu-logout" title="تسجيل خروج">
+          <form method="POST" action="http://demo.local/logout" style="display:flex;">
+            <input type="hidden" name="_token" value="offline-demo" autocomplete="off">            <button type="submit" class="tu-logout" title="تسجيل خروج">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
             </button>
           </form>
@@ -163,61 +181,248 @@
     </div>
 
     <div class="content">
-      <div class="section-head">
-  <div class="pill-tabs">
-    <button class="pill-tab active">المستخدمون</button>
-    <a href="settings-roles.html" class="pill-tab" style="display:inline-block;">إدارة الأدوار</a>
-    <a href="settings-permissions.html" class="pill-tab" style="display:inline-block;">الصلاحيات</a>
-  </div>
-  <button class="btn btn-primary btn-sm" onclick="openAddUser()">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-    إضافة مستخدم
-  </button>
-</div>
-
-<div class="card" style="overflow-x:auto;">
-<table>
-  <thead>
-    <tr><th>الاسم</th><th>اسم المستخدم</th><th>البريد الإلكتروني</th><th>الدور</th><th>الحالة</th><th>تاريخ الإنشاء</th><th>إجراءات</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="font-weight:700;">
-        <div style="display:flex;align-items:center;gap:10px;">
-          <span class="avatar-sm">Ow</span>
-          <span>Owner</span>
-        </div>
-      </td>
-      <td><span class="badge badge-gray" style="font-family:monospace;">Owner</span></td>
-      <td class="muted">kaleido@gmail.com</td>
-      <td>
-                <span class="badge badge-green">الأونر</span>
-      </td>
-      <td>
-                  <span class="badge badge-green">نشط</span>
-              </td>
-      <td class="muted">2026/07/29</td>
-      <td>
-        
-                  <div class="row-actions">
-            <button class="ra-btn" title="تعديل" onclick="openEditUser(49)">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
-            </button>
-            <button class="ra-btn" title="إعادة تعيين كلمة المرور" onclick="openResetPassword(49)">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 019.9-1"/><circle cx="12" cy="16" r="1"/></svg>
-            </button>
-            <button class="ra-btn" title="تعطيل" onclick="toggleUser(49)">
-                              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64A9 9 0 1120.77 15"/><line x1="12" y1="2" x2="12" y2="12"/></svg>
-                          </button>
-            <button class="ra-btn ra-danger" title="حذف" onclick="deleteUser(49, 'Owner')">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
-            </button>
-          </div>
-              </td>
-    </tr>
-    </tbody>
-</table>
-</div>
+            <div class="section-head">
+<a class="btn btn-primary" href="settings-permissions.html">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+<span>الأدوار والصلاحيات</span>
+</a>
+</div>
+<p id="user-message" role="status"></p>
+<section class="card" style="margin-bottom:20px"><h2>إضافة مستخدم</h2><form class="user-form" action="settings-users.html" data-method="POST">
+<div class="grid grid-2">
+<div class="field"><label>الاسم<input name="name" type="text" value="" required maxlength="255"></label></div>
+<div class="field"><label>البريد الإلكتروني<input name="email" type="email" value="" required maxlength="255"></label></div>
+<div class="field"><label>التليفون<input name="phone" type="text" value="" required maxlength="50"></label></div>
+<div class="field"><label>اسم المستخدم<input name="username" type="text" value="" required maxlength="255"></label></div>
+<div class="field"><label>البوزيشن<input name="position" type="text" value=""  maxlength="255"></label></div>
+<div class="field"><label>الدور<select name="role" ><option value="owner" >المالك</option><option value="manager" >مدير العمليات</option><option value="supervisor" >قائد القسم</option><option value="user" selected>الموظف</option></select></label></div>
+<div class="field"><label>القسم الأساسي<select name="primary_department_id" required><option value="">—</option><option value="2" >البرودكشن</option><option value="3" >برمجة</option><option value="1" >ديجيتال ماركتينج</option></select></label></div>
+<div class="field"><label>كلمة المرور<input type="password" name="password" autocomplete="new-password" maxlength="72" required></label></div>
+<div class="field"><label>تأكيد كلمة المرور<input type="password" name="password_confirmation" autocomplete="new-password" maxlength="72" required></label></div>
+</div><p class="muted">البوزيشن للعرض فقط ولا يغيّر الصلاحيات.</p><button class="btn btn-primary">حفظ</button></form>
+</section>
+<section class="card users-directory" aria-labelledby="users-heading">
+<div class="users-directory-head"><h2 id="users-heading">المستخدمون</h2><span id="users-count" role="status" aria-live="polite">8 / 8</span></div>
+<div class="users-filters">
+<label class="users-search">البحث عن مستخدم<input id="users-search" type="search" placeholder="الاسم، الإيميل أو التليفون"></label>
+<label>الدور<select id="users-role"><option value="">كل الأدوار</option><option value="owner">المالك</option><option value="manager">مدير العمليات</option><option value="supervisor">قائد القسم</option><option value="user">الموظف</option></select></label>
+<label>القسم الأساسي<select id="users-department"><option value="">كل الأقسام</option><option value="2">البرودكشن</option><option value="3">برمجة</option><option value="1">ديجيتال ماركتينج</option></select></label>
+<label>حالة الحساب<select id="users-status"><option value="">كل الحالات</option><option value="1">نشط</option><option value="0">معطّل</option></select></label>
+<button type="button" class="btn btn-outline" id="users-reset">مسح الفلاتر</button>
+</div>
+<div class="users-table-wrap"><table class="users-table"><thead><tr>
+<th scope="col">المستخدم</th><th scope="col">الدور</th><th scope="col">القسم الأساسي</th><th scope="col">البوزيشن</th><th scope="col">حالة الحساب</th><th scope="col">الإجراءات</th></tr></thead><tbody>
+<tr class="user-row" data-id="1" data-role="owner" data-department="" data-status="1" data-search="أحمد منصور demo1@kaleido.test  demo1">
+<td><div class="user-identity"><span class="user-avatar" aria-hidden="true">أ</span><div><strong>أحمد منصور</strong><span dir="auto">demo1@kaleido.test</span><span dir="auto"></span></div></div></td>
+<td><span class="user-role-label">المالك</span></td>
+<td>—</td><td>إدارة الوكالة</td>
+<td><span class="user-status is-active">نشط</span></td>
+<td><button class="btn btn-outline user-edit-toggle" type="button" aria-haspopup="dialog" aria-controls="user-editor-1">تعديل<span class="sr-only"> أحمد منصور</span></button></td>
+</tr>
+<tr class="user-row" data-id="2" data-role="manager" data-department="1" data-status="1" data-search="سارة عادل demo2@kaleido.test  demo2">
+<td><div class="user-identity"><span class="user-avatar" aria-hidden="true">س</span><div><strong>سارة عادل</strong><span dir="auto">demo2@kaleido.test</span><span dir="auto"></span></div></div></td>
+<td><span class="user-role-label">مدير العمليات</span></td>
+<td>ديجيتال ماركتينج</td><td>مدير العمليات</td>
+<td><span class="user-status is-active">نشط</span></td>
+<td><button class="btn btn-outline user-edit-toggle" type="button" aria-haspopup="dialog" aria-controls="user-editor-2">تعديل<span class="sr-only"> سارة عادل</span></button></td>
+</tr>
+<tr class="user-row" data-id="3" data-role="supervisor" data-department="2" data-status="1" data-search="عمر حسن demo3@kaleido.test  demo3">
+<td><div class="user-identity"><span class="user-avatar" aria-hidden="true">ع</span><div><strong>عمر حسن</strong><span dir="auto">demo3@kaleido.test</span><span dir="auto"></span></div></div></td>
+<td><span class="user-role-label">قائد القسم</span></td>
+<td>البرودكشن</td><td>قائد فريق</td>
+<td><span class="user-status is-active">نشط</span></td>
+<td><button class="btn btn-outline user-edit-toggle" type="button" aria-haspopup="dialog" aria-controls="user-editor-3">تعديل<span class="sr-only"> عمر حسن</span></button></td>
+</tr>
+<tr class="user-row" data-id="4" data-role="supervisor" data-department="3" data-status="1" data-search="نور خالد demo4@kaleido.test  demo4">
+<td><div class="user-identity"><span class="user-avatar" aria-hidden="true">ن</span><div><strong>نور خالد</strong><span dir="auto">demo4@kaleido.test</span><span dir="auto"></span></div></div></td>
+<td><span class="user-role-label">قائد القسم</span></td>
+<td>برمجة</td><td>قائد فريق</td>
+<td><span class="user-status is-active">نشط</span></td>
+<td><button class="btn btn-outline user-edit-toggle" type="button" aria-haspopup="dialog" aria-controls="user-editor-4">تعديل<span class="sr-only"> نور خالد</span></button></td>
+</tr>
+<tr class="user-row" data-id="5" data-role="supervisor" data-department="1" data-status="1" data-search="مريم علي demo5@kaleido.test  demo5">
+<td><div class="user-identity"><span class="user-avatar" aria-hidden="true">م</span><div><strong>مريم علي</strong><span dir="auto">demo5@kaleido.test</span><span dir="auto"></span></div></div></td>
+<td><span class="user-role-label">قائد القسم</span></td>
+<td>ديجيتال ماركتينج</td><td>قائد فريق</td>
+<td><span class="user-status is-active">نشط</span></td>
+<td><button class="btn btn-outline user-edit-toggle" type="button" aria-haspopup="dialog" aria-controls="user-editor-5">تعديل<span class="sr-only"> مريم علي</span></button></td>
+</tr>
+<tr class="user-row" data-id="6" data-role="user" data-department="2" data-status="1" data-search="يوسف سامي demo6@kaleido.test  demo6">
+<td><div class="user-identity"><span class="user-avatar" aria-hidden="true">ي</span><div><strong>يوسف سامي</strong><span dir="auto">demo6@kaleido.test</span><span dir="auto"></span></div></div></td>
+<td><span class="user-role-label">الموظف</span></td>
+<td>البرودكشن</td><td>مصمم</td>
+<td><span class="user-status is-active">نشط</span></td>
+<td><button class="btn btn-outline user-edit-toggle" type="button" aria-haspopup="dialog" aria-controls="user-editor-6">تعديل<span class="sr-only"> يوسف سامي</span></button></td>
+</tr>
+<tr class="user-row" data-id="7" data-role="user" data-department="3" data-status="1" data-search="ملك طارق demo7@kaleido.test  demo7">
+<td><div class="user-identity"><span class="user-avatar" aria-hidden="true">م</span><div><strong>ملك طارق</strong><span dir="auto">demo7@kaleido.test</span><span dir="auto"></span></div></div></td>
+<td><span class="user-role-label">الموظف</span></td>
+<td>برمجة</td><td>مونتير</td>
+<td><span class="user-status is-active">نشط</span></td>
+<td><button class="btn btn-outline user-edit-toggle" type="button" aria-haspopup="dialog" aria-controls="user-editor-7">تعديل<span class="sr-only"> ملك طارق</span></button></td>
+</tr>
+<tr class="user-row" data-id="8" data-role="user" data-department="1" data-status="1" data-search="آدم كريم demo8@kaleido.test  demo8">
+<td><div class="user-identity"><span class="user-avatar" aria-hidden="true">آ</span><div><strong>آدم كريم</strong><span dir="auto">demo8@kaleido.test</span><span dir="auto"></span></div></div></td>
+<td><span class="user-role-label">الموظف</span></td>
+<td>ديجيتال ماركتينج</td><td>كاتب محتوى</td>
+<td><span class="user-status is-active">نشط</span></td>
+<td><button class="btn btn-outline user-edit-toggle" type="button" aria-haspopup="dialog" aria-controls="user-editor-8">تعديل<span class="sr-only"> آدم كريم</span></button></td>
+</tr>
+<tr id="users-empty"  hidden ><td colspan="6">لا يوجد مستخدمون مطابقون. جرّب تغيير البحث أو الفلاتر.</td></tr>
+</tbody></table></div>
+</section>
+<dialog id="user-editor-1" class="user-edit-dialog" aria-labelledby="user-editor-title-1"><div class="user-dialog-head">
+<h3 id="user-editor-title-1">تعديل: <span class="user-dialog-name">أحمد منصور</span></h3><button type="button" class="btn btn-outline user-dialog-close" aria-label="إغلاق">×</button></div><div class="user-dialog-body"><p class="user-dialog-message" role="alert"></p>
+<form class="user-form" action="http://demo.local/settings/users/1" data-method="PUT">
+<div class="grid grid-2">
+<div class="field"><label>الاسم<input name="name" type="text" value="أحمد منصور" required maxlength="255"></label></div>
+<div class="field"><label>البريد الإلكتروني<input name="email" type="email" value="demo1@kaleido.test" required maxlength="255"></label></div>
+<div class="field"><label>التليفون<input name="phone" type="text" value="" required maxlength="50"></label></div>
+<div class="field"><label>اسم المستخدم<input name="username" type="text" value="demo1" required maxlength="255"></label></div>
+<div class="field"><label>البوزيشن<input name="position" type="text" value="إدارة الوكالة"  maxlength="255"></label></div>
+<div class="field"><label>الدور<select name="role" disabled><option value="owner" selected>المالك</option><option value="manager" >مدير العمليات</option><option value="supervisor" >قائد القسم</option><option value="user" >الموظف</option></select></label><input type="hidden" name="role" value="owner"></div>
+<div class="field"><label>القسم الأساسي<select name="primary_department_id" required><option value="">—</option><option value="2" >البرودكشن</option><option value="3" >برمجة</option><option value="1" >ديجيتال ماركتينج</option></select></label></div>
+<div class="field"><label>كلمة مرور جديدة (اختياري)<input type="password" name="password" autocomplete="new-password" maxlength="72" ></label></div>
+<div class="field"><label>تأكيد كلمة المرور<input type="password" name="password_confirmation" autocomplete="new-password" maxlength="72" ></label></div>
+</div><p class="muted">البوزيشن للعرض فقط ولا يغيّر الصلاحيات.</p><button class="btn btn-primary">حفظ</button></form>
+<div class="user-account-actions">
+
+<button class="btn btn-outline user-action" data-url="http://demo.local/settings/users/1/toggle" data-method="POST">تعطيل</button>
+<button class="btn btn-outline user-action user-delete" data-url="http://demo.local/settings/users/1" data-method="DELETE">حذف</button>
+</div></div></dialog>
+<dialog id="user-editor-2" class="user-edit-dialog" aria-labelledby="user-editor-title-2"><div class="user-dialog-head">
+<h3 id="user-editor-title-2">تعديل: <span class="user-dialog-name">سارة عادل</span></h3><button type="button" class="btn btn-outline user-dialog-close" aria-label="إغلاق">×</button></div><div class="user-dialog-body"><p class="user-dialog-message" role="alert"></p>
+<form class="user-form" action="http://demo.local/settings/users/2" data-method="PUT">
+<div class="grid grid-2">
+<div class="field"><label>الاسم<input name="name" type="text" value="سارة عادل" required maxlength="255"></label></div>
+<div class="field"><label>البريد الإلكتروني<input name="email" type="email" value="demo2@kaleido.test" required maxlength="255"></label></div>
+<div class="field"><label>التليفون<input name="phone" type="text" value="" required maxlength="50"></label></div>
+<div class="field"><label>اسم المستخدم<input name="username" type="text" value="demo2" required maxlength="255"></label></div>
+<div class="field"><label>البوزيشن<input name="position" type="text" value="مدير العمليات"  maxlength="255"></label></div>
+<div class="field"><label>الدور<select name="role" ><option value="owner" >المالك</option><option value="manager" selected>مدير العمليات</option><option value="supervisor" >قائد القسم</option><option value="user" >الموظف</option></select></label></div>
+<div class="field"><label>القسم الأساسي<select name="primary_department_id" required><option value="">—</option><option value="2" >البرودكشن</option><option value="3" >برمجة</option><option value="1" selected>ديجيتال ماركتينج</option></select></label></div>
+<div class="field"><label>كلمة مرور جديدة (اختياري)<input type="password" name="password" autocomplete="new-password" maxlength="72" ></label></div>
+<div class="field"><label>تأكيد كلمة المرور<input type="password" name="password_confirmation" autocomplete="new-password" maxlength="72" ></label></div>
+</div><p class="muted">البوزيشن للعرض فقط ولا يغيّر الصلاحيات.</p><button class="btn btn-primary">حفظ</button></form>
+<div class="user-account-actions">
+
+<button class="btn btn-outline user-action" data-url="http://demo.local/settings/users/2/toggle" data-method="POST">تعطيل</button>
+<button class="btn btn-outline user-action user-delete" data-url="http://demo.local/settings/users/2" data-method="DELETE">حذف</button>
+</div></div></dialog>
+<dialog id="user-editor-3" class="user-edit-dialog" aria-labelledby="user-editor-title-3"><div class="user-dialog-head">
+<h3 id="user-editor-title-3">تعديل: <span class="user-dialog-name">عمر حسن</span></h3><button type="button" class="btn btn-outline user-dialog-close" aria-label="إغلاق">×</button></div><div class="user-dialog-body"><p class="user-dialog-message" role="alert"></p>
+<form class="user-form" action="http://demo.local/settings/users/3" data-method="PUT">
+<div class="grid grid-2">
+<div class="field"><label>الاسم<input name="name" type="text" value="عمر حسن" required maxlength="255"></label></div>
+<div class="field"><label>البريد الإلكتروني<input name="email" type="email" value="demo3@kaleido.test" required maxlength="255"></label></div>
+<div class="field"><label>التليفون<input name="phone" type="text" value="" required maxlength="50"></label></div>
+<div class="field"><label>اسم المستخدم<input name="username" type="text" value="demo3" required maxlength="255"></label></div>
+<div class="field"><label>البوزيشن<input name="position" type="text" value="قائد فريق"  maxlength="255"></label></div>
+<div class="field"><label>الدور<select name="role" ><option value="owner" >المالك</option><option value="manager" >مدير العمليات</option><option value="supervisor" selected>قائد القسم</option><option value="user" >الموظف</option></select></label></div>
+<div class="field"><label>القسم الأساسي<select name="primary_department_id" required><option value="">—</option><option value="2" selected>البرودكشن</option><option value="3" >برمجة</option><option value="1" >ديجيتال ماركتينج</option></select></label></div>
+<div class="field"><label>كلمة مرور جديدة (اختياري)<input type="password" name="password" autocomplete="new-password" maxlength="72" ></label></div>
+<div class="field"><label>تأكيد كلمة المرور<input type="password" name="password_confirmation" autocomplete="new-password" maxlength="72" ></label></div>
+</div><p class="muted">البوزيشن للعرض فقط ولا يغيّر الصلاحيات.</p><button class="btn btn-primary">حفظ</button></form>
+<div class="user-account-actions">
+
+<button class="btn btn-outline user-action" data-url="http://demo.local/settings/users/3/toggle" data-method="POST">تعطيل</button>
+<button class="btn btn-outline user-action user-delete" data-url="http://demo.local/settings/users/3" data-method="DELETE">حذف</button>
+</div></div></dialog>
+<dialog id="user-editor-4" class="user-edit-dialog" aria-labelledby="user-editor-title-4"><div class="user-dialog-head">
+<h3 id="user-editor-title-4">تعديل: <span class="user-dialog-name">نور خالد</span></h3><button type="button" class="btn btn-outline user-dialog-close" aria-label="إغلاق">×</button></div><div class="user-dialog-body"><p class="user-dialog-message" role="alert"></p>
+<form class="user-form" action="http://demo.local/settings/users/4" data-method="PUT">
+<div class="grid grid-2">
+<div class="field"><label>الاسم<input name="name" type="text" value="نور خالد" required maxlength="255"></label></div>
+<div class="field"><label>البريد الإلكتروني<input name="email" type="email" value="demo4@kaleido.test" required maxlength="255"></label></div>
+<div class="field"><label>التليفون<input name="phone" type="text" value="" required maxlength="50"></label></div>
+<div class="field"><label>اسم المستخدم<input name="username" type="text" value="demo4" required maxlength="255"></label></div>
+<div class="field"><label>البوزيشن<input name="position" type="text" value="قائد فريق"  maxlength="255"></label></div>
+<div class="field"><label>الدور<select name="role" ><option value="owner" >المالك</option><option value="manager" >مدير العمليات</option><option value="supervisor" selected>قائد القسم</option><option value="user" >الموظف</option></select></label></div>
+<div class="field"><label>القسم الأساسي<select name="primary_department_id" required><option value="">—</option><option value="2" >البرودكشن</option><option value="3" selected>برمجة</option><option value="1" >ديجيتال ماركتينج</option></select></label></div>
+<div class="field"><label>كلمة مرور جديدة (اختياري)<input type="password" name="password" autocomplete="new-password" maxlength="72" ></label></div>
+<div class="field"><label>تأكيد كلمة المرور<input type="password" name="password_confirmation" autocomplete="new-password" maxlength="72" ></label></div>
+</div><p class="muted">البوزيشن للعرض فقط ولا يغيّر الصلاحيات.</p><button class="btn btn-primary">حفظ</button></form>
+<div class="user-account-actions">
+
+<button class="btn btn-outline user-action" data-url="http://demo.local/settings/users/4/toggle" data-method="POST">تعطيل</button>
+<button class="btn btn-outline user-action user-delete" data-url="http://demo.local/settings/users/4" data-method="DELETE">حذف</button>
+</div></div></dialog>
+<dialog id="user-editor-5" class="user-edit-dialog" aria-labelledby="user-editor-title-5"><div class="user-dialog-head">
+<h3 id="user-editor-title-5">تعديل: <span class="user-dialog-name">مريم علي</span></h3><button type="button" class="btn btn-outline user-dialog-close" aria-label="إغلاق">×</button></div><div class="user-dialog-body"><p class="user-dialog-message" role="alert"></p>
+<form class="user-form" action="http://demo.local/settings/users/5" data-method="PUT">
+<div class="grid grid-2">
+<div class="field"><label>الاسم<input name="name" type="text" value="مريم علي" required maxlength="255"></label></div>
+<div class="field"><label>البريد الإلكتروني<input name="email" type="email" value="demo5@kaleido.test" required maxlength="255"></label></div>
+<div class="field"><label>التليفون<input name="phone" type="text" value="" required maxlength="50"></label></div>
+<div class="field"><label>اسم المستخدم<input name="username" type="text" value="demo5" required maxlength="255"></label></div>
+<div class="field"><label>البوزيشن<input name="position" type="text" value="قائد فريق"  maxlength="255"></label></div>
+<div class="field"><label>الدور<select name="role" ><option value="owner" >المالك</option><option value="manager" >مدير العمليات</option><option value="supervisor" selected>قائد القسم</option><option value="user" >الموظف</option></select></label></div>
+<div class="field"><label>القسم الأساسي<select name="primary_department_id" required><option value="">—</option><option value="2" >البرودكشن</option><option value="3" >برمجة</option><option value="1" selected>ديجيتال ماركتينج</option></select></label></div>
+<div class="field"><label>كلمة مرور جديدة (اختياري)<input type="password" name="password" autocomplete="new-password" maxlength="72" ></label></div>
+<div class="field"><label>تأكيد كلمة المرور<input type="password" name="password_confirmation" autocomplete="new-password" maxlength="72" ></label></div>
+</div><p class="muted">البوزيشن للعرض فقط ولا يغيّر الصلاحيات.</p><button class="btn btn-primary">حفظ</button></form>
+<div class="user-account-actions">
+
+<button class="btn btn-outline user-action" data-url="http://demo.local/settings/users/5/toggle" data-method="POST">تعطيل</button>
+<button class="btn btn-outline user-action user-delete" data-url="http://demo.local/settings/users/5" data-method="DELETE">حذف</button>
+</div></div></dialog>
+<dialog id="user-editor-6" class="user-edit-dialog" aria-labelledby="user-editor-title-6"><div class="user-dialog-head">
+<h3 id="user-editor-title-6">تعديل: <span class="user-dialog-name">يوسف سامي</span></h3><button type="button" class="btn btn-outline user-dialog-close" aria-label="إغلاق">×</button></div><div class="user-dialog-body"><p class="user-dialog-message" role="alert"></p>
+<form class="user-form" action="http://demo.local/settings/users/6" data-method="PUT">
+<div class="grid grid-2">
+<div class="field"><label>الاسم<input name="name" type="text" value="يوسف سامي" required maxlength="255"></label></div>
+<div class="field"><label>البريد الإلكتروني<input name="email" type="email" value="demo6@kaleido.test" required maxlength="255"></label></div>
+<div class="field"><label>التليفون<input name="phone" type="text" value="" required maxlength="50"></label></div>
+<div class="field"><label>اسم المستخدم<input name="username" type="text" value="demo6" required maxlength="255"></label></div>
+<div class="field"><label>البوزيشن<input name="position" type="text" value="مصمم"  maxlength="255"></label></div>
+<div class="field"><label>الدور<select name="role" ><option value="owner" >المالك</option><option value="manager" >مدير العمليات</option><option value="supervisor" >قائد القسم</option><option value="user" selected>الموظف</option></select></label></div>
+<div class="field"><label>القسم الأساسي<select name="primary_department_id" required><option value="">—</option><option value="2" selected>البرودكشن</option><option value="3" >برمجة</option><option value="1" >ديجيتال ماركتينج</option></select></label></div>
+<div class="field"><label>كلمة مرور جديدة (اختياري)<input type="password" name="password" autocomplete="new-password" maxlength="72" ></label></div>
+<div class="field"><label>تأكيد كلمة المرور<input type="password" name="password_confirmation" autocomplete="new-password" maxlength="72" ></label></div>
+</div><p class="muted">البوزيشن للعرض فقط ولا يغيّر الصلاحيات.</p><button class="btn btn-primary">حفظ</button></form>
+<div class="user-account-actions">
+
+<button class="btn btn-outline user-action" data-url="http://demo.local/settings/users/6/toggle" data-method="POST">تعطيل</button>
+<button class="btn btn-outline user-action user-delete" data-url="http://demo.local/settings/users/6" data-method="DELETE">حذف</button>
+</div></div></dialog>
+<dialog id="user-editor-7" class="user-edit-dialog" aria-labelledby="user-editor-title-7"><div class="user-dialog-head">
+<h3 id="user-editor-title-7">تعديل: <span class="user-dialog-name">ملك طارق</span></h3><button type="button" class="btn btn-outline user-dialog-close" aria-label="إغلاق">×</button></div><div class="user-dialog-body"><p class="user-dialog-message" role="alert"></p>
+<form class="user-form" action="http://demo.local/settings/users/7" data-method="PUT">
+<div class="grid grid-2">
+<div class="field"><label>الاسم<input name="name" type="text" value="ملك طارق" required maxlength="255"></label></div>
+<div class="field"><label>البريد الإلكتروني<input name="email" type="email" value="demo7@kaleido.test" required maxlength="255"></label></div>
+<div class="field"><label>التليفون<input name="phone" type="text" value="" required maxlength="50"></label></div>
+<div class="field"><label>اسم المستخدم<input name="username" type="text" value="demo7" required maxlength="255"></label></div>
+<div class="field"><label>البوزيشن<input name="position" type="text" value="مونتير"  maxlength="255"></label></div>
+<div class="field"><label>الدور<select name="role" ><option value="owner" >المالك</option><option value="manager" >مدير العمليات</option><option value="supervisor" >قائد القسم</option><option value="user" selected>الموظف</option></select></label></div>
+<div class="field"><label>القسم الأساسي<select name="primary_department_id" required><option value="">—</option><option value="2" >البرودكشن</option><option value="3" selected>برمجة</option><option value="1" >ديجيتال ماركتينج</option></select></label></div>
+<div class="field"><label>كلمة مرور جديدة (اختياري)<input type="password" name="password" autocomplete="new-password" maxlength="72" ></label></div>
+<div class="field"><label>تأكيد كلمة المرور<input type="password" name="password_confirmation" autocomplete="new-password" maxlength="72" ></label></div>
+</div><p class="muted">البوزيشن للعرض فقط ولا يغيّر الصلاحيات.</p><button class="btn btn-primary">حفظ</button></form>
+<div class="user-account-actions">
+
+<button class="btn btn-outline user-action" data-url="http://demo.local/settings/users/7/toggle" data-method="POST">تعطيل</button>
+<button class="btn btn-outline user-action user-delete" data-url="http://demo.local/settings/users/7" data-method="DELETE">حذف</button>
+</div></div></dialog>
+<dialog id="user-editor-8" class="user-edit-dialog" aria-labelledby="user-editor-title-8"><div class="user-dialog-head">
+<h3 id="user-editor-title-8">تعديل: <span class="user-dialog-name">آدم كريم</span></h3><button type="button" class="btn btn-outline user-dialog-close" aria-label="إغلاق">×</button></div><div class="user-dialog-body"><p class="user-dialog-message" role="alert"></p>
+<form class="user-form" action="http://demo.local/settings/users/8" data-method="PUT">
+<div class="grid grid-2">
+<div class="field"><label>الاسم<input name="name" type="text" value="آدم كريم" required maxlength="255"></label></div>
+<div class="field"><label>البريد الإلكتروني<input name="email" type="email" value="demo8@kaleido.test" required maxlength="255"></label></div>
+<div class="field"><label>التليفون<input name="phone" type="text" value="" required maxlength="50"></label></div>
+<div class="field"><label>اسم المستخدم<input name="username" type="text" value="demo8" required maxlength="255"></label></div>
+<div class="field"><label>البوزيشن<input name="position" type="text" value="كاتب محتوى"  maxlength="255"></label></div>
+<div class="field"><label>الدور<select name="role" ><option value="owner" >المالك</option><option value="manager" >مدير العمليات</option><option value="supervisor" >قائد القسم</option><option value="user" selected>الموظف</option></select></label></div>
+<div class="field"><label>القسم الأساسي<select name="primary_department_id" required><option value="">—</option><option value="2" >البرودكشن</option><option value="3" >برمجة</option><option value="1" selected>ديجيتال ماركتينج</option></select></label></div>
+<div class="field"><label>كلمة مرور جديدة (اختياري)<input type="password" name="password" autocomplete="new-password" maxlength="72" ></label></div>
+<div class="field"><label>تأكيد كلمة المرور<input type="password" name="password_confirmation" autocomplete="new-password" maxlength="72" ></label></div>
+</div><p class="muted">البوزيشن للعرض فقط ولا يغيّر الصلاحيات.</p><button class="btn btn-primary">حفظ</button></form>
+<div class="user-account-actions">
+
+<button class="btn btn-outline user-action" data-url="http://demo.local/settings/users/8/toggle" data-method="POST">تعطيل</button>
+<button class="btn btn-outline user-action user-delete" data-url="http://demo.local/settings/users/8" data-method="DELETE">حذف</button>
+</div></div></dialog>
     </div>
   </div>
 </div>
@@ -233,14 +438,14 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="js/app.js"></script>
+<script src="assets/js/app.js"></script>
 <script>window.UI_TRANSLATIONS = [];</script>
-<script src="js/i18n.js"></script>
+<script src="assets/js/i18n.js"></script>
 <script>
 /* ---------- جرس الإشعارات (مشترك لكل الصفحات) ---------- */
-const NOTIF_URL = ".\/notifications";
-const NOTIF_READ_URL = ".\/notifications\/read-all";
-const NOTIF_OPEN = ".\/notifications";
+const NOTIF_URL = "http://demo.local/notifications";
+const NOTIF_READ_URL = "http://demo.local/notifications/read-all";
+const NOTIF_OPEN = "http://demo.local/notifications";
 const NOTIF_CSRF = document.querySelector('meta[name=csrf-token]').content;
 const NOTIF_ICONS = {
   task: '<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>',
@@ -310,202 +515,20 @@ document.addEventListener('click', e => {
 document.addEventListener('DOMContentLoaded', loadNotifications);
 setInterval(loadNotifications, 60000); // تحديث كل دقيقة
 </script>
-<script>
-const USERS = [{"id":49,"name":"Owner","username":"Owner","email":"kaleido@gmail.com","role":"owner","is_active":true}];
-const CURRENT_USER_ID = 49;
-const CSRF = document.querySelector('meta[name=csrf-token]').content;
-const EYE = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`;
-
-/* ---------- أدوات ---------- */
-function val(id) { const el = document.getElementById(id); return el ? el.value : ''; }
-
-// 🔴 الأدوار المتاحة بتعتمد على دور المستخدم الحالي — الأونر بس يقدر يعمل أونر
-const ASSIGNABLE_ROLES = [["owner","\u0627\u0644\u0623\u0648\u0646\u0631"]];
-const ROLE_LABELS = {"owner":"\u0627\u0644\u0623\u0648\u0646\u0631"};
-const I_AM_OWNER = true;
-
-function roleOptions(selected) {
-  return ASSIGNABLE_ROLES
-    .map(([v, l]) => `<option value="${v}" ${v === selected ? 'selected' : ''}>${l}</option>`).join('');
-}
-
-function textField(id, label, type, value = '', extra = '') {
-  return `<div class="field">
-      <label for="${id}">${label}</label>
-      <input id="${id}" type="${type}" value="${(value + '').replace(/"/g, '&quot;')}" ${extra}>
-    </div>`;
-}
-
-function pwField(id, label, withGen = false) {
-  return `<div class="field">
-      <label for="${id}">${label}</label>
-      <div class="pw-wrap">
-        <input id="${id}" type="password" autocomplete="new-password">
-        <button type="button" class="pw-eye" title="إظهار / إخفاء" onclick="togglePw('${id}')">${EYE}</button>
-      </div>
-      ${withGen ? `<button type="button" class="pw-gen" onclick="genPw('${id}')">توليد كلمة مرور قوية وإظهارها</button>` : ''}
-    </div>`;
-}
-
-function togglePw(id) {
-  const el = document.getElementById(id);
-  el.type = el.type === 'password' ? 'text' : 'password';
-}
-
-// يولّد كلمة مرور قوية، يملأ حقل الباسورد وحقل التأكيد، ويظهرهم عشان تنسخهم
-function genPw(baseId) {
-  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789@#%&*';
-  let pw = '';
-  const arr = new Uint32Array(14);
-  crypto.getRandomValues(arr);
-  for (let i = 0; i < 14; i++) pw += chars[arr[i] % chars.length];
-  ['', '_confirmation'].forEach(suffix => {
-    const el = document.getElementById(baseId + suffix);
-    if (el) { el.value = pw; el.type = 'text'; }
-  });
-  showToast('تم توليد كلمة مرور — انسخها قبل الحفظ');
-}
-
-function showModalError(msg) {
-  const box = document.getElementById('u-error');
-  if (box) { box.textContent = msg; box.style.display = 'flex'; }
-}
-
-function extractError(payload) {
-  if (payload && payload.errors) return Object.values(payload.errors)[0][0];
-  if (payload && payload.message) return payload.message;
-  return 'حدث خطأ غير متوقع.';
-}
-
-/* ---------- إضافة مستخدم ---------- */
-function openAddUser() {
-  document.getElementById('modalBox').innerHTML = `
-    <div class="modal-head"><h3>إضافة مستخدم جديد</h3><button class="close-x" onclick="closeModal()">✕</button></div>
-    <div class="modal-body">
-      <div id="u-error" class="auth-error" style="display:none;"></div>
-      ${textField('u-name', 'الاسم', 'text', '', 'required')}
-      ${textField('u-username', 'اسم المستخدم (للدخول)', 'text', '', 'required autocomplete=off')}
-      ${textField('u-email', 'البريد الإلكتروني', 'email', '', 'required autocomplete=off')}
-      ${pwField('u-password', 'كلمة المرور', true)}
-      ${pwField('u-password_confirmation', 'تأكيد كلمة المرور')}
-      <div class="field">
-        <label for="u-role">الدور</label>
-        <select id="u-role" class="form-select">${roleOptions('user')}</select>
-      </div>
-      <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:6px;" onclick="submitAddUser(this)">حفظ المستخدم</button>
-    </div>`;
-  document.getElementById('overlay').classList.add('active');
-}
-
-function submitAddUser(btn) {
-  btn.disabled = true;
-  fetch('settings-users.html', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
-    body: JSON.stringify({
-      name: val('u-name'), username: val('u-username'), email: val('u-email'),
-      password: val('u-password'), password_confirmation: val('u-password_confirmation'),
-      role: val('u-role'),
-    }),
-  }).then(async r => {
-    const d = await r.json();
-    if (r.ok && d.ok) { closeModal(); showToast(d.message); setTimeout(() => location.reload(), 500); }
-    else { btn.disabled = false; showModalError(extractError(d)); }
-  }).catch(() => { btn.disabled = false; showModalError('تعذّر الاتصال بالخادم.'); });
-}
-
-/* ---------- تعديل مستخدم ---------- */
-function openEditUser(id) {
-  const u = USERS.find(x => x.id === id);
-  if (!u) return;
-  const isSelf = u.id === CURRENT_USER_ID;
-  // المدير مايقدرش يعدّل دور أونر (والسيرفر بيرفض كمان)
-  const lockedOwner = u.role === 'owner' && !I_AM_OWNER;
-  let roleField;
-  if (lockedOwner) {
-    roleField = `<div class="field"><label>الدور</label><input type="text" value="${ROLE_LABELS.owner}" disabled><small class="muted">دور الأونر ما يتعدّلش إلا من أونر تاني.</small></div>`;
-  } else if (isSelf) {
-    roleField = `<div class="field"><label>الدور</label><input type="text" value="${ROLE_LABELS[u.role] || u.role}" disabled><small class="muted">لا يمكنك تعديل دورك الخاص.</small></div>`;
-  } else {
-    roleField = `<div class="field"><label for="u-role">الدور</label><select id="u-role" class="form-select">${roleOptions(u.role)}</select></div>`;
-  }
-  document.getElementById('modalBox').innerHTML = `
-    <div class="modal-head"><h3>تعديل المستخدم</h3><button class="close-x" onclick="closeModal()">✕</button></div>
-    <div class="modal-body">
-      <div id="u-error" class="auth-error" style="display:none;"></div>
-      ${textField('u-name', 'الاسم', 'text', u.name, 'required')}
-      ${textField('u-username', 'اسم المستخدم (للدخول)', 'text', u.username, 'required autocomplete=off')}
-      ${textField('u-email', 'البريد الإلكتروني', 'email', u.email, 'required autocomplete=off')}
-      ${roleField}
-      <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:6px;" onclick="submitEditUser(this, ${u.id}, ${lockedOwner || isSelf ? `'${u.role}'` : 'null'})">حفظ التعديلات</button>
-    </div>`;
-  document.getElementById('overlay').classList.add('active');
-}
-
-function submitEditUser(btn, id, fixedRole) {
-  btn.disabled = true;
-  const role = fixedRole !== null ? fixedRole : val('u-role');
-  fetch('settings-users.html/' + id, {
-    method: 'PUT',
-    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
-    body: JSON.stringify({ name: val('u-name'), username: val('u-username'), email: val('u-email'), role }),
-  }).then(async r => {
-    const d = await r.json();
-    if (r.ok && d.ok) { closeModal(); showToast(d.message); setTimeout(() => location.reload(), 500); }
-    else { btn.disabled = false; showModalError(extractError(d)); }
-  }).catch(() => { btn.disabled = false; showModalError('تعذّر الاتصال بالخادم.'); });
-}
-
-/* ---------- إعادة تعيين كلمة المرور ---------- */
-function openResetPassword(id) {
-  const u = USERS.find(x => x.id === id);
-  if (!u) return;
-  document.getElementById('modalBox').innerHTML = `
-    <div class="modal-head"><h3>إعادة تعيين كلمة المرور</h3><button class="close-x" onclick="closeModal()">✕</button></div>
-    <div class="modal-body">
-      <div id="u-error" class="auth-error" style="display:none;"></div>
-      <p class="muted" style="font-size:12.5px;margin-bottom:14px;line-height:1.8;">
-        بتعيّن كلمة مرور جديدة للمستخدم <b>${u.name}</b> (${u.username}). استخدم زر الإظهار أو التوليد لتشوفها وتنسخها وتبلّغها للمستخدم.
-      </p>
-      ${pwField('u-password', 'كلمة المرور الجديدة', true)}
-      ${pwField('u-password_confirmation', 'تأكيد كلمة المرور')}
-      <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:6px;" onclick="submitResetPassword(this, ${u.id})">حفظ كلمة المرور</button>
-    </div>`;
-  document.getElementById('overlay').classList.add('active');
-}
-
-function submitResetPassword(btn, id) {
-  btn.disabled = true;
-  fetch('settings-users.html/' + id + '/password', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
-    body: JSON.stringify({ password: val('u-password'), password_confirmation: val('u-password_confirmation') }),
-  }).then(async r => {
-    const d = await r.json();
-    if (r.ok && d.ok) { closeModal(); showToast(d.message); }
-    else { btn.disabled = false; showModalError(extractError(d)); }
-  }).catch(() => { btn.disabled = false; showModalError('تعذّر الاتصال بالخادم.'); });
-}
-
-/* ---------- تعطيل / حذف ---------- */
-function toggleUser(id) {
-  fetch('settings-users.html/' + id + '/toggle', {
-    method: 'POST', headers: { 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
-  }).then(async r => {
-    const d = await r.json(); showToast(d.message);
-    if (r.ok && d.ok) setTimeout(() => location.reload(), 500);
-  });
-}
-
-function deleteUser(id, name) {
-  if (!confirm('متأكد من حذف المستخدم "' + name + '"؟')) return;
-  fetch('settings-users.html/' + id, {
-    method: 'DELETE', headers: { 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
-  }).then(async r => {
-    const d = await r.json(); showToast(d.message);
-    if (r.ok && d.ok) setTimeout(() => location.reload(), 500);
-  });
-}
-</script>
-<script src="js/prototype.js"></script></body>
+<script>
+const userRows=[...document.querySelectorAll('.user-row')];
+const filterControls=['users-search','users-role','users-department','users-status'].map(id=>document.getElementById(id));
+function filterUsers(){const [search,role,department,status]=filterControls.map(control=>control.value.trim().toLocaleLowerCase());let count=0;userRows.forEach(row=>{const visible=(!search||row.dataset.search.toLocaleLowerCase().includes(search))&&(!role||row.dataset.role===role)&&(!department||row.dataset.department===department)&&(!status||row.dataset.status===status);row.hidden=!visible;if(visible)count++;});document.getElementById('users-count').textContent=count+' / '+userRows.length;document.getElementById('users-empty').hidden=count>0;}
+filterControls.forEach(control=>control.addEventListener(control.type==='search'?'input':'change',filterUsers));
+document.getElementById('users-reset').addEventListener('click',()=>{filterControls.forEach(control=>control.value='');filterUsers();});
+document.querySelectorAll('.user-edit-toggle').forEach(button=>button.addEventListener('click',()=>{const dialog=document.getElementById(button.getAttribute('aria-controls'));dialog.querySelector('.user-dialog-message').textContent='';dialog.showModal();}));
+document.querySelectorAll('.user-edit-dialog').forEach(dialog=>{const close=()=>{if(!dialog.dataset.saving){dialog.close();dialog.querySelectorAll('input[type=password]').forEach(input=>input.value='');}};dialog.querySelector('.user-dialog-close').addEventListener('click',close);dialog.addEventListener('click',event=>{if(event.target===dialog){const rect=dialog.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)close();}});dialog.addEventListener('cancel',event=>{event.preventDefault();close();});});
+function updateUserRow(user,form){const row=document.querySelector('.user-row[data-id="'+user.id+'"]');row.dataset.role=user.role;row.dataset.department=String(user.primary_department_id||'');row.dataset.search=[user.name,user.email,user.phone,user.username].join(' ');row.querySelector('.user-avatar').textContent=Array.from(user.name)[0]||'';row.querySelector('.user-identity strong').textContent=user.name;const identity=row.querySelectorAll('.user-identity span[dir]');identity[0].textContent=user.email;identity[1].textContent=user.phone||'';row.querySelector('.user-role-label').textContent=user.role_label;row.cells[2].textContent=form.elements.primary_department_id.selectedOptions[0]?.textContent||'—';row.cells[3].textContent=user.position||'—';row.querySelector('.sr-only').textContent=' '+user.name;form.closest('dialog').querySelector('.user-dialog-name').textContent=user.name;filterUsers();}
+
+async function userRequest(url,method,data){const response=await fetch(url,{method,headers:{'Content-Type':'application/json','Accept':'application/json','X-CSRF-TOKEN':document.querySelector('meta[name=csrf-token]').content},body:JSON.stringify(data)});const result=await response.json();if(!response.ok)throw new Error(Object.values(result.errors||{}).flat().join(' ')||result.message);document.getElementById('user-message').textContent=result.message;return result;}
+document.querySelectorAll('.user-form').forEach(form=>form.addEventListener('submit',async event=>{event.preventDefault();const button=form.querySelector('button');const dialog=form.closest('dialog');const feedback=dialog?.querySelector('.user-dialog-message')||document.getElementById('user-message');feedback.textContent='';button.disabled=true;if(dialog){dialog.dataset.saving='true';dialog.setAttribute('aria-busy','true');}try{const result=await userRequest(form.action,form.dataset.method,Object.fromEntries(new FormData(form)));if(dialog){updateUserRow(result.user,form);form.querySelectorAll('input[type=password]').forEach(input=>input.value='');dialog.close();}else{location.reload();}}catch(error){feedback.textContent=error.message;}finally{button.disabled=false;if(dialog){delete dialog.dataset.saving;dialog.removeAttribute('aria-busy');}}}));
+
+document.querySelectorAll('.user-action').forEach(button=>button.addEventListener('click',async()=>{if(!confirm("\u062a\u0623\u0643\u064a\u062f \u0627\u0644\u0639\u0645\u0644\u064a\u0629\u061f"))return;button.disabled=true;try{await userRequest(button.dataset.url,button.dataset.method,{});if(!button.dataset.url.endsWith('/password'))location.reload();}catch(error){(button.closest('dialog')?.querySelector('.user-dialog-message')||document.getElementById('user-message')).textContent=error.message;}finally{button.disabled=false;}}));
+</script>
+</body>
 </html>

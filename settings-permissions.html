@@ -3,109 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="csrf-token" content="ej8JW8vQZ0VUhbnlyJYxDvoQs7IJxkm9Ik8iMW5t">
+<meta name="csrf-token" content="offline-demo">
 <title>Kaleido O.S | نظام إدارة شركات الماركتينج والبرودكشن</title>
-<link rel="stylesheet" href="fonts/fonts.css">
-<script src="js/chart.min.js"></script>
-<link rel="stylesheet" href="css/core.css">
 
-<link rel="stylesheet" href="modules/departments/css/departments.css">
-<link rel="stylesheet" href="modules/crm/css/crm.css">
-<link rel="stylesheet" href="modules/tasks/css/tasks.css">
-<link rel="stylesheet" href="modules/projects/css/projects.css">
-<link rel="stylesheet" href="modules/scheduling/css/scheduling.css">
-<link rel="stylesheet" href="modules/freelancers/css/freelancers.css">
-<link rel="stylesheet" href="modules/invoices/css/finance.css">
-</head>
+<link href="assets/fonts/fonts.css" rel="stylesheet">
+<script src="assets/vendor/chart.js"></script>
+<link rel="stylesheet" href="assets/css/core.css">
+
+<link rel="stylesheet" href="assets/modules/departments/css/departments.css">
+<link rel="stylesheet" href="assets/modules/crm/css/crm.css">
+<link rel="stylesheet" href="assets/modules/tasks/css/tasks.css">
+<link rel="stylesheet" href="assets/modules/projects/css/projects.css">
+<link rel="stylesheet" href="assets/modules/scheduling/css/scheduling.css">
+<link rel="stylesheet" href="assets/calendar.css">
+<link rel="stylesheet" href="assets/modules/freelancers/css/freelancers.css">
+<link rel="stylesheet" href="assets/modules/invoices/css/finance.css">
+<link rel="stylesheet" href="assets/css/roles.css"><link rel="stylesheet" href="assets/demo.css"><script src="assets/demo-data.js"></script><script src="assets/demo.js"></script></head>
 <body>
 
 <div class="app">
   <div class="sidebar-backdrop" id="backdrop" onclick="toggleSidebar(false)"></div>
 
-  <aside class="sidebar" id="sidebar">
-    <div class="brand">
-        <div class="brand-row">
-        <div class="brand-mark">K</div>
-        <div>
-            <div class="brand-name">Kaleido O.S</div>
-            <div class="brand-sub">MARKETING &amp; PRODUCTION OS</div>
-        </div>
-        </div>
-        <div class="clapper-stripe"></div>
-    </div>
-
-    <nav class="nav">
-                <div class="nav-group-label">الرئيسية</div>
-                                    <a href="index.html" class="nav-item ">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h8V3H3v10zM13 21h8V11h-8v10zM13 3v6h8V3h-8zM3 21h8v-6H3v6z"/></svg>
-                <span>لوحة التحكم</span>
-                            </a>
-                                        <div class="nav-group-label">المبيعات والعملاء</div>
-                                    <a href="crm-pipeline.html" class="nav-item ">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M2 21v-2a5 5 0 015-5h4a5 5 0 015 5v2"/><circle cx="18" cy="8" r="2.3"/><path d="M16 21v-1.6a4 4 0 00-1.2-2.9"/></svg>
-                <span>العملاء (CRM)</span>
-                            </a>
-                                                            <div class="nav-parent " id="projects-nav-parent">
-                <button type="button" class="nav-item nav-parent-toggle "
-                        onclick="toggleNavSubmenu('projects-nav-parent')" aria-expanded="false">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
-                    <span>المشاريع</span>
-                                        <span class="badge">1</span>
-                                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"/></svg>
-                </button>
-                <div class="nav-submenu">
-                    <a href="projects.html" class="nav-subitem ">
-                        <span class="nav-sub-dot"></span>
-                        <span>كل المشاريع</span>
-                    </a>
-                    <a href="tasks.html" class="nav-subitem ">
-                        <span class="nav-sub-dot"></span>
-                        <span>كل التاسكات</span>
-                    </a>
-                </div>
-            </div>
-                                        <div class="nav-group-label">العمليات</div>
-                                    <a href="scheduling.html" class="nav-item ">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                <span>جدولة التصوير والمعدات</span>
-                            </a>
-                                                <a href="freelancers.html" class="nav-item ">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
-                <span>الفريلانسرز</span>
-                            </a>
-                                                <a href="departments.html" class="nav-item ">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-5h6v5"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01"/></svg>
-                <span>الأقسام</span>
-                            </a>
-                                        <div class="nav-group-label">العميل والمال</div>
-                                    <a href="reports.html" class="nav-item ">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9M12 21V3M20 21v-7"/></svg>
-                <span>تقارير الربحية</span>
-                            </a>
-                                                <a href="invoices.html" class="nav-item ">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l3 3v17H6z"/><line x1="9" y1="8" x2="14" y2="8"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="12" y2="16"/></svg>
-                <span>الفواتير</span>
-                            </a>
-                                        <div class="nav-group-label">النظام</div>
-                                                <div class="nav-parent open" id="settings-nav-parent">
-                <button type="button" class="nav-item nav-parent-toggle active"
-                        onclick="toggleNavSubmenu('settings-nav-parent')" aria-expanded="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
-                    <span>الإعدادات</span>
-                    <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"/></svg>
-                </button>
-                <div class="nav-submenu">
-                    <a href="settings-users.html" class="nav-subitem active">
-                        <span class="nav-sub-dot"></span>
-                        <span>إدارة المستخدمين</span>
-                    </a>
-                    <a href="settings-company.html" class="nav-subitem ">
-                        <span class="nav-sub-dot"></span><span>بيانات الشركة</span>
-                    </a>
-                </div>
-            </div>
-                                    </nav>
-</aside>
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+        <div class="brand-row">
+        <div class="brand-mark">K</div>
+        <div>
+            <div class="brand-name">Kaleido O.S</div>
+            <div class="brand-sub">MARKETING &amp; PRODUCTION OS</div>
+        </div>
+        </div>
+        <div class="clapper-stripe"></div>
+    </div>
+
+    <nav class="nav">
+                <div class="nav-group-label">الرئيسية</div>
+                                    <a href="index.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h8V3H3v10zM13 21h8V11h-8v10zM13 3v6h8V3h-8zM3 21h8v-6H3v6z"/></svg>
+                <span>لوحة التحكم</span>
+                            </a>
+                                        <div class="nav-group-label">المبيعات والعملاء</div>
+                                    <a href="crm-pipeline.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M2 21v-2a5 5 0 015-5h4a5 5 0 015 5v2"/><circle cx="18" cy="8" r="2.3"/><path d="M16 21v-1.6a4 4 0 00-1.2-2.9"/></svg>
+                <span>العملاء (CRM)</span>
+                                <span class="badge">7</span>
+                            </a>
+                                                <a href="quotations.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l3 3v17H6z"/><path d="M14 2v4h4"/><path d="M9 10h6M9 14h6M9 18h3"/></svg>
+                <span>عروض الأسعار</span>
+                            </a>
+                                                            <div class="nav-parent " id="projects-nav-parent">
+                <button type="button" class="nav-item nav-parent-toggle "
+                        onclick="toggleNavSubmenu('projects-nav-parent')" aria-expanded="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
+                    <span>المشاريع</span>
+                                        <span class="badge">4</span>
+                                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+                <div class="nav-submenu">
+                    <a href="projects.html" class="nav-subitem ">
+                        <span class="nav-sub-dot"></span>
+                        <span>كل المشاريع</span>
+                    </a>
+                    <a href="tasks.html" class="nav-subitem ">
+                        <span class="nav-sub-dot"></span>
+                        <span>كل التاسكات</span>
+                    </a>
+                </div>
+            </div>
+                                        <div class="nav-group-label">العمليات</div>
+                                    <a href="scheduling.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>جدولة التصوير والمعدات</span>
+                            </a>
+                                                <a href="freelancers.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+                <span>الفريلانسرز</span>
+                            </a>
+                                                <a href="departments.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-5h6v5"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01"/></svg>
+                <span>الأقسام</span>
+                            </a>
+                                        <div class="nav-group-label">العميل والمال</div>
+                                    <a href="reports.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9M12 21V3M20 21v-7"/></svg>
+                <span>تقارير الربحية</span>
+                            </a>
+                                                <a href="invoices.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l3 3v17H6z"/><line x1="9" y1="8" x2="14" y2="8"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="12" y2="16"/></svg>
+                <span>الفواتير</span>
+                            </a>
+                                        <div class="nav-group-label">النظام</div>
+                                                <div class="nav-parent open" id="settings-nav-parent">
+                <button type="button" class="nav-item nav-parent-toggle active"
+                        onclick="toggleNavSubmenu('settings-nav-parent')" aria-expanded="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                    <span>الإعدادات</span>
+                    <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+                <div class="nav-submenu">
+                                        <a href="settings-users.html" class="nav-subitem active">
+                        <span class="nav-sub-dot"></span>
+                        <span>إدارة المستخدمين</span>
+                    </a>
+                    <a href="settings-company.html" class="nav-subitem ">
+                        <span class="nav-sub-dot"></span><span>بيانات الشركة</span>
+                    </a>
+                                                            <a href="activity.html" class="nav-subitem ">
+                        <span class="nav-sub-dot"></span><span>سجل النشاط</span>
+                    </a>
+                                    </div>
+            </div>
+                                                <a href="activity.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3h16v18H4z"/></svg>
+                <span>سجل النشاط</span>
+                            </a>
+                                    </nav>
+</aside>
 
   <div class="main">
     <div class="topbar">
@@ -114,14 +128,18 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
         </button>
         <div>
-          <div class="topbar-title">إدارة المستخدمين</div>
-          <div class="topbar-sub">المستخدمون والأدوار والصلاحيات</div>
+          <div class="topbar-title">الأدوار والصلاحيات</div>
+          <div class="topbar-sub"></div>
         </div>
               </div>
       <div class="topbar-right">
         
+                <div class="rec-pill">
+          <span class="rec-dot"></span>
+          <span class="txt">2 تصوير جاري دلوقتي</span>
+        </div>
         
-                <a class="language-switch" href="#"
+                <a class="btn btn-ghost btn-sm" href="account-security.html">أمان الحساب</a>        <a class="language-switch" href="http://demo.local/language/en"
            title="Switch to English"
            aria-label="Switch to English">
           <span class="language-switch-code">EN</span>
@@ -148,13 +166,13 @@
         </div>
 
         <div class="topbar-user">
-          <div class="user-avatar">Ow</div>
+          <div class="user-avatar">أح</div>
           <div class="tu-meta">
-            <div class="tu-name">Owner</div>
-            <div class="tu-role">الأونر</div>
+            <div class="tu-name">أحمد منصور</div>
+            <div class="tu-role">المالك</div>
           </div>
-          <form method="POST" action="#" style="display:flex;">
-            <input type="hidden" name="_token" value="ej8JW8vQZ0VUhbnlyJYxDvoQs7IJxkm9Ik8iMW5t" autocomplete="off">            <button type="submit" class="tu-logout" title="تسجيل خروج">
+          <form method="POST" action="http://demo.local/logout" style="display:flex;">
+            <input type="hidden" name="_token" value="offline-demo" autocomplete="off">            <button type="submit" class="tu-logout" title="تسجيل خروج">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
             </button>
           </form>
@@ -163,54 +181,42 @@
     </div>
 
     <div class="content">
-      <div class="section-head">
-  <div class="pill-tabs">
-    <a href="settings-users.html" class="pill-tab" style="display:inline-block;">المستخدمون</a>
-    <a href="settings-roles.html" class="pill-tab" style="display:inline-block;">إدارة الأدوار</a>
-    <button class="pill-tab active">الصلاحيات</button>
-  </div>
-</div>
-
-<div class="card" style="overflow-x:auto;">
-<table class="perm-table">
-  <thead>
-    <tr>
-      <th>الموديول</th>
-          </tr>
-  </thead>
-  <tbody>
-      <tr>
-      <td style="font-weight:700;">لوحة التحكم</td>
-          </tr>
-      <tr>
-      <td style="font-weight:700;">العملاء (CRM)</td>
-          </tr>
-      <tr>
-      <td style="font-weight:700;">المشاريع</td>
-          </tr>
-      <tr>
-      <td style="font-weight:700;">جدولة التصوير والمعدات</td>
-          </tr>
-      <tr>
-      <td style="font-weight:700;">الفريلانسرز</td>
-          </tr>
-      <tr>
-      <td style="font-weight:700;">إدارة المستخدمين</td>
-          </tr>
-    </tbody>
-</table>
-</div>
-
-<div class="perm-notes">
-  <p>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-    <span>حساب <b>الأدمن</b> عنده صلاحية كاملة على كل الموديولات التشغيلية ولا يمكن تقييده من هنا — <b>ما عدا الموديولات المالية</b>.</span>
-  </p>
-  <p class="is-warn">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-    <span><b>الفواتير</b> و<b>تقارير الربحية</b> مش في الجدول ده بقصد — بقوا <b>حصريين لدور "مدير الشركة"</b> بشكل ثابت في الكود، والأدمن نفسه محجوب عنهم.</span>
-  </p>
-</div>
+            <a class="btn" href="settings-users.html">المستخدمون</a>
+<p role="status" id="access-message"></p>
+<form id="duplicate-role" class="card" style="display:flex;gap:12px;flex-wrap:wrap;align-items:end;margin-bottom:20px">
+<div class="field"><label>نسخ دور<select name="source_role"><option value="owner">المالك</option><option value="manager">مدير العمليات</option><option value="supervisor">قائد القسم</option><option value="user">الموظف</option></select></label></div>
+<div class="field"><label>اسم الدور الجديد<input name="name" required maxlength="100"></label></div><button class="btn btn-primary">نسخ دور</button>
+</form>
+<div class="role-grid">
+<a class="role-card" href="settings-roles-1.html">
+<div class="role-card-top"><span class="role-symbol" aria-hidden="true">ا</span><span class="badge">مقفول</span></div>
+<h2>المالك</h2>
+<p class="role-members-count">1 مستخدم</p>
+<p class="role-member-preview">أحمد منصور</p>
+<div class="role-card-bottom"><span>عرض الصلاحيات</span><span aria-hidden="true">←</span></div>
+</a>
+<a class="role-card" href="settings-roles-2.html">
+<div class="role-card-top"><span class="role-symbol" aria-hidden="true">م</span><span class="badge">دور أساسي</span></div>
+<h2>مدير العمليات</h2>
+<p class="role-members-count">1 مستخدم</p>
+<p class="role-member-preview">سارة عادل</p>
+<div class="role-card-bottom"><span>عرض الصلاحيات</span><span aria-hidden="true">←</span></div>
+</a>
+<a class="role-card" href="settings-roles-3.html">
+<div class="role-card-top"><span class="role-symbol" aria-hidden="true">ق</span><span class="badge">دور أساسي</span></div>
+<h2>قائد القسم</h2>
+<p class="role-members-count">3 مستخدم</p>
+<p class="role-member-preview">عمر حسن، نور خالد، مريم علي</p>
+<div class="role-card-bottom"><span>عرض الصلاحيات</span><span aria-hidden="true">←</span></div>
+</a>
+<a class="role-card" href="settings-roles-4.html">
+<div class="role-card-top"><span class="role-symbol" aria-hidden="true">ا</span><span class="badge">دور أساسي</span></div>
+<h2>الموظف</h2>
+<p class="role-members-count">3 مستخدم</p>
+<p class="role-member-preview">يوسف سامي، ملك طارق، آدم كريم</p>
+<div class="role-card-bottom"><span>عرض الصلاحيات</span><span aria-hidden="true">←</span></div>
+</a>
+</div>
     </div>
   </div>
 </div>
@@ -226,14 +232,14 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="js/app.js"></script>
+<script src="assets/js/app.js"></script>
 <script>window.UI_TRANSLATIONS = [];</script>
-<script src="js/i18n.js"></script>
+<script src="assets/js/i18n.js"></script>
 <script>
 /* ---------- جرس الإشعارات (مشترك لكل الصفحات) ---------- */
-const NOTIF_URL = ".\/notifications";
-const NOTIF_READ_URL = ".\/notifications\/read-all";
-const NOTIF_OPEN = ".\/notifications";
+const NOTIF_URL = "http://demo.local/notifications";
+const NOTIF_READ_URL = "http://demo.local/notifications/read-all";
+const NOTIF_OPEN = "http://demo.local/notifications";
 const NOTIF_CSRF = document.querySelector('meta[name=csrf-token]').content;
 const NOTIF_ICONS = {
   task: '<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>',
@@ -303,30 +309,10 @@ document.addEventListener('click', e => {
 document.addEventListener('DOMContentLoaded', loadNotifications);
 setInterval(loadNotifications, 60000); // تحديث كل دقيقة
 </script>
-<script>
-const CSRF = document.querySelector('meta[name=csrf-token]').content;
-
-function togglePermission(input, role, moduleKey) {
-  input.disabled = true;
-  fetch('settings-permissions.html', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
-    body: JSON.stringify({ role, module_key: moduleKey, can_view: input.checked }),
-  }).then(async r => {
-    const d = await r.json();
-    input.disabled = false;
-    if (r.ok && d.ok) {
-      showToast(d.message);
-    } else {
-      input.checked = !input.checked; // رجّع الحالة عند الفشل
-      showToast('تعذّر تحديث الصلاحية.');
-    }
-  }).catch(() => {
-    input.disabled = false;
-    input.checked = !input.checked;
-    showToast('تعذّر الاتصال بالخادم.');
-  });
-}
-</script>
-<script src="js/prototype.js"></script></body>
+<script>
+const message=document.getElementById('access-message');
+async function accessRequest(url,method,data){const response=await fetch(url,{method,headers:{'Content-Type':'application/json','Accept':'application/json','X-CSRF-TOKEN':document.querySelector('meta[name=csrf-token]').content},body:JSON.stringify(data)});const result=await response.json();if(!response.ok)throw new Error(Object.values(result.errors||{}).flat().join(' ')||result.message);message.textContent=result.message;return result;}
+document.getElementById('duplicate-role').addEventListener('submit',async event=>{event.preventDefault();try{const result=await accessRequest("settings-roles.html",'POST',Object.fromEntries(new FormData(event.target)));location.href="settings-roles.html"+'/'+result.id;}catch(error){message.textContent=error.message;}});
+</script>
+</body>
 </html>

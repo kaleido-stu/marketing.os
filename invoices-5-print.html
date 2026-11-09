@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>فاتورة INV-1046 | Kaleido O.S</title>
+
+
+
+<link href="assets/fonts/fonts.css" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="assets/css/core.css">
+
+<link rel="stylesheet" href="assets/modules/invoices/css/finance.css">
+
+<style>
+
+  /* صفحة طباعة مستقلة — بدون sidebar/topbar */
+
+  body{ background:#fff; padding:0; }
+
+  .inv-sheet{ max-width:780px; margin:0 auto; padding:40px 36px; }
+
+  .inv-head{ display:flex; align-items:flex-start; justify-content:space-between; gap:20px;
+
+    border-bottom:2px solid var(--gray-150); padding-bottom:22px; }
+
+  .inv-brand{ display:flex; align-items:center; gap:12px; }
+
+  .inv-title{ text-align:end; }
+
+  .inv-title h1{ font-size:26px; }
+
+  .inv-num{ font-family:monospace; font-size:15px; font-weight:700; color:var(--blue-dark); margin-top:6px; }
+
+  .inv-meta{ display:grid; grid-template-columns:auto 1fr; gap:12px 20px; margin-top:28px; font-size:14px; }
+
+  .inv-meta dt{ color:var(--gray-500); font-weight:600; }
+
+  .inv-meta dd{ margin:0; font-weight:700; }
+
+  .inv-amount{ margin-top:30px; background:var(--gray-100); border:1px solid var(--gray-150);
+
+    border-radius:var(--radius); padding:22px 24px; display:flex; align-items:center; justify-content:space-between; }
+
+  .inv-amount .lbl{ font-size:14px; color:var(--gray-700); font-weight:600; }
+
+  .inv-amount .amt{ font-family:'Cairo',sans-serif; font-weight:800; font-size:30px; color:var(--blue-dark); }
+
+  .inv-foot{ margin-top:38px; padding-top:18px; border-top:1px solid var(--gray-150);
+
+    font-size:12px; color:var(--gray-500); display:flex; justify-content:space-between; gap:16px; }
+
+  .inv-actions{ max-width:780px; margin:20px auto 0; padding:0 36px; display:flex; gap:10px; }
+
+  .inv-draft{ margin-top:20px; background:#FBF0DD; border:1px solid var(--amber); color:var(--amber);
+
+    border-radius:10px; padding:11px 14px; font-size:13px; font-weight:700; }
+
+
+
+  @media print {
+
+    .inv-actions{ display:none !important; }
+
+    .inv-sheet{ padding:0; max-width:100%; }
+
+    body{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+
+    @page { margin:16mm; }
+
+  }
+
+</style>
+
+<link rel="stylesheet" href="assets/demo.css"><script src="assets/demo-data.js"></script><script src="assets/demo.js"></script></head>
+
+<body>
+
+
+
+<div class="inv-sheet">
+
+  <div class="inv-head">
+
+    <div>
+
+      <div class="inv-brand">
+
+        <div class="brand-mark">K</div>
+
+        <div>
+
+          <div style="font-family:'Cairo';font-weight:800;font-size:19px;">Kaleido O.S</div>
+
+          <div style="font-size:11px;color:var(--gray-500);letter-spacing:.5px;">MARKETING &amp; PRODUCTION OS</div>
+
+        </div>
+
+      </div>
+
+      <div class="clapper-stripe" style="margin-top:14px;width:160px;border-radius:4px;"></div>
+
+    </div>
+
+    <div class="inv-title">
+
+      <h1>فاتورة</h1>
+
+      <div class="inv-num">INV-1046</div>
+
+      <span class="badge badge-amber" style="margin-top:8px;">مستحقة</span>
+
+    </div>
+
+  </div>
+
+
+
+  
+
+  <dl class="inv-meta">
+
+    <dt>العميل</dt><dd>كليوباترا تكنولوجي</dd>
+
+          <dt>مسؤول التواصل</dt><dd>مريم حسن</dd>
+
+            <dt>المشروع</dt><dd>كامبين افتتاح فرع جديد</dd>
+
+    <dt>نوع الفاتورة</dt><dd>مشروع</dd>
+
+    <dt>تاريخ الإصدار</dt><dd>2026/11/09</dd>
+
+    <dt>تاريخ الاستحقاق</dt><dd>2026/11/11</dd>
+
+  </dl>
+
+
+
+      <div class="demo-print-table"><table style="margin-top:28px;">
+
+      <thead><tr><th>#</th><th>البند</th><th>الكمية</th><th style="text-align:end;">سعر الوحدة</th><th style="text-align:end;">الإجمالي</th></tr></thead>
+
+      <tbody>
+
+                  <tr>
+
+            <td style="color:var(--gray-500);width:40px;">1</td>
+
+            <td style="font-weight:600;">قيمة الفاتورة</td>
+
+            <td>1</td>
+
+            <td style="text-align:end;white-space:nowrap;">75,000 ج.م</td>
+
+            <td style="text-align:end;font-weight:700;white-space:nowrap;">75,000 ج.م</td>
+
+          </tr>
+
+              </tbody>
+
+    </table></div>
+
+  
+
+  <div class="inv-amount">
+
+    <span class="lbl">المبلغ الإجمالي</span>
+
+    <span class="amt">75,000 ج.م</span>
+
+  </div>
+
+
+
+  <div class="inv-foot">
+
+    <span>Kaleido O.S — نظام إدارة شركات الماركتينج والبرودكشن</span>
+
+    <span>طُبعت في 2026/11/09 12:00</span>
+
+  </div>
+
+</div>
+
+
+
+<div class="inv-actions">
+
+  <button class="btn btn-primary" onclick="window.print()">
+
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+
+    طباعة
+
+  </button>
+
+  <button class="btn btn-ghost" onclick="window.close()">إغلاق</button>
+
+</div>
+
+
+
+<script>window.UI_TRANSLATIONS = [];</script>
+
+<script src="assets/js/i18n.js"></script>
+
+
+
+</body>
+
+</html>
+

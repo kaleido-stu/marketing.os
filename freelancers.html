@@ -3,109 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="csrf-token" content="ej8JW8vQZ0VUhbnlyJYxDvoQs7IJxkm9Ik8iMW5t">
+<meta name="csrf-token" content="offline-demo">
 <title>Kaleido O.S | نظام إدارة شركات الماركتينج والبرودكشن</title>
-<link rel="stylesheet" href="fonts/fonts.css">
-<script src="js/chart.min.js"></script>
-<link rel="stylesheet" href="css/core.css">
 
-<link rel="stylesheet" href="modules/departments/css/departments.css">
-<link rel="stylesheet" href="modules/crm/css/crm.css">
-<link rel="stylesheet" href="modules/tasks/css/tasks.css">
-<link rel="stylesheet" href="modules/projects/css/projects.css">
-<link rel="stylesheet" href="modules/scheduling/css/scheduling.css">
-<link rel="stylesheet" href="modules/freelancers/css/freelancers.css">
-<link rel="stylesheet" href="modules/invoices/css/finance.css">
-</head>
+<link href="assets/fonts/fonts.css" rel="stylesheet">
+<script src="assets/vendor/chart.js"></script>
+<link rel="stylesheet" href="assets/css/core.css">
+
+<link rel="stylesheet" href="assets/modules/departments/css/departments.css">
+<link rel="stylesheet" href="assets/modules/crm/css/crm.css">
+<link rel="stylesheet" href="assets/modules/tasks/css/tasks.css">
+<link rel="stylesheet" href="assets/modules/projects/css/projects.css">
+<link rel="stylesheet" href="assets/modules/scheduling/css/scheduling.css">
+<link rel="stylesheet" href="assets/calendar.css">
+<link rel="stylesheet" href="assets/modules/freelancers/css/freelancers.css">
+<link rel="stylesheet" href="assets/modules/invoices/css/finance.css">
+<link rel="stylesheet" href="assets/demo.css"><script src="assets/demo-data.js"></script><script src="assets/demo.js"></script></head>
 <body>
 
 <div class="app">
   <div class="sidebar-backdrop" id="backdrop" onclick="toggleSidebar(false)"></div>
 
-  <aside class="sidebar" id="sidebar">
-    <div class="brand">
-        <div class="brand-row">
-        <div class="brand-mark">K</div>
-        <div>
-            <div class="brand-name">Kaleido O.S</div>
-            <div class="brand-sub">MARKETING &amp; PRODUCTION OS</div>
-        </div>
-        </div>
-        <div class="clapper-stripe"></div>
-    </div>
-
-    <nav class="nav">
-                <div class="nav-group-label">الرئيسية</div>
-                                    <a href="index.html" class="nav-item ">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h8V3H3v10zM13 21h8V11h-8v10zM13 3v6h8V3h-8zM3 21h8v-6H3v6z"/></svg>
-                <span>لوحة التحكم</span>
-                            </a>
-                                        <div class="nav-group-label">المبيعات والعملاء</div>
-                                    <a href="crm-pipeline.html" class="nav-item ">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M2 21v-2a5 5 0 015-5h4a5 5 0 015 5v2"/><circle cx="18" cy="8" r="2.3"/><path d="M16 21v-1.6a4 4 0 00-1.2-2.9"/></svg>
-                <span>العملاء (CRM)</span>
-                            </a>
-                                                            <div class="nav-parent " id="projects-nav-parent">
-                <button type="button" class="nav-item nav-parent-toggle "
-                        onclick="toggleNavSubmenu('projects-nav-parent')" aria-expanded="false">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
-                    <span>المشاريع</span>
-                                        <span class="badge">1</span>
-                                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"/></svg>
-                </button>
-                <div class="nav-submenu">
-                    <a href="projects.html" class="nav-subitem ">
-                        <span class="nav-sub-dot"></span>
-                        <span>كل المشاريع</span>
-                    </a>
-                    <a href="tasks.html" class="nav-subitem ">
-                        <span class="nav-sub-dot"></span>
-                        <span>كل التاسكات</span>
-                    </a>
-                </div>
-            </div>
-                                        <div class="nav-group-label">العمليات</div>
-                                    <a href="scheduling.html" class="nav-item ">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                <span>جدولة التصوير والمعدات</span>
-                            </a>
-                                                <a href="freelancers.html" class="nav-item active">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
-                <span>الفريلانسرز</span>
-                            </a>
-                                                <a href="departments.html" class="nav-item ">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-5h6v5"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01"/></svg>
-                <span>الأقسام</span>
-                            </a>
-                                        <div class="nav-group-label">العميل والمال</div>
-                                    <a href="reports.html" class="nav-item ">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9M12 21V3M20 21v-7"/></svg>
-                <span>تقارير الربحية</span>
-                            </a>
-                                                <a href="invoices.html" class="nav-item ">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l3 3v17H6z"/><line x1="9" y1="8" x2="14" y2="8"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="12" y2="16"/></svg>
-                <span>الفواتير</span>
-                            </a>
-                                        <div class="nav-group-label">النظام</div>
-                                                <div class="nav-parent " id="settings-nav-parent">
-                <button type="button" class="nav-item nav-parent-toggle "
-                        onclick="toggleNavSubmenu('settings-nav-parent')" aria-expanded="false">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
-                    <span>الإعدادات</span>
-                    <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"/></svg>
-                </button>
-                <div class="nav-submenu">
-                    <a href="settings-users.html" class="nav-subitem ">
-                        <span class="nav-sub-dot"></span>
-                        <span>إدارة المستخدمين</span>
-                    </a>
-                    <a href="settings-company.html" class="nav-subitem ">
-                        <span class="nav-sub-dot"></span><span>بيانات الشركة</span>
-                    </a>
-                </div>
-            </div>
-                                    </nav>
-</aside>
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+        <div class="brand-row">
+        <div class="brand-mark">K</div>
+        <div>
+            <div class="brand-name">Kaleido O.S</div>
+            <div class="brand-sub">MARKETING &amp; PRODUCTION OS</div>
+        </div>
+        </div>
+        <div class="clapper-stripe"></div>
+    </div>
+
+    <nav class="nav">
+                <div class="nav-group-label">الرئيسية</div>
+                                    <a href="index.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h8V3H3v10zM13 21h8V11h-8v10zM13 3v6h8V3h-8zM3 21h8v-6H3v6z"/></svg>
+                <span>لوحة التحكم</span>
+                            </a>
+                                        <div class="nav-group-label">المبيعات والعملاء</div>
+                                    <a href="crm-pipeline.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M2 21v-2a5 5 0 015-5h4a5 5 0 015 5v2"/><circle cx="18" cy="8" r="2.3"/><path d="M16 21v-1.6a4 4 0 00-1.2-2.9"/></svg>
+                <span>العملاء (CRM)</span>
+                                <span class="badge">7</span>
+                            </a>
+                                                <a href="quotations.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l3 3v17H6z"/><path d="M14 2v4h4"/><path d="M9 10h6M9 14h6M9 18h3"/></svg>
+                <span>عروض الأسعار</span>
+                            </a>
+                                                            <div class="nav-parent " id="projects-nav-parent">
+                <button type="button" class="nav-item nav-parent-toggle "
+                        onclick="toggleNavSubmenu('projects-nav-parent')" aria-expanded="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l3-4h5l1 2h9v13H3z"/></svg>
+                    <span>المشاريع</span>
+                                        <span class="badge">4</span>
+                                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+                <div class="nav-submenu">
+                    <a href="projects.html" class="nav-subitem ">
+                        <span class="nav-sub-dot"></span>
+                        <span>كل المشاريع</span>
+                    </a>
+                    <a href="tasks.html" class="nav-subitem ">
+                        <span class="nav-sub-dot"></span>
+                        <span>كل التاسكات</span>
+                    </a>
+                </div>
+            </div>
+                                        <div class="nav-group-label">العمليات</div>
+                                    <a href="scheduling.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>جدولة التصوير والمعدات</span>
+                            </a>
+                                                <a href="freelancers.html" class="nav-item active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+                <span>الفريلانسرز</span>
+                            </a>
+                                                <a href="departments.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-5h6v5"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01"/></svg>
+                <span>الأقسام</span>
+                            </a>
+                                        <div class="nav-group-label">العميل والمال</div>
+                                    <a href="reports.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9M12 21V3M20 21v-7"/></svg>
+                <span>تقارير الربحية</span>
+                            </a>
+                                                <a href="invoices.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l3 3v17H6z"/><line x1="9" y1="8" x2="14" y2="8"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="12" y2="16"/></svg>
+                <span>الفواتير</span>
+                            </a>
+                                        <div class="nav-group-label">النظام</div>
+                                                <div class="nav-parent " id="settings-nav-parent">
+                <button type="button" class="nav-item nav-parent-toggle "
+                        onclick="toggleNavSubmenu('settings-nav-parent')" aria-expanded="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                    <span>الإعدادات</span>
+                    <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+                <div class="nav-submenu">
+                                        <a href="settings-users.html" class="nav-subitem ">
+                        <span class="nav-sub-dot"></span>
+                        <span>إدارة المستخدمين</span>
+                    </a>
+                    <a href="settings-company.html" class="nav-subitem ">
+                        <span class="nav-sub-dot"></span><span>بيانات الشركة</span>
+                    </a>
+                                                            <a href="activity.html" class="nav-subitem ">
+                        <span class="nav-sub-dot"></span><span>سجل النشاط</span>
+                    </a>
+                                    </div>
+            </div>
+                                                <a href="activity.html" class="nav-item ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3h16v18H4z"/></svg>
+                <span>سجل النشاط</span>
+                            </a>
+                                    </nav>
+</aside>
 
   <div class="main">
     <div class="topbar">
@@ -120,8 +134,12 @@
               </div>
       <div class="topbar-right">
         
+                <div class="rec-pill">
+          <span class="rec-dot"></span>
+          <span class="txt">2 تصوير جاري دلوقتي</span>
+        </div>
         
-                <a class="language-switch" href="#"
+                <a class="btn btn-ghost btn-sm" href="account-security.html">أمان الحساب</a>        <a class="language-switch" href="http://demo.local/language/en"
            title="Switch to English"
            aria-label="Switch to English">
           <span class="language-switch-code">EN</span>
@@ -148,13 +166,13 @@
         </div>
 
         <div class="topbar-user">
-          <div class="user-avatar">Ow</div>
+          <div class="user-avatar">أح</div>
           <div class="tu-meta">
-            <div class="tu-name">Owner</div>
-            <div class="tu-role">الأونر</div>
+            <div class="tu-name">أحمد منصور</div>
+            <div class="tu-role">المالك</div>
           </div>
-          <form method="POST" action="#" style="display:flex;">
-            <input type="hidden" name="_token" value="ej8JW8vQZ0VUhbnlyJYxDvoQs7IJxkm9Ik8iMW5t" autocomplete="off">            <button type="submit" class="tu-logout" title="تسجيل خروج">
+          <form method="POST" action="http://demo.local/logout" style="display:flex;">
+            <input type="hidden" name="_token" value="offline-demo" autocomplete="off">            <button type="submit" class="tu-logout" title="تسجيل خروج">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
             </button>
           </form>
@@ -163,230 +181,228 @@
     </div>
 
     <div class="content">
-      <div class="section-head">
-  <h3>دليل الفريلانسرز</h3>
-  <button class="btn btn-primary btn-sm" onclick="openFreelancerForm()">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-    إضافة فريلانسر
-  </button>
-</div>
-
-<div class="card" style="overflow-x:auto;">
-<table>
-  <thead>
-    <tr>
-      <th>الاسم</th>
-      <th>التخصص</th>
-      <th>التقييم</th>
-      <th>السعر</th>
-      <th>المهارات</th>
-      <th>الحالة</th>
-      <th>إجراءات</th>
-    </tr>
-  </thead>
-  <tbody>
-          <tr>
-      <td style="font-weight:700;">
-        <span class="fl-cell">
-          <span class="avatar-sm">أم</span>
-          أمير توفيق
-        </span>
-      </td>
-      <td>مصور فيديو</td>
-      <td class="fl-stars" title="4.8 من 5">
-        ★★★★★
-        <span class="muted" style="font-size:11px;">(4.8)</span>
-      </td>
-      <td style="white-space:nowrap;font-weight:700;">1200 ج/يوم</td>
-      <td>
-                  <span class="fl-tag">تصوير</span>
-                  <span class="fl-tag">درون</span>
-              </td>
-      <td>
-        
-        <span class="badge badge-green">متاح</span>
-              </td>
-      <td>
-        <div class="row-actions">
-          <button class="ra-btn" title="تعديل" onclick="openFreelancerForm(1)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
-          </button>
-          <button class="ra-btn ra-danger" title="حذف" onclick="deleteFreelancer(1, '\u0623\u0645\u064a\u0631 \u062a\u0648\u0641\u064a\u0642')">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
-          </button>
-        </div>
-      </td>
-    </tr>
-          <tr>
-      <td style="font-weight:700;">
-        <span class="fl-cell">
-          <span class="avatar-sm">دي</span>
-          دينا الشريف
-        </span>
-      </td>
-      <td>مصممة جرافيك</td>
-      <td class="fl-stars" title="4.9 من 5">
-        ★★★★★
-        <span class="muted" style="font-size:11px;">(4.9)</span>
-      </td>
-      <td style="white-space:nowrap;font-weight:700;">350 ج/ساعة</td>
-      <td>
-                  <span class="fl-tag">تصميم</span>
-                  <span class="fl-tag">براندينج</span>
-              </td>
-      <td>
-        
-        <span class="badge badge-green">متاح</span>
-              </td>
-      <td>
-        <div class="row-actions">
-          <button class="ra-btn" title="تعديل" onclick="openFreelancerForm(2)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
-          </button>
-          <button class="ra-btn ra-danger" title="حذف" onclick="deleteFreelancer(2, '\u062f\u064a\u0646\u0627 \u0627\u0644\u0634\u0631\u064a\u0641')">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
-          </button>
-        </div>
-      </td>
-    </tr>
-          <tr>
-      <td style="font-weight:700;">
-        <span class="fl-cell">
-          <span class="avatar-sm">ري</span>
-          ريم عادل
-        </span>
-      </td>
-      <td>كاتبة محتوى</td>
-      <td class="fl-stars" title="4.7 من 5">
-        ★★★★★
-        <span class="muted" style="font-size:11px;">(4.7)</span>
-      </td>
-      <td style="white-space:nowrap;font-weight:700;">250 ج/بوست</td>
-      <td>
-                  <span class="fl-tag">محتوى</span>
-                  <span class="fl-tag">سوشيال</span>
-              </td>
-      <td>
-        
-        <span class="badge badge-amber">مشغول</span>
-                  <div class="fl-projects" title="تطوير الشركه">تطوير الشركه</div>
-              </td>
-      <td>
-        <div class="row-actions">
-          <button class="ra-btn" title="تعديل" onclick="openFreelancerForm(4)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
-          </button>
-          <button class="ra-btn ra-danger" title="حذف" onclick="deleteFreelancer(4, '\u0631\u064a\u0645 \u0639\u0627\u062f\u0644')">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
-          </button>
-        </div>
-      </td>
-    </tr>
-          <tr>
-      <td style="font-weight:700;">
-        <span class="fl-cell">
-          <span class="avatar-sm">سا</span>
-          سارة يوسف
-        </span>
-      </td>
-      <td>مديرة إعلانات ممولة</td>
-      <td class="fl-stars" title="4.9 من 5">
-        ★★★★★
-        <span class="muted" style="font-size:11px;">(4.9)</span>
-      </td>
-      <td style="white-space:nowrap;font-weight:700;">8000 ج/شهر</td>
-      <td>
-                  <span class="fl-tag">فيسبوك</span>
-                  <span class="fl-tag">جوجل ادز</span>
-              </td>
-      <td>
-        
-        <span class="badge badge-amber">مشغول</span>
-                  <div class="fl-projects" title="مشروع جديد - محمد عبدالرحمن">مشروع جديد - محمد عبدالرحمن</div>
-              </td>
-      <td>
-        <div class="row-actions">
-          <button class="ra-btn" title="تعديل" onclick="openFreelancerForm(6)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
-          </button>
-          <button class="ra-btn ra-danger" title="حذف" onclick="deleteFreelancer(6, '\u0633\u0627\u0631\u0629 \u064a\u0648\u0633\u0641')">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
-          </button>
-        </div>
-      </td>
-    </tr>
-          <tr>
-      <td style="font-weight:700;">
-        <span class="fl-cell">
-          <span class="avatar-sm">طا</span>
-          طارق منصور
-        </span>
-      </td>
-      <td>مصور فوتوغرافي</td>
-      <td class="fl-stars" title="4.5 من 5">
-        ★★★★★
-        <span class="muted" style="font-size:11px;">(4.5)</span>
-      </td>
-      <td style="white-space:nowrap;font-weight:700;">1000 ج/يوم</td>
-      <td>
-                  <span class="fl-tag">تصوير</span>
-                  <span class="fl-tag">منتجات</span>
-              </td>
-      <td>
-        
-        <span class="badge badge-green">متاح</span>
-              </td>
-      <td>
-        <div class="row-actions">
-          <button class="ra-btn" title="تعديل" onclick="openFreelancerForm(5)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
-          </button>
-          <button class="ra-btn ra-danger" title="حذف" onclick="deleteFreelancer(5, '\u0637\u0627\u0631\u0642 \u0645\u0646\u0635\u0648\u0631')">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
-          </button>
-        </div>
-      </td>
-    </tr>
-          <tr>
-      <td style="font-weight:700;">
-        <span class="fl-cell">
-          <span class="avatar-sm">ما</span>
-          مازن سعيد
-        </span>
-      </td>
-      <td>مونتير</td>
-      <td class="fl-stars" title="4.6 من 5">
-        ★★★★★
-        <span class="muted" style="font-size:11px;">(4.6)</span>
-      </td>
-      <td style="white-space:nowrap;font-weight:700;">900 ج/يوم</td>
-      <td>
-                  <span class="fl-tag">مونتاج</span>
-                  <span class="fl-tag">موشن جرافيك</span>
-              </td>
-      <td>
-        
-        <span class="badge badge-green">متاح</span>
-              </td>
-      <td>
-        <div class="row-actions">
-          <button class="ra-btn" title="تعديل" onclick="openFreelancerForm(3)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
-          </button>
-          <button class="ra-btn ra-danger" title="حذف" onclick="deleteFreelancer(3, '\u0645\u0627\u0632\u0646 \u0633\u0639\u064a\u062f')">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
-          </button>
-        </div>
-      </td>
-    </tr>
-    </tbody>
-</table>
-</div>
-
-<p class="muted" style="font-size:12px;margin-top:12px;line-height:1.8;">
-  <b>الحالة بتتحسب لوحدها:</b> الفريلانسر بيبقى «مشغول» طول ما هو مسنود لمهمة
-  لسه مقفلتش، و«متاح» أول ما مهامه تخلص — من غير ما حد يغيّرها بإيده.
-</p>
+            <div class="section-head">
+  <h3>دليل الفريلانسرز</h3>
+  <button class="btn btn-primary btn-sm" onclick="openFreelancerForm()">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+    إضافة فريلانسر
+  </button>
+</div>
+
+<div class="card" style="overflow-x:auto;">
+<table>
+  <thead>
+    <tr>
+      <th>الاسم</th>
+      <th>التخصص</th>
+      <th>التقييم</th>
+      <th>السعر</th>
+      <th>المهارات</th>
+      <th>الحالة</th>
+      <th>إجراءات</th>
+    </tr>
+  </thead>
+  <tbody>
+          <tr>
+      <td style="font-weight:700;">
+        <span class="fl-cell">
+          <span class="avatar-sm">أم</span>
+          أمير توفيق
+        </span>
+      </td>
+      <td>مصور فيديو</td>
+      <td class="fl-stars" title="4.8 من 5">
+        ★★★★★
+        <span class="muted" style="font-size:11px;">(4.8)</span>
+      </td>
+      <td style="white-space:nowrap;font-weight:700;">1200 ج/يوم</td>
+      <td>
+                  <span class="fl-tag">تصوير</span>
+                  <span class="fl-tag">درون</span>
+              </td>
+      <td>
+        
+        <span class="badge badge-green">متاح</span>
+              </td>
+      <td>
+        <div class="row-actions">
+          <button class="ra-btn" title="تعديل" onclick="openFreelancerForm(1)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+          </button>
+          <button class="ra-btn ra-danger" title="حذف" onclick="deleteFreelancer(1, '\u0623\u0645\u064a\u0631 \u062a\u0648\u0641\u064a\u0642')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
+          </button>
+        </div>
+      </td>
+    </tr>
+          <tr>
+      <td style="font-weight:700;">
+        <span class="fl-cell">
+          <span class="avatar-sm">دي</span>
+          دينا الشريف
+        </span>
+      </td>
+      <td>مصممة جرافيك</td>
+      <td class="fl-stars" title="4.9 من 5">
+        ★★★★★
+        <span class="muted" style="font-size:11px;">(4.9)</span>
+      </td>
+      <td style="white-space:nowrap;font-weight:700;">350 ج/ساعة</td>
+      <td>
+                  <span class="fl-tag">تصميم</span>
+                  <span class="fl-tag">براندينج</span>
+              </td>
+      <td>
+        
+        <span class="badge badge-green">متاح</span>
+              </td>
+      <td>
+        <div class="row-actions">
+          <button class="ra-btn" title="تعديل" onclick="openFreelancerForm(2)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+          </button>
+          <button class="ra-btn ra-danger" title="حذف" onclick="deleteFreelancer(2, '\u062f\u064a\u0646\u0627 \u0627\u0644\u0634\u0631\u064a\u0641')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
+          </button>
+        </div>
+      </td>
+    </tr>
+          <tr>
+      <td style="font-weight:700;">
+        <span class="fl-cell">
+          <span class="avatar-sm">ري</span>
+          ريم عادل
+        </span>
+      </td>
+      <td>كاتبة محتوى</td>
+      <td class="fl-stars" title="4.7 من 5">
+        ★★★★★
+        <span class="muted" style="font-size:11px;">(4.7)</span>
+      </td>
+      <td style="white-space:nowrap;font-weight:700;">250 ج/بوست</td>
+      <td>
+                  <span class="fl-tag">محتوى</span>
+                  <span class="fl-tag">سوشيال</span>
+              </td>
+      <td>
+        
+        <span class="badge badge-green">متاح</span>
+              </td>
+      <td>
+        <div class="row-actions">
+          <button class="ra-btn" title="تعديل" onclick="openFreelancerForm(4)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+          </button>
+          <button class="ra-btn ra-danger" title="حذف" onclick="deleteFreelancer(4, '\u0631\u064a\u0645 \u0639\u0627\u062f\u0644')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
+          </button>
+        </div>
+      </td>
+    </tr>
+          <tr>
+      <td style="font-weight:700;">
+        <span class="fl-cell">
+          <span class="avatar-sm">سا</span>
+          سارة يوسف
+        </span>
+      </td>
+      <td>مديرة إعلانات ممولة</td>
+      <td class="fl-stars" title="4.9 من 5">
+        ★★★★★
+        <span class="muted" style="font-size:11px;">(4.9)</span>
+      </td>
+      <td style="white-space:nowrap;font-weight:700;">8000 ج/شهر</td>
+      <td>
+                  <span class="fl-tag">فيسبوك</span>
+                  <span class="fl-tag">جوجل ادز</span>
+              </td>
+      <td>
+        
+        <span class="badge badge-green">متاح</span>
+              </td>
+      <td>
+        <div class="row-actions">
+          <button class="ra-btn" title="تعديل" onclick="openFreelancerForm(6)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+          </button>
+          <button class="ra-btn ra-danger" title="حذف" onclick="deleteFreelancer(6, '\u0633\u0627\u0631\u0629 \u064a\u0648\u0633\u0641')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
+          </button>
+        </div>
+      </td>
+    </tr>
+          <tr>
+      <td style="font-weight:700;">
+        <span class="fl-cell">
+          <span class="avatar-sm">طا</span>
+          طارق منصور
+        </span>
+      </td>
+      <td>مصور فوتوغرافي</td>
+      <td class="fl-stars" title="4.5 من 5">
+        ★★★★★
+        <span class="muted" style="font-size:11px;">(4.5)</span>
+      </td>
+      <td style="white-space:nowrap;font-weight:700;">1000 ج/يوم</td>
+      <td>
+                  <span class="fl-tag">تصوير</span>
+                  <span class="fl-tag">منتجات</span>
+              </td>
+      <td>
+        
+        <span class="badge badge-green">متاح</span>
+              </td>
+      <td>
+        <div class="row-actions">
+          <button class="ra-btn" title="تعديل" onclick="openFreelancerForm(5)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+          </button>
+          <button class="ra-btn ra-danger" title="حذف" onclick="deleteFreelancer(5, '\u0637\u0627\u0631\u0642 \u0645\u0646\u0635\u0648\u0631')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
+          </button>
+        </div>
+      </td>
+    </tr>
+          <tr>
+      <td style="font-weight:700;">
+        <span class="fl-cell">
+          <span class="avatar-sm">ما</span>
+          مازن سعيد
+        </span>
+      </td>
+      <td>مونتير</td>
+      <td class="fl-stars" title="4.6 من 5">
+        ★★★★★
+        <span class="muted" style="font-size:11px;">(4.6)</span>
+      </td>
+      <td style="white-space:nowrap;font-weight:700;">900 ج/يوم</td>
+      <td>
+                  <span class="fl-tag">مونتاج</span>
+                  <span class="fl-tag">موشن جرافيك</span>
+              </td>
+      <td>
+        
+        <span class="badge badge-green">متاح</span>
+              </td>
+      <td>
+        <div class="row-actions">
+          <button class="ra-btn" title="تعديل" onclick="openFreelancerForm(3)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4z"/></svg>
+          </button>
+          <button class="ra-btn ra-danger" title="حذف" onclick="deleteFreelancer(3, '\u0645\u0627\u0632\u0646 \u0633\u0639\u064a\u062f')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
+          </button>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+</table>
+</div>
+
+<p class="muted" style="font-size:12px;margin-top:12px;line-height:1.8;">
+  <b>الحالة بتتحسب لوحدها:</b> الفريلانسر بيبقى «مشغول» طول ما هو مسنود لمهمة
+  لسه مقفلتش، و«متاح» أول ما مهامه تخلص — من غير ما حد يغيّرها بإيده.
+</p>
     </div>
   </div>
 </div>
@@ -402,14 +418,14 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="js/app.js"></script>
+<script src="assets/js/app.js"></script>
 <script>window.UI_TRANSLATIONS = [];</script>
-<script src="js/i18n.js"></script>
+<script src="assets/js/i18n.js"></script>
 <script>
 /* ---------- جرس الإشعارات (مشترك لكل الصفحات) ---------- */
-const NOTIF_URL = ".\/notifications";
-const NOTIF_READ_URL = ".\/notifications\/read-all";
-const NOTIF_OPEN = ".\/notifications";
+const NOTIF_URL = "http://demo.local/notifications";
+const NOTIF_READ_URL = "http://demo.local/notifications/read-all";
+const NOTIF_OPEN = "http://demo.local/notifications";
 const NOTIF_CSRF = document.querySelector('meta[name=csrf-token]').content;
 const NOTIF_ICONS = {
   task: '<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>',
@@ -479,88 +495,88 @@ document.addEventListener('click', e => {
 document.addEventListener('DOMContentLoaded', loadNotifications);
 setInterval(loadNotifications, 60000); // تحديث كل دقيقة
 </script>
-<script>
-const CSRF = document.querySelector('meta[name=csrf-token]').content;
-const FREELANCERS = [{"id":1,"name":"\u0623\u0645\u064a\u0631 \u062a\u0648\u0641\u064a\u0642","role":"\u0645\u0635\u0648\u0631 \u0641\u064a\u062f\u064a\u0648","rate_label":"1200 \u062c\/\u064a\u0648\u0645","rating":4.8,"tags":"\u062a\u0635\u0648\u064a\u0631,\u062f\u0631\u0648\u0646","notes":null},{"id":2,"name":"\u062f\u064a\u0646\u0627 \u0627\u0644\u0634\u0631\u064a\u0641","role":"\u0645\u0635\u0645\u0645\u0629 \u062c\u0631\u0627\u0641\u064a\u0643","rate_label":"350 \u062c\/\u0633\u0627\u0639\u0629","rating":4.9,"tags":"\u062a\u0635\u0645\u064a\u0645,\u0628\u0631\u0627\u0646\u062f\u064a\u0646\u062c","notes":null},{"id":4,"name":"\u0631\u064a\u0645 \u0639\u0627\u062f\u0644","role":"\u0643\u0627\u062a\u0628\u0629 \u0645\u062d\u062a\u0648\u0649","rate_label":"250 \u062c\/\u0628\u0648\u0633\u062a","rating":4.7,"tags":"\u0645\u062d\u062a\u0648\u0649,\u0633\u0648\u0634\u064a\u0627\u0644","notes":null},{"id":6,"name":"\u0633\u0627\u0631\u0629 \u064a\u0648\u0633\u0641","role":"\u0645\u062f\u064a\u0631\u0629 \u0625\u0639\u0644\u0627\u0646\u0627\u062a \u0645\u0645\u0648\u0644\u0629","rate_label":"8000 \u062c\/\u0634\u0647\u0631","rating":4.9,"tags":"\u0641\u064a\u0633\u0628\u0648\u0643,\u062c\u0648\u062c\u0644 \u0627\u062f\u0632","notes":null},{"id":5,"name":"\u0637\u0627\u0631\u0642 \u0645\u0646\u0635\u0648\u0631","role":"\u0645\u0635\u0648\u0631 \u0641\u0648\u062a\u0648\u063a\u0631\u0627\u0641\u064a","rate_label":"1000 \u062c\/\u064a\u0648\u0645","rating":4.5,"tags":"\u062a\u0635\u0648\u064a\u0631,\u0645\u0646\u062a\u062c\u0627\u062a","notes":null},{"id":3,"name":"\u0645\u0627\u0632\u0646 \u0633\u0639\u064a\u062f","role":"\u0645\u0648\u0646\u062a\u064a\u0631","rate_label":"900 \u062c\/\u064a\u0648\u0645","rating":4.6,"tags":"\u0645\u0648\u0646\u062a\u0627\u062c,\u0645\u0648\u0634\u0646 \u062c\u0631\u0627\u0641\u064a\u0643","notes":null}];
-
-function val(id) { const el = document.getElementById(id); return el ? el.value : ''; }
-
-function field(id, label, type, value, placeholder) {
-  const safe = (value ?? '').toString().replace(/"/g, '&quot;');
-  return '<div class="field"><label for="' + id + '">' + label + '</label>'
-    + '<input id="' + id + '" type="' + type + '" value="' + safe + '" placeholder="' + (placeholder || '') + '"></div>';
-}
-
-/* ---------- إضافة / تعديل فريلانسر ---------- */
-function openFreelancerForm(id) {
-  const f = id ? FREELANCERS.find(x => x.id === id) : null;
-
-  document.getElementById('modalBox').innerHTML =
-    '<div class="modal-head"><h3>' + (f ? 'تعديل بيانات الفريلانسر' : 'إضافة فريلانسر') + '</h3>'
-    + '<button class="close-x" onclick="closeModal()">✕</button></div>'
-    + '<div class="modal-body">'
-    + '<div id="f-error" class="auth-error" style="display:none;"></div>'
-    + field('f-name', 'الاسم', 'text', f && f.name, 'مثال: أمير توفيق')
-    + '<div style="margin-top:12px;">' + field('f-role', 'التخصص / الوظيفة', 'text', f && f.role, 'مثال: مصور فيديو') + '</div>'
-    + '<div class="grid grid-2" style="gap:12px;margin-top:12px;">'
-    +   field('f-rate', 'السعر', 'text', f && f.rate_label, 'مثال: 1200 ج/يوم')
-    +   field('f-rating', 'التقييم (من 5)', 'number', f && f.rating, '4.5')
-    + '</div>'
-    + '<div style="margin-top:12px;">' + field('f-tags', 'المهارات (افصلها بفاصلة)', 'text', f && f.tags, 'تصوير, درون, مونتاج') + '</div>'
-    + '<div class="field" style="margin-top:12px;"><label for="f-notes">تفاصيل عن الفريلانسر</label>'
-    + '<textarea id="f-notes" rows="4" placeholder="خبراته، ملاحظات التعامل معاه، لينك أعماله..."></textarea></div>'
-    + '<button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:14px;" '
-    + 'onclick="submitFreelancer(this, ' + (f ? f.id : 'null') + ')">'
-    + (f ? 'حفظ التعديلات' : 'حفظ الفريلانسر') + '</button>'
-    + '</div>';
-
-  document.getElementById('overlay').classList.add('active');
-
-  const rating = document.getElementById('f-rating');
-  rating.step = '0.1';
-  rating.min = '0';
-  rating.max = '5';
-
-  if (f && f.notes) document.getElementById('f-notes').value = f.notes;
-}
-
-function submitFreelancer(btn, id) {
-  const err = document.getElementById('f-error');
-  err.style.display = 'none';
-
-  if (!val('f-name').trim()) { err.textContent = 'اكتب اسم الفريلانسر.'; err.style.display = 'flex'; return; }
-  if (!val('f-role').trim()) { err.textContent = 'اكتب التخصص أو الوظيفة.'; err.style.display = 'flex'; return; }
-
-  btn.disabled = true;
-  fetch(id ? 'freelancers.html/' + id : 'freelancers.html', {
-    method: id ? 'PUT' : 'POST',
-    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
-    body: JSON.stringify({
-      name: val('f-name').trim(),
-      role: val('f-role').trim(),
-      rate_label: val('f-rate').trim() || null,
-      rating: val('f-rating') || null,
-      tags: val('f-tags').trim() || null,
-      notes: val('f-notes').trim() || null,
-    }),
-  }).then(async r => {
-    const d = await r.json();
-    if (r.ok && d.ok) { closeModal(); showToast(d.message); setTimeout(() => location.reload(), 500); }
-    else { btn.disabled = false; err.textContent = d.errors ? Object.values(d.errors)[0][0] : (d.message || 'حدث خطأ.'); err.style.display = 'flex'; }
-  }).catch(() => { btn.disabled = false; err.textContent = 'تعذّر الاتصال بالخادم.'; err.style.display = 'flex'; });
-}
-
-function deleteFreelancer(id, name) {
-  if (!confirm('متأكد من حذف الفريلانسر "' + name + '"؟')) return;
-
-  fetch('freelancers.html/' + id, {
-    method: 'DELETE', headers: { 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
-  }).then(async r => {
-    const d = await r.json();
-    showToast(d.message);
-    if (r.ok && d.ok) setTimeout(() => location.reload(), 500);
-  }).catch(() => showToast('تعذّر الاتصال بالخادم.'));
-}
-</script>
-<script src="js/prototype.js"></script></body>
+<script>
+const CSRF = document.querySelector('meta[name=csrf-token]').content;
+const FREELANCERS = [{"id":1,"name":"\u0623\u0645\u064a\u0631 \u062a\u0648\u0641\u064a\u0642","role":"\u0645\u0635\u0648\u0631 \u0641\u064a\u062f\u064a\u0648","rate_label":"1200 \u062c/\u064a\u0648\u0645","rating":4.8,"tags":"\u062a\u0635\u0648\u064a\u0631,\u062f\u0631\u0648\u0646","notes":null},{"id":2,"name":"\u062f\u064a\u0646\u0627 \u0627\u0644\u0634\u0631\u064a\u0641","role":"\u0645\u0635\u0645\u0645\u0629 \u062c\u0631\u0627\u0641\u064a\u0643","rate_label":"350 \u062c/\u0633\u0627\u0639\u0629","rating":4.9,"tags":"\u062a\u0635\u0645\u064a\u0645,\u0628\u0631\u0627\u0646\u062f\u064a\u0646\u062c","notes":null},{"id":4,"name":"\u0631\u064a\u0645 \u0639\u0627\u062f\u0644","role":"\u0643\u0627\u062a\u0628\u0629 \u0645\u062d\u062a\u0648\u0649","rate_label":"250 \u062c/\u0628\u0648\u0633\u062a","rating":4.7,"tags":"\u0645\u062d\u062a\u0648\u0649,\u0633\u0648\u0634\u064a\u0627\u0644","notes":null},{"id":6,"name":"\u0633\u0627\u0631\u0629 \u064a\u0648\u0633\u0641","role":"\u0645\u062f\u064a\u0631\u0629 \u0625\u0639\u0644\u0627\u0646\u0627\u062a \u0645\u0645\u0648\u0644\u0629","rate_label":"8000 \u062c/\u0634\u0647\u0631","rating":4.9,"tags":"\u0641\u064a\u0633\u0628\u0648\u0643,\u062c\u0648\u062c\u0644 \u0627\u062f\u0632","notes":null},{"id":5,"name":"\u0637\u0627\u0631\u0642 \u0645\u0646\u0635\u0648\u0631","role":"\u0645\u0635\u0648\u0631 \u0641\u0648\u062a\u0648\u063a\u0631\u0627\u0641\u064a","rate_label":"1000 \u062c/\u064a\u0648\u0645","rating":4.5,"tags":"\u062a\u0635\u0648\u064a\u0631,\u0645\u0646\u062a\u062c\u0627\u062a","notes":null},{"id":3,"name":"\u0645\u0627\u0632\u0646 \u0633\u0639\u064a\u062f","role":"\u0645\u0648\u0646\u062a\u064a\u0631","rate_label":"900 \u062c/\u064a\u0648\u0645","rating":4.6,"tags":"\u0645\u0648\u0646\u062a\u0627\u062c,\u0645\u0648\u0634\u0646 \u062c\u0631\u0627\u0641\u064a\u0643","notes":null}];
+
+function val(id) { const el = document.getElementById(id); return el ? el.value : ''; }
+
+function field(id, label, type, value, placeholder) {
+  const safe = escapeHtml(value);
+  return '<div class="field"><label for="' + id + '">' + label + '</label>'
+    + '<input id="' + id + '" type="' + type + '" value="' + safe + '" placeholder="' + (placeholder || '') + '"></div>';
+}
+
+/* ---------- إضافة / تعديل فريلانسر ---------- */
+function openFreelancerForm(id) {
+  const f = id ? FREELANCERS.find(x => x.id === id) : null;
+
+  document.getElementById('modalBox').innerHTML =
+    '<div class="modal-head"><h3>' + (f ? 'تعديل بيانات الفريلانسر' : 'إضافة فريلانسر') + '</h3>'
+    + '<button class="close-x" onclick="closeModal()">✕</button></div>'
+    + '<div class="modal-body">'
+    + '<div id="f-error" class="auth-error" style="display:none;"></div>'
+    + field('f-name', 'الاسم', 'text', f && f.name, 'مثال: أمير توفيق')
+    + '<div style="margin-top:12px;">' + field('f-role', 'التخصص / الوظيفة', 'text', f && f.role, 'مثال: مصور فيديو') + '</div>'
+    + '<div class="grid grid-2" style="gap:12px;margin-top:12px;">'
+    +   field('f-rate', 'السعر', 'text', f && f.rate_label, 'مثال: 1200 ج/يوم')
+    +   field('f-rating', 'التقييم (من 5)', 'number', f && f.rating, '4.5')
+    + '</div>'
+    + '<div style="margin-top:12px;">' + field('f-tags', 'المهارات (افصلها بفاصلة)', 'text', f && f.tags, 'تصوير, درون, مونتاج') + '</div>'
+    + '<div class="field" style="margin-top:12px;"><label for="f-notes">تفاصيل عن الفريلانسر</label>'
+    + '<textarea id="f-notes" rows="4" placeholder="خبراته، ملاحظات التعامل معاه، لينك أعماله..."></textarea></div>'
+    + '<button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:14px;" '
+    + 'onclick="submitFreelancer(this, ' + (f ? f.id : 'null') + ')">'
+    + (f ? 'حفظ التعديلات' : 'حفظ الفريلانسر') + '</button>'
+    + '</div>';
+
+  document.getElementById('overlay').classList.add('active');
+
+  const rating = document.getElementById('f-rating');
+  rating.step = '0.1';
+  rating.min = '0';
+  rating.max = '5';
+
+  if (f && f.notes) document.getElementById('f-notes').value = f.notes;
+}
+
+function submitFreelancer(btn, id) {
+  const err = document.getElementById('f-error');
+  err.style.display = 'none';
+
+  if (!val('f-name').trim()) { err.textContent = 'اكتب اسم الفريلانسر.'; err.style.display = 'flex'; return; }
+  if (!val('f-role').trim()) { err.textContent = 'اكتب التخصص أو الوظيفة.'; err.style.display = 'flex'; return; }
+
+  btn.disabled = true;
+  fetch(id ? 'http://demo.local/freelancers/' + id : 'freelancers.html', {
+    method: id ? 'PUT' : 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
+    body: JSON.stringify({
+      name: val('f-name').trim(),
+      role: val('f-role').trim(),
+      rate_label: val('f-rate').trim() || null,
+      rating: val('f-rating') || null,
+      tags: val('f-tags').trim() || null,
+      notes: val('f-notes').trim() || null,
+    }),
+  }).then(async r => {
+    const d = await r.json();
+    if (r.ok && d.ok) { closeModal(); showToast(d.message); setTimeout(() => location.reload(), 500); }
+    else { btn.disabled = false; err.textContent = d.errors ? Object.values(d.errors)[0][0] : (d.message || 'حدث خطأ.'); err.style.display = 'flex'; }
+  }).catch(() => { btn.disabled = false; err.textContent = 'تعذّر الاتصال بالخادم.'; err.style.display = 'flex'; });
+}
+
+function deleteFreelancer(id, name) {
+  if (!confirm('متأكد من حذف الفريلانسر "' + name + '"؟')) return;
+
+  fetch('http://demo.local/freelancers/' + id, {
+    method: 'DELETE', headers: { 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
+  }).then(async r => {
+    const d = await r.json();
+    showToast(d.message);
+    if (r.ok && d.ok) setTimeout(() => location.reload(), 500);
+  }).catch(() => showToast('تعذّر الاتصال بالخادم.'));
+}
+</script>
+</body>
 </html>

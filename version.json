@@ -1,0 +1,11 @@
+{
+  "release": "2026-11-09-responsive-v2",
+  "pages": 139,
+  "responsive_widths": [
+    360,
+    390,
+    768,
+    1024,
+    1440
+  ]
+}

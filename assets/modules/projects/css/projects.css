@@ -1,0 +1,131 @@
+/* ستايل موديول المشاريع — بيتحمّل بعد core.css. */
+
+/* ===================== PROJECTS: TASKS / COMMENTS ===================== */
+/* ملخص المهام على كرت المشروع */
+.proj-tasks-summary{ display:flex; gap:20px; margin-top:16px; }
+.pts-item{ display:flex; flex-direction:column; }
+.pts-num{ font-family:'Cairo',sans-serif; font-weight:800; font-size:22px; line-height:1; }
+.pts-label{ font-size:11.5px; color:var(--gray-500); margin-top:4px; }
+
+/* بناء المهام في صفحة الإضافة */
+.task-block{ margin-bottom:14px; }
+.task-block-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
+.task-num{ font-family:'Cairo',sans-serif; font-weight:800; font-size:14px; color:var(--blue); }
+.task-block .field{ margin-bottom:12px; }
+
+/* حقول textarea (نفس ستايل input) */
+.field textarea{
+  width:100%; padding:11px 13px; border-radius:10px; border:1px solid var(--gray-300);
+  background:#fff; font-size:13.5px; color:var(--ink); resize:vertical; line-height:1.7; transition:.15s;
+}
+.field textarea:focus{ outline:none; border-color:var(--blue); box-shadow:0 0 0 3px var(--blue-tint); }
+
+/* كرت المهمة في صفحة المشروع */
+.task-card{ margin-bottom:16px; }
+.task-card-head{ display:flex; align-items:flex-start; gap:14px; }
+.task-card-head h3{ font-size:15.5px; }
+.task-desc{ font-size:13px; margin-top:6px; line-height:1.8; white-space:pre-line; }
+.task-assignees{ display:flex; align-items:center; gap:6px; margin-top:14px; flex-wrap:wrap; }
+.task-assignees .avatar-sm{ border:2px solid #fff; }
+
+/* دروب داون الحالة */
+.status-select{ width:auto; min-width:110px; flex-shrink:0; font-weight:700; cursor:pointer; }
+.status-select.st-in_progress{ color:var(--blue-dark); border-color:var(--blue); background:var(--blue-tint); }
+.status-select.st-review{ color:var(--amber); border-color:var(--amber); background:var(--amber-tint); }
+.status-select.st-completed{ color:var(--green); border-color:var(--green); background:var(--green-tint); }
+
+/* التعليقات */
+.comments{ margin-top:16px; border-top:1px solid var(--gray-150); padding-top:14px; }
+.comments-title{ font-size:13px; margin-bottom:10px; }
+.comment-list{ display:flex; flex-direction:column; gap:12px; margin-bottom:12px; }
+.comment{ display:flex; gap:10px; align-items:flex-start; }
+.comment .avatar-sm{ flex-shrink:0; }
+.comment-name{ font-size:12.5px; font-weight:700; }
+.comment-time{ font-weight:400; font-size:11px; }
+.comment-body{ font-size:13px; color:var(--gray-700); margin-top:2px; line-height:1.7; white-space:pre-line; }
+.comment-form{ display:flex; gap:8px; }
+.comment-form input{
+  flex:1; padding:10px 13px; border-radius:10px; border:1px solid var(--gray-300);
+  font-size:13px; background:#fff; transition:.15s;
+}
+.comment-form input:focus{ outline:none; border-color:var(--blue); box-shadow:0 0 0 3px var(--blue-tint); }
+
+/* --- زر حذف المشروع --- */
+.btn-danger{ background:var(--red-tint); color:var(--red); }
+.btn-danger:hover{ background:var(--red); color:#fff; }
+.proj-del{
+  width:32px; height:32px; border-radius:8px; background:var(--gray-100);
+  display:flex; align-items:center; justify-content:center; color:var(--gray-500);
+  flex-shrink:0; transition:.15s;
+}
+.proj-del:hover{ background:var(--red-tint); color:var(--red); }
+.proj-del svg{ width:16px; height:16px; }
+
+/* --- أزرار الإجراءات على كرت المشروع --- */
+.proj-actions{ display:flex; gap:6px; flex-shrink:0; }
+.proj-editbtn:hover{ background:var(--blue-tint); color:var(--blue); }
+
+/* --- شريط بحث المشاريع (AJAX) --- */
+.search-bar{
+  position:relative; margin-bottom:18px; max-width:460px;
+}
+.search-bar > svg{
+  position:absolute; inset-inline-start:14px; top:50%; transform:translateY(-50%);
+  width:18px; height:18px; color:var(--gray-500); pointer-events:none;
+}
+.search-bar input{
+  width:100%; padding:12px 44px 12px 40px; border-radius:12px;
+  border:1px solid var(--gray-300); background:#fff; font-size:13.5px; color:var(--ink); transition:.15s;
+}
+.search-bar input:focus{ outline:none; border-color:var(--blue); box-shadow:0 0 0 3px var(--blue-tint); }
+.search-spinner{
+  position:absolute; inset-inline-end:14px; top:50%; transform:translateY(-50%);
+  width:16px; height:16px; border:2px solid var(--gray-300); border-top-color:var(--blue);
+  border-radius:50%; opacity:0; transition:.15s;
+}
+.search-spinner.on{ opacity:1; animation:spin .6s linear infinite; }
+@keyframes spin{ to{ transform:translateY(-50%) rotate(360deg); } }
+.project-page-heading{display:flex;flex-direction:column;gap:4px;}
+.project-page-heading p{margin:0;color:var(--gray-500);font-size:13px;font-weight:600;}
+.project-task-metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:18px 0 22px;}
+.project-task-metric{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;gap:8px;min-height:105px;padding:17px 18px;}
+.project-task-metric::before{content:"";position:absolute;inset-block:0;inset-inline-start:0;width:4px;background:var(--gray-400);}
+.project-task-metric span{font-size:12px;font-weight:700;color:var(--gray-600);}
+.project-task-metric strong{font-family:'Cairo',sans-serif;font-size:27px;color:var(--ink);}
+.project-task-metric.is-new::before{background:var(--gray-500);}
+.project-task-metric.is-progress::before{background:var(--primary);}
+.project-task-metric.is-completed::before{background:var(--green);}
+.project-task-metric.is-review::before{background:var(--amber);}
+.project-task-metric.is-overdue::before{background:var(--red);}
+.project-task-metric.is-overdue strong{color:var(--red);}
+@media(max-width:1100px){.project-task-metrics{grid-template-columns:repeat(3,minmax(0,1fr));}}
+@media(max-width:700px){.project-task-metrics{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:430px){.project-task-metrics{grid-template-columns:1fr;}}
+
+/* بيانات وإدارة المشروع */
+.project-edit-section{margin-bottom:18px;}
+.project-edit-section h3{font-size:16px;margin-bottom:16px;color:var(--primary-dark);}
+.project-form-grid{gap:14px;margin-bottom:14px;}
+.project-progress-note{display:flex;align-items:center;justify-content:space-between;gap:18px;}
+.project-progress-note > div{display:flex;flex-direction:column;gap:4px;}
+.project-progress-note span{font-size:12px;color:var(--gray-600);font-weight:700;}
+.project-progress-note strong{font-size:24px;color:var(--blue);}
+.project-progress-note p{margin:0;}
+.project-overview-grid{display:grid;grid-template-columns:2fr 1fr;gap:14px;margin-bottom:14px;}
+.project-overview-card{margin:0;min-width:0;}
+.project-overview-main{display:flex;flex-direction:column;justify-content:space-between;gap:20px;}
+.project-overview-head{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:20px;}
+.project-overview-head > div{display:flex;flex-direction:column;align-items:flex-start;gap:7px;}
+.project-overview-label{display:block;font-size:11.5px;font-weight:700;color:var(--gray-500);margin-bottom:6px;}
+.project-progress-block{padding:14px 16px;border:1px solid var(--gray-150);border-radius:12px;background:var(--gray-100);}
+.project-progress-head{display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:12.5px;font-weight:700;margin-bottom:10px;}
+.project-progress-head strong{font-size:22px;line-height:1;color:var(--blue);direction:ltr;}
+.project-progress-track{height:10px;background:var(--gray-200);border-radius:999px;overflow:hidden;margin-bottom:9px;}
+.project-progress-track span{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--primary));border-radius:inherit;transition:width .35s ease;}
+.project-overview-card small{font-size:11.5px;color:var(--gray-500);}
+.project-date-row{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--gray-150);font-size:12.5px;}
+.project-date-row.is-delayed strong{color:var(--red);}
+.project-detail-grid{gap:14px;margin-bottom:14px;}.project-detail-grid .card{margin:0;}.project-detail-grid h3{font-size:15px;color:var(--primary-dark);}
+.project-extra-details{display:grid;gap:16px;margin-bottom:18px;}.project-extra-details > div + div{padding-top:14px;border-top:1px solid var(--gray-150);}.project-extra-details p{white-space:pre-line;font-size:13px;line-height:1.8;margin:0;}
+.project-files-link{display:inline-flex;font-size:13px;font-weight:800;color:var(--blue);}.project-delay-reason p{color:var(--red);}
+@media(max-width:800px){.project-overview-grid{grid-template-columns:1fr;}.project-overview-head{grid-template-columns:1fr;}.project-progress-note{align-items:flex-start;flex-direction:column;}}
